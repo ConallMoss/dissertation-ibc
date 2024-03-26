@@ -5,7 +5,7 @@ def bfs_distances(G: Graph, s: Node) -> dict[Node, int]:
     """Finds node distances using BFS"""
     distance = defaultdict(int)
     distance[s] = 0
-    Q = [s]
+    Q = deque((s,))
     while Q:
         n = Q.popleft()
         for i in G[n]:
@@ -15,7 +15,7 @@ def bfs_distances(G: Graph, s: Node) -> dict[Node, int]:
     return distance
 
 def bfs_brandes(G: Graph, s: Node) -> tuple[dict[Node, int], dict[Node, set[Node]], list[Node]]:
-    """Find node no. shortest paths, parents and reverse bfs order from given node"""
+    """Find node's no. shortest paths, parents and reverse bfs order from given node"""
     distance = {s: 0}
     parents = defaultdict(list)
     sigma = defaultdict(int); sigma[s] = 1

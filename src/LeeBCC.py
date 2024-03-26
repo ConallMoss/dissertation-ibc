@@ -42,7 +42,7 @@ def LeeBCC(G: Graph, BCe: dict[Edge, float], e: Edge, V_ins: list[Node] = None) 
         recalc_component = find_bicon_with_edge(all_bicons, e) #* Our bicon we are interested in
         our_articulation_points = (find_articulation_points(G)).intersection(recalc_component)
         articulation_subgraph_size = find_connected_subgraph_size(G, our_articulation_points, recalc_component)
-        BCe_updated = edge_betweenness(G.subgraph(recalc_component), articulation_subgraph_size)
+        BCe_updated = edge_betweenness(G.subgraph(recalc_component).copy(), articulation_subgraph_size)
         BCe.update(BCe_updated)
 
     return BCe

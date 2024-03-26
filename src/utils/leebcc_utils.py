@@ -10,7 +10,7 @@ def find_bridge_subgraphs(G: Graph, e: Edge) -> Optional[tuple[Graph, Graph]]:
     subgraph_nodes2 = nx.node_connected_component(G, v2)
     
     if subgraph_nodes1 != subgraph_nodes2:
-        return G.subgraph(subgraph_nodes1), G.subgraph(subgraph_nodes2)
+        return G.subgraph(subgraph_nodes1).copy(), G.subgraph(subgraph_nodes2).copy()
     else:
         return None
     

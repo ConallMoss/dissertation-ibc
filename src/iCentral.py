@@ -11,8 +11,8 @@ def iCentral(G: Graph, BC: dict[Node, float], e: Edge) -> dict[Node, float]:
     all_articulation_points = find_articulation_points(G)
 
     #* We only care about the bicon with our new edge
-    bicon_new = G.subgraph(find_bicon_with_edge(all_bicons, e)) #* B_e' in paper
-    bicon_old = bicon_new #* B_e in paper
+    bicon_new = G.subgraph(find_bicon_with_edge(all_bicons, e)).copy() #* B_e'
+    bicon_old = deepcopy(bicon_new) #* B_e in paper
     bicon_old.remove_edge(v1, v2)
 
     our_articulation_points = all_articulation_points.intersection(bicon_new.nodes)
