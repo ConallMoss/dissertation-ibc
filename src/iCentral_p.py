@@ -7,7 +7,7 @@ from multiprocessing import Pool, Manager, get_logger
 
 logger = logging.getLogger(__name__)
 
-def iCentral_p(G: Graph, BC: dict[Node, float], e: Edge, PROCESSES=1) -> dict[Node, float]:
+def iCentral_p(G: Graph, BC: dict[Node, float], e: Edge, PROCESSES=None) -> dict[Node, float]:
     logger.info("iCentral_p begun")
     v1, v2 = e
     G.add_edge(v1, v2)
