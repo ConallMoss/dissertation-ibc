@@ -1,0 +1,12 @@
+dataset:
+ego-facebook
+edges:
+[(1586, 1845)]
+Average iCentral:
+0.06406641897046939
+Average LeeBCC:
+0.04930149595020339
+Real times iCentral:
+[0.06406641897046939]
+Real times LeeBCC: 
+[0.04930149595020339]

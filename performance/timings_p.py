@@ -32,8 +32,8 @@ if __name__ == "__main__":
         node2 = random.choice(list(possible_nodes))
         return node1, node2
 
-    #G_base = nx.read_edgelist("./datasets/facebook_combined.txt")
-    G_base =  nx.erdos_renyi_graph(256, 0.5, seed=123, directed=False)
+    G_base = nx.read_edgelist("../datasets/facebook_combined.txt")
+    #G_base =  nx.erdos_renyi_graph(256, 0.5, seed=123, directed=False)
     G = G_base
     e = pick_random_nonedge(G_base)
     #e = ('693', '2379')#('1095', '3289')
@@ -44,7 +44,7 @@ if __name__ == "__main__":
     G = G_base.copy()
     bce_initial = defaultdict(float)
     s = time.perf_counter()
-    x = iCentral_p(G, bce_initial, e, PROCESSES=1)
+    x = iCentral_p(G, bce_initial, e, PROCESSES=56)
     print("Real time Parallel iCentral:")
     print(time.perf_counter() - s)
 

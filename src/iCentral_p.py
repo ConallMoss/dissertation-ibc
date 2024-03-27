@@ -41,17 +41,18 @@ def iCentral_p(G: Graph, BC: dict[Node, float], e: Edge, PROCESSES=1) -> dict[No
         #* bicon_old, bicon_new: Graph objects
         #* our_articulation_points: set of nodes
         #* articulation_subgraph_size: dict[node: int]
-        bicon_old = manager.dict(nx.to_dict_of_dicts(bicon_old))
-        bicon_new = manager.dict(nx.to_dict_of_dicts(bicon_new))
+        bicon_old_manager = manager.dict(nx.to_dict_of_dicts(bicon_old))
+        bicon_new_manager = manager.dict(nx.to_dict_of_dicts(bicon_new))
         #* manager does not support sets, only dicts 
 
         our_articulation_points_manager = manager.dict(dict.fromkeys(our_articulation_points, 0))
         articulation_subgraph_size_manager = manager.dict(dict.fromkeys(articulation_subgraph_size, 0))
         
-        all_managers = (bicon_old, bicon_new, our_articulation_points_manager, articulation_subgraph_size_manager)
-        logger.info(f"multiprocessing calls")
+        all_managers = (bicon_old_manager, bicon_new_manager, our_articulation_points_manager, articulation_subgraph_size_manager)
+        no_managers = (bicon_old, bicon_new, our_articulation_points, articulation_subgraph_size)
+        logger.info(f"multiprocessing calls: {PROCESSES=}")
         #* Multiprocessing calls to subfunctions
-        bc_updates = p.starmap(calculate_node_dependencies_p, [(s, *all_managers) for s in Q])
+        bc_updates = p.starmap(calculate_node_dependencies_p, [(s, *no_managers) for s in Q])
         
         #* Add updates
         for bc_update in bc_updates:
