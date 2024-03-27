@@ -1,9 +1,3 @@
-# %%
-# from pathlib import Path
-# import sys
-# parent_dir = str(Path().resolve().parents[0])
-# sys.path.insert(0, parent_dir)
-
 import networkx as nx
 from src.LeeBCC import LeeBCC
 from src.iCentral import iCentral
@@ -32,36 +26,19 @@ if __name__ == "__main__":
         node2 = random.choice(list(possible_nodes))
         return node1, node2
 
-    G_base = nx.read_edgelist("./datasets/facebook_combined.txt")
-    #G_base =  nx.erdos_renyi_graph(256, 0.5, seed=123, directed=False)
+    #G_base = nx.read_edgelist("./datasets/facebook_combined.txt")
+    G_base =  nx.erdos_renyi_graph(256, 0.5, seed=123, directed=False)
     G = G_base
     e = pick_random_nonedge(G_base)
-    e = ('3997', '660')
     #e = ('693', '2379')#('1095', '3289')
     print(e)
 
-    #* Real time iCentral_p
-    print("Running iCentral_p:")
+    #* Profile iCentral
     G = G_base.copy()
     bce_initial = defaultdict(float)
-    s = time.perf_counter()
-    x = iCentral_p(G, bce_initial, e, PROCESSES=16)
-    print("Real time Parallel iCentral:")
-    print(time.perf_counter() - s)
-
-    #* Real time LeeBCC
-    G = G_base.copy()
-    bce_initial = defaultdict(float)
-    s = time.perf_counter()
-    x = LeeBCC(G, bce_initial, e)
-    print("Real time LeeBCC:")
-    print(time.perf_counter() - s)
-
-    # %%
-    #* Real time iCentral
-    G = G_base.copy()
-    bce_initial = defaultdict(float)
-    s = time.perf_counter()
-    x = iCentral(G, bce_initial, e)
-    print("Real time iCentral:")
-    print(time.perf_counter() - s)
+    #e = ('2289', '2510')
+    with cProfile.Profile() as pr:
+        x = iCentral_p(G, bce_initial, e, PROCESSES=16)
+        stats = pstats.Stats(pr)
+        print("Profile iCentral:")
+        stats.sort_stats(SortKey.CUMULATIVE).print_stats()

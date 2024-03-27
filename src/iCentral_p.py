@@ -44,11 +44,15 @@ def iCentral_p(G: Graph, BC: dict[Node, float], e: Edge, PROCESSES=None) -> dict
         bicon_old_manager = manager.dict(nx.to_dict_of_dicts(bicon_old))
         bicon_new_manager = manager.dict(nx.to_dict_of_dicts(bicon_new))
         #* manager does not support sets, only dicts 
-
+        
         our_articulation_points_manager = manager.dict(dict.fromkeys(our_articulation_points, 0))
         articulation_subgraph_size_manager = manager.dict(dict.fromkeys(articulation_subgraph_size, 0))
         
         all_managers = (bicon_old_manager, bicon_new_manager, our_articulation_points_manager, articulation_subgraph_size_manager)
+        
+        bicon_old_dod = nx.to_dict_of_dicts(bicon_old)
+        bicon_new_dod = nx.to_dict_of_dicts(bicon_new)
+        
         no_managers = (bicon_old, bicon_new, our_articulation_points, articulation_subgraph_size)
         logger.info(f"multiprocessing calls: {PROCESSES=}")
         #* Multiprocessing calls to subfunctions
