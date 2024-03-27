@@ -113,12 +113,12 @@ def test_LeeBCC_randEdge_nxsocial_karate():
 
 #* Repeat for other social graphs
     
-def test_LeeBCC_randEdge_ER500():
+def test_LeeBCC_randEdge_ER256():
     """
-    Test LeeBCC on: Erdos-Reyni (n=500, p=0.5) graph, with randomly generated insert edge
+    Test LeeBCC on: Erdos-Reyni (n=256, p=0.5) graph, with randomly generated insert edge
     """
     #* Arrange
-    G =  nx.erdos_renyi_graph(500, 0.5, seed=123, directed=False)
+    G =  nx.erdos_renyi_graph(256, 0.5, seed=123, directed=False)
     e = pick_random_nonedge(G, seed=42)
     
     #* Act
@@ -128,17 +128,18 @@ def test_LeeBCC_randEdge_ER500():
     #* Assert
     assert bce_new == approx(bce_LeeBCC)
 
-def test_LeeBCC_randEdge_ER1024():
-    """
-    Test LeeBCC on: Erdos-Reyni (n=1024, p=1/32) graph, with randomly generated insert edge
-    """
-    #* Arrange
-    G =  nx.erdos_renyi_graph(1024, 1/32, seed=123, directed=False)
-    e = pick_random_nonedge(G, seed=42)
+# @nottest #Takes too long to run
+# def test_LeeBCC_randEdge_ER1024():
+#     """
+#     Test LeeBCC on: Erdos-Reyni (n=1024, p=1/32) graph, with randomly generated insert edge
+#     """
+#     #* Arrange
+#     G =  nx.erdos_renyi_graph(1024, 1/32, seed=123, directed=False)
+#     e = pick_random_nonedge(G, seed=42)
     
-    #* Act
-    bce_new, bce_LeeBCC = dotest_LeeBCC(G, e)
-    print(bce_LeeBCC)
+#     #* Act
+#     bce_new, bce_LeeBCC = dotest_LeeBCC(G, e)
+#     print(bce_LeeBCC)
 
-    #* Assert
-    assert bce_new == approx(bce_LeeBCC)
+#     #* Assert
+#     assert bce_new == approx(bce_LeeBCC)

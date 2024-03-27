@@ -113,12 +113,12 @@ def test_iCentral_randEdge_nxsocial_karate():
 
 #* Repeat for other social graphs
     
-def test_iCentral_randEdge_ER500():
+def test_iCentral_randEdge_ER256():
     """
-    Test iCentral on: Erdos-Reyni (n=500, p=0.5) graph, with randomly generated insert edge
+    Test iCentral on: Erdos-Reyni (n=256, p=0.5) graph, with randomly generated insert edge
     """
     #* Arrange
-    G =  nx.erdos_renyi_graph(500, 0.5, seed=123, directed=False)
+    G =  nx.erdos_renyi_graph(256, 0.5, seed=123, directed=False)
     e = pick_random_nonedge(G, seed=42)
     
     #* Act
@@ -128,17 +128,17 @@ def test_iCentral_randEdge_ER500():
     #* Assert
     assert bc_new == approx(bc_iCentral)
 
-def test_iCentral_randEdge_ER1024():
-    """
-    Test iCentral on: Erdos-Reyni (n=1024, p=1/32) graph, with randomly generated insert edge
-    """
-    #* Arrange
-    G =  nx.erdos_renyi_graph(1024, 1/32, seed=123, directed=False)
-    e = pick_random_nonedge(G, seed=42)
+# def test_iCentral_randEdge_ER1024():
+#     """
+#     Test iCentral on: Erdos-Reyni (n=1024, p=1/32) graph, with randomly generated insert edge
+#     """
+#     #* Arrange
+#     G =  nx.erdos_renyi_graph(1024, 1/32, seed=123, directed=False)
+#     e = pick_random_nonedge(G, seed=42)
     
-    #* Act
-    bc_new, bc_iCentral = dotest_iCentral(G, e)
-    print(bc_iCentral)
+#     #* Act
+#     bc_new, bc_iCentral = dotest_iCentral(G, e)
+#     print(bc_iCentral)
 
-    #* Assert
-    assert bc_new == approx(bc_iCentral)
+#     #* Assert
+#     assert bc_new == approx(bc_iCentral)

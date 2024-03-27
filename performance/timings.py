@@ -7,6 +7,7 @@ sys.path.insert(0, parent_dir)
 import networkx as nx
 from src.LeeBCC import LeeBCC
 from src.iCentral import iCentral
+from src.iCentral_p import iCentral_p
 from collections import defaultdict
 import cProfile, pstats
 from pstats import SortKey
@@ -33,7 +34,7 @@ def pick_random_nonedge(G, seed=None):
 G_base = nx.read_edgelist("../datasets/facebook_combined.txt")
 G = G_base
 #e = pick_random_nonedge(G_base)
-e = ('1095', '3289')
+e = ('693', '2379')#('1095', '3289')
 
 #* Performance tests:
 
@@ -75,4 +76,6 @@ s = time.perf_counter()
 x = LeeBCC(G, bce_initial, e)
 print("Real time LeeBCC:")
 print(time.perf_counter() - s)
+# %%
+
 # %%
