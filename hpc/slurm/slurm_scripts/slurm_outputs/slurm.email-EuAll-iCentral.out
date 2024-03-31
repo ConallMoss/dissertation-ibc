@@ -1,0 +1,31 @@
+Loading rhel8/default-icl
+  Loading requirement: dot rhel8/slurm singularity/current rhel8/global
+    cuda/11.4 vgl/2.5.1/64 intel-oneapi-compilers/2022.1.0/gcc/b6zld2mz
+    intel-oneapi-mpi/2021.6.0/intel/guxuvcpm
+Changed directory to /rds/user/cm2121/hpc-work/dissertation-ibc.
+
+JobID: 49263806
+======
+Time: Sun Mar 31 16:45:19 BST 2024
+Running on master node: cpu-q-162
+Current directory: /rds/user/cm2121/hpc-work/dissertation-ibc
+
+Nodes allocated:
+================
+cpu-q-162
+
+numtasks=1, numnodes=1, mpi_tasks_per_node=1 (OMP_NUM_THREADS=1)
+
+Executing command:
+==================
+python -m hpc.run_dataset email-EuAll -r 1 -p iCentral >hpc/slurm/email-EuAll/email-EuAll-iCentral.txt
+
+flatpak: symbol lookup error: /lib64/libk5crypto.so.3: undefined symbol: EVP_KDF_ctrl, version OPENSSL_1_1_1b
+Traceback (most recent call last):
+  File "/home/cm2121/.conda/envs/main/lib/python3.10/runpy.py", line 196, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File "/home/cm2121/.conda/envs/main/lib/python3.10/runpy.py", line 86, in _run_code
+    exec(code, run_globals)
+  File "/rds/user/cm2121/hpc-work/dissertation-ibc/hpc/run_dataset.py", line 104, in <module>
+    print(f"Real times {names[i]}:")
+IndexError: list index out of range
