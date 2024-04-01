@@ -23,17 +23,15 @@ def iCentral_p(G: Graph, BC: dict[Node, float], e: Edge, PROCESSES=None) -> dict
     articulation_subgraph_size = find_connected_subgraph_size(G, our_articulation_points, bicon_new.nodes)
 
     #* Line 4:
-    d = {
-        v1: bfs_distances(bicon_old, v1),
-        v2: bfs_distances(bicon_old, v2)
-    }
+    d1 = bfs_distances(bicon_old, v1)
+    d2 = bfs_distances(bicon_old, v2)
 
     #* Line 7:
     Q = deque() #Queue
     for s in bicon_old.nodes: 
         #* Check if ends of the edge are at different distances from edge endpoints
         #* i.e. if not, then edge would not be used
-        if d[v1][s] != d[v2][s]: 
+        if d1[s] != d2[s]: 
              Q.append(s)
     logger.info(f"{len(Q)=}")
     with Pool(processes=PROCESSES) as p, Manager() as manager:
