@@ -9,7 +9,7 @@
 
 #! sbatch directives begin here ###############################
 #! Name of the job:
-#SBATCH -J ego-facebook-all
+#SBATCH -J pajek-erdos-iCentral
 #! Which project should be charged:
 #SBATCH -A TGRIFFIN-SL3-CPU
 #SBATCH -p icelake
@@ -58,10 +58,10 @@ module load rhel8/default-icl              # REQUIRED - loads the basic environm
 module load miniconda/3
 #! Insert additional module load commands after this line if needed:
 
-name=ego-facebook-all
-dataset=ego-facebook
+name=pajek_erdos_iCentral
+dataset=pajek-erdos
 runs=1000
-prog=all
+prog=iCentral
 
 #! Full path to application executable: 
 application="python -m hpc.run_dataset $dataset -r $runs -p $prog"
