@@ -1,0 +1,42 @@
+Loading rhel8/default-icl
+  Loading requirement: dot rhel8/slurm singularity/current rhel8/global
+    cuda/11.4 vgl/2.5.1/64 intel-oneapi-compilers/2022.1.0/gcc/b6zld2mz
+    intel-oneapi-mpi/2021.6.0/intel/guxuvcpm
+Changed directory to /rds/user/cm2121/hpc-work/dissertation-ibc/hpc.
+
+JobID: 48916461
+======
+Time: Wed Mar 27 18:00:01 GMT 2024
+Running on master node: cpu-q-348
+Current directory: /rds/user/cm2121/hpc-work/dissertation-ibc/hpc
+
+Nodes allocated:
+================
+cpu-q-348
+
+numtasks=1, numnodes=1, mpi_tasks_per_node=1 (OMP_NUM_THREADS=1)
+
+Executing command:
+==================
+python -m hpc.run_dataset ego-facebook 1 > ./hpc/ego-facebook-1.txt
+
+
+CommandNotFoundError: Your shell has not been properly configured to use 'conda activate'.
+To initialize your shell, run
+
+    $ conda init <SHELL_NAME>
+
+Currently supported shells are:
+  - bash
+  - fish
+  - tcsh
+  - xonsh
+  - zsh
+  - powershell
+
+See 'conda init --help' for more information and options.
+
+IMPORTANT: You may need to close and restart your shell after running 'conda init'.
+
+
+/var/spool/slurm/slurmd/job48916461/slurm_script: line 129: ./hpc/ego-facebook-1.txt: No such file or directory

@@ -1,0 +1,19 @@
+dataset='pajek-erdos'
+max_runs=1
+max_secs=20000
+
+Graph read time:
+0.1147927560377866
+
+processes
+76
+
+runs
+1
+
+Real times iCentral:
+[7.0514727311674505]
+Real times LeeBCC:
+[17.32079952606]
+Real times iCentral_p:
+[12.373605689033866]

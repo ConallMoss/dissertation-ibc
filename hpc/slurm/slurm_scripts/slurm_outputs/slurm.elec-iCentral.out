@@ -4,15 +4,15 @@ Loading rhel8/default-icl
     intel-oneapi-mpi/2021.6.0/intel/guxuvcpm
 Changed directory to /rds/user/cm2121/hpc-work/dissertation-ibc.
 
-JobID: 49265291
+JobID: 49502706
 ======
-Time: Sun Mar 31 17:15:20 BST 2024
-Running on master node: cpu-q-73
+Time: Tue Apr  2 15:14:59 BST 2024
+Running on master node: cpu-q-76
 Current directory: /rds/user/cm2121/hpc-work/dissertation-ibc
 
 Nodes allocated:
 ================
-cpu-q-73
+cpu-q-76
 
 numtasks=1, numnodes=1, mpi_tasks_per_node=1 (OMP_NUM_THREADS=1)
 
@@ -21,4 +21,4 @@ Executing command:
 python -m hpc.run_dataset elec -r 1000 -p iCentral >hpc/slurm/elec/elec-iCentral.txt
 
 flatpak: symbol lookup error: /lib64/libk5crypto.so.3: undefined symbol: EVP_KDF_ctrl, version OPENSSL_1_1_1b
-slurmstepd: error: *** JOB 49265291 ON cpu-q-73 CANCELLED AT 2024-04-01T05:15:21 DUE TO TIME LIMIT ***
+slurmstepd: error: *** JOB 49502706 ON cpu-q-76 CANCELLED AT 2024-04-02T15:15:06 ***

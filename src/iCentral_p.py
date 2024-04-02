@@ -11,6 +11,7 @@ logger = logging.getLogger(__name__)
 def iCentral_p(G: Graph, BC: dict[Node, float], e: Edge, PROCESSES=None) -> dict[Node, float]:
     if PROCESSES is None:
         PROCESSES = multiprocessing.cpu_count()
+
     v1, v2 = e
     G.add_edge(v1, v2)
     all_bicons = find_biconnected_components(G)
@@ -79,7 +80,6 @@ def run(q, bc_manager, manager_lock, resources):
                         bc_manager[k] += v
 
 def calculate_node_dependencies_p(s: Node, bicon_old, bicon_new, our_articulation_points, articulation_subgraph_size) -> dict[Node, float]:
-    #print(f"started: {s}")
     BC_upd = defaultdict(float)
 
     shortest_paths_old, preds_old, ordered_nodes_old = bfs_brandes(bicon_old, s) #* σ_s, P_s
@@ -122,5 +122,4 @@ def calculate_node_dependencies_p(s: Node, bicon_old, bicon_new, our_articulatio
             BC_upd[w] += pair_dependency_new[w] * articulation_subgraph_size[s]
             BC_upd[w] += external_dependency_new[w] / 2
 
-    #print(f"finished: {s}")
     return BC_upd

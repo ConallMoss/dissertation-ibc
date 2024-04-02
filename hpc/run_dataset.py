@@ -1,63 +1,87 @@
-import sys
 import networkx as nx
 from src.LeeBCC import LeeBCC
 from src.iCentral import iCentral
+from src.iCentral_p import iCentral_p
 from collections import defaultdict
 import time
 import random
+import os
+import argparse
+import copy
 
-def pick_random_nonedge(G, seed=None):
+start_time = time.perf_counter()
+
+def pick_random_new_nonedge(G, seed=None, G_nodes=None):
+    if G_nodes is None:
+        G_nodes = set(G.nodes())
     if seed is not None:
         random.seed(seed)
-    node1 = random.choice(list(G.nodes()))
-    possible_nodes = set(G.nodes())
+    node1 = random.choice(list(G_nodes))
     neighbours = set(G[node1]).union({node1})
-    possible_nodes.difference_update(neighbours)
-    node2 = random.choice(list(possible_nodes))
+    G_nodes -= neighbours
+    node2 = random.choice(list(G_nodes))
     return node1, node2
 
 def get_dataset(name):
+    if name == "facebook_combined":
+        return nx.read_edgelist(f"../datasets/facebook_combined.txt", nodetype=int, comments="%", data=False)
     return nx.read_edgelist(f"../datasets/{name}/out.{name}", nodetype=int, comments="%", data=False)
 
 def get_lcc(G):
-    return max(nx.connected_components(G), key=len)
+    return G.subgraph(max(nx.connected_components(G), key=len)).copy()
 
-dataset = sys.argv[1]
-G_base = get_dataset(dataset)
+parser = argparse.ArgumentParser()
+parser.add_argument("dataset", help="Dataset to use", type=str)
+parser.add_argument("--max_runs", "-r", help="max number of runs", type=int, default=1)
+parser.add_argument("--prog", "-p", help="which program to run", type=str, default="iCentral")
 
-edges = []
-counts = [[], []]
+args = parser.parse_args()
 
-runs = int((sys.argv[2:3] or [0])[0])
+if __name__ == "__main__":
+    
+    dataset = args.dataset
+    prog = args.prog
 
-for i in range(runs):
-    e = pick_random_nonedge(G_base)
-    edges.append(e)
-    #* Real time iCentral
-    G = G_base.copy()
-    bce_initial = defaultdict(float)
-    s = time.perf_counter()
-    x = iCentral(G, bce_initial, e)
-    #print("Real time iCentral:")
-    counts[0].append(time.perf_counter() - s)
+    max_runs = args.max_runs
+    max_secs = 20000
 
-    #* Real time LeeBCC
-    G = G_base.copy()
-    bce_initial = defaultdict(float)
-    s = time.perf_counter()
-    x = LeeBCC(G, bce_initial, e)
-    #print("Real time LeeBCC:")
-    counts[1].append(time.perf_counter() - s)
+    print(f"{dataset=}")
+    print(f"{prog=}")
+    print(f"{max_runs=}")
+    print(f"{max_secs=}")
+    if prog == "iCentral_p":
+        print(f"processes={os.cpu_count()}")
+    print("")
 
-print("dataset:")
-print(dataset)
-print("edges:")
-print(edges)
-print("Average iCentral:")
-print(sum(counts[0])/runs)
-print("Average LeeBCC:")
-print(sum(counts[1])/runs)
-print("Real times iCentral:")
-print(counts[0])
-print("Real times LeeBCC: ")
-print(counts[1])
+    
+    funcs = {
+        "iCentral": iCentral,
+        "iCentral_p": iCentral_p,
+        "LeeBCC": LeeBCC
+    }
+    func = funcs[prog]
+
+
+
+
+    start_time = time.perf_counter()
+    G_base = get_lcc(get_dataset(dataset))
+    graph_read_time = time.perf_counter() - start_time
+
+    print("Graph read time:")
+    print(graph_read_time)
+    print("")
+
+    print("Run times:")
+
+    run = 0
+    while ((time.perf_counter()-start_time)<max_secs) and (run < max_runs):
+        run += 1
+        e = pick_random_new_nonedge(G_base)
+        
+        G = copy.deepcopy(G_base)
+        initial = defaultdict(float)
+        s = time.perf_counter()
+        x = func(G, initial, e)
+        print(time.perf_counter()-s)
+

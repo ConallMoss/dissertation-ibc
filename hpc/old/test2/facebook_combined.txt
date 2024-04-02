@@ -1,0 +1,4 @@
+dataset='facebook_combined'
+max_runs=1000
+max_secs=20000
+

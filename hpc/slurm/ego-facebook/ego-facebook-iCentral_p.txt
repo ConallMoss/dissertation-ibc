@@ -1,0 +1,17 @@
+dataset:
+ego-facebook
+
+Graph read time:
+0.016330722952261567
+
+edges:
+[(1995, 702)]
+
+Real times iCentral:
+[0.05445227585732937]
+
+Real times LeeBCC: 
+[0.057888759998604655]
+
+Real times iCentral_p: 
+[]

@@ -1,0 +1,24 @@
+Loading rhel8/default-icl
+  Loading requirement: dot rhel8/slurm singularity/current rhel8/global
+    cuda/11.4 vgl/2.5.1/64 intel-oneapi-compilers/2022.1.0/gcc/b6zld2mz
+    intel-oneapi-mpi/2021.6.0/intel/guxuvcpm
+Changed directory to /rds/user/cm2121/hpc-work/dissertation-ibc/hpc.
+
+JobID: 49012561
+======
+Time: Fri Mar 29 12:08:32 GMT 2024
+Running on master node: cpu-q-44
+Current directory: /rds/user/cm2121/hpc-work/dissertation-ibc/hpc
+
+Nodes allocated:
+================
+cpu-q-44
+
+numtasks=1, numnodes=1, mpi_tasks_per_node=1 (OMP_NUM_THREADS=1)
+
+Executing command:
+==================
+python -m hpc.run_dataset_slashdot_threads >hpc/slashdot_threads.txt
+
+flatpak: symbol lookup error: /lib64/libk5crypto.so.3: undefined symbol: EVP_KDF_ctrl, version OPENSSL_1_1_1b
+/var/spool/slurm/slurmd/job49012561/slurm_script: line 130: hpc/slashdot_threads.txt: No such file or directory
