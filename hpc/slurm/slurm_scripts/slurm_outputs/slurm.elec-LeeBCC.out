@@ -21,3 +21,4 @@ Executing command:
 python -m hpc.run_dataset elec -r 1000 -p LeeBCC >hpc/slurm/elec/elec-LeeBCC.txt
 
 flatpak: symbol lookup error: /lib64/libk5crypto.so.3: undefined symbol: EVP_KDF_ctrl, version OPENSSL_1_1_1b
+slurmstepd: error: *** JOB 49265422 ON cpu-q-280 CANCELLED AT 2024-04-01T05:16:22 DUE TO TIME LIMIT ***

@@ -1,8 +1,16 @@
 #!/bin/bash
 
-sbatch slurm_run_ego-facebook-all.peta4-icelake
-sbatch slurm_run_pajek_erdos_all.peta4-icelake
-sbatch slurm_run_slashdot-threads-all.peta4-icelake
+sbatch ego-facebook/slurm_run_ego-facebook-iCentral.peta4-icelake
+sbatch ego-facebook/slurm_run_ego-facebook-iCentral_p.peta4-icelake
+sbatch ego-facebook/slurm_run_ego-facebook-LeeBCC.peta4-icelake
+
+sbatch pajek-erdos/slurm_run_pajek-erdos-iCentral.peta4-icelake
+sbatch pajek-erdos/slurm_run_pajek-erdos-iCentral_p.peta4-icelake
+sbatch pajek-erdos/slurm_run_pajek-erdos-LeeBCC.peta4-icelake
+
+sbatch slashdot-threads/slurm_run_slashdot-threads-iCentral.peta4-icelake
+sbatch slashdot-threads/slurm_run_slashdot-threads-iCentral_p.peta4-icelake
+sbatch slashdot-threads/slurm_run_slashdot-threads-LeeBCC.peta4-icelake
 
 sbatch slurm_run_email-EuAll-iCentral_p.peta4-icelake
 sbatch slurm_run_email-EuAll-iCentral.peta4-icelake
@@ -16,6 +24,6 @@ sbatch slurm_run_elec-iCentral.peta4-icelake
 sbatch slurm_run_elec-iCentral_p.peta4-icelake
 sbatch slurm_run_elec-LeeBCC.peta4-icelake
 
-sbatch slurm_run_facebook_combined_iCentral.peta4-icelake
-sbatch slurm_run_facebook_combined_iCentral_p.peta4-icelake
-sbatch slurm_run_facebook_combined_LeeBCC.peta4-icelake
+sbatch slurm_run_facebook_combined-iCentral.peta4-icelake
+sbatch slurm_run_facebook_combined-iCentral_p.peta4-icelake
+sbatch slurm_run_facebook_combined-LeeBCC.peta4-icelake
