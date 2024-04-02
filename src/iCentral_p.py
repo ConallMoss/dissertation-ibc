@@ -45,7 +45,13 @@ def iCentral_p(G: Graph, BC: dict[Node, float], e: Edge, PROCESSES=None) -> dict
     #* Thread safe dictionary update manager
     with Manager() as manager:
         #* Setup inputs for each call
-        resources = (bicon_old, bicon_new, our_articulation_points, articulation_subgraph_size)
+
+        bicon_old_manager = manager.dict(nx.to_dict_of_dicts(bicon_old))
+        bicon_new_manager = manager.dict(nx.to_dict_of_dicts(bicon_new))
+        our_articulation_points_manager = manager.dict(dict.fromkeys(our_articulation_points, 0))
+        articulation_subgraph_size_manager = manager.dict(dict.fromkeys(articulation_subgraph_size, 0))
+
+        resources = (bicon_old_manager, bicon_new_manager, our_articulation_points_manager, articulation_subgraph_size_manager)
         bc_manager = manager.dict(BC)
         manager_lock = Lock()
         all_processes = []

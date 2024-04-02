@@ -4,9 +4,9 @@ Loading rhel8/default-icl
     intel-oneapi-mpi/2021.6.0/intel/guxuvcpm
 Changed directory to /rds/user/cm2121/hpc-work/dissertation-ibc.
 
-JobID: 49502698
+JobID: 49503208
 ======
-Time: Tue Apr  2 15:15:03 BST 2024
+Time: Tue Apr  2 15:28:45 BST 2024
 Running on master node: cpu-q-208
 Current directory: /rds/user/cm2121/hpc-work/dissertation-ibc
 
@@ -21,4 +21,32 @@ Executing command:
 python -m hpc.run_dataset slashdot-threads -r 1000 -p iCentral_p >hpc/slurm/slashdot-threads/slashdot-threads-iCentral_p.txt
 
 flatpak: symbol lookup error: /lib64/libk5crypto.so.3: undefined symbol: EVP_KDF_ctrl, version OPENSSL_1_1_1b
-slurmstepd: error: *** JOB 49502698 ON cpu-q-208 CANCELLED AT 2024-04-02T15:15:06 ***
+Process Process-2:
+/var/spool/slurm/slurmd/job49503208/slurm_script: line 137: 844672 Killed                  python -m hpc.run_dataset slashdot-threads -r 1000 -p iCentral_p > hpc/slurm/slashdot-threads/slashdot-threads-iCentral_p.txt
+Process Process-3:
+Process Process-4:
+Traceback (most recent call last):
+  File "/home/cm2121/.conda/envs/main/lib/python3.10/multiprocessing/managers.py", line 810, in _callmethod
+    conn = self._tls.connection
+AttributeError: 'ForkAwareLocal' object has no attribute 'connection'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/cm2121/.conda/envs/main/lib/python3.10/multiprocessing/process.py", line 315, in _bootstrap
+    self.run()
+  File "/home/cm2121/.conda/envs/main/lib/python3.10/multiprocessing/process.py", line 108, in run
+    self._target(*self._args, **self._kwargs)
+  File "/rds/user/cm2121/hpc-work/dissertation-ibc/src/iCentral_p.py", line 80, in run
+    bc_manager[k] += v
+  File "<string>", line 2, in __getitem__
+  File "/home/cm2121/.conda/envs/main/lib/python3.10/multiprocessing/managers.py", line 814, in _callmethod
+    self._connect()
+  File "/home/cm2121/.conda/envs/main/lib/python3.10/multiprocessing/managers.py", line 801, in _connect
+    conn = self._Client(self._token.address, authkey=self._authkey)
+  File "/home/cm2121/.conda/envs/main/lib/python3.10/multiprocessing/connection.py", line 507, in Client
+    c = SocketClient(address)
+  File "/home/cm2121/.conda/envs/main/lib/python3.10/multiprocessing/connection.py", line 635, in SocketClient
+    s.connect(address)
+ConnectionRefusedError: [Errno 111] Connection refused
+slurmstepd: error: Detected 3 oom_kill events in StepId=49503208.batch. Some of the step tasks have been OOM Killed.

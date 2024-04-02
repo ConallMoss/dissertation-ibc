@@ -4,15 +4,15 @@ Loading rhel8/default-icl
     intel-oneapi-mpi/2021.6.0/intel/guxuvcpm
 Changed directory to /rds/user/cm2121/hpc-work/dissertation-ibc.
 
-JobID: 49502692
+JobID: 49503202
 ======
-Time: Tue Apr  2 15:15:03 BST 2024
-Running on master node: cpu-q-208
+Time: Tue Apr  2 15:28:46 BST 2024
+Running on master node: cpu-q-221
 Current directory: /rds/user/cm2121/hpc-work/dissertation-ibc
 
 Nodes allocated:
 ================
-cpu-q-208
+cpu-q-221
 
 numtasks=1, numnodes=1, mpi_tasks_per_node=1 (OMP_NUM_THREADS=1)
 
@@ -21,4 +21,3 @@ Executing command:
 python -m hpc.run_dataset ego-facebook -r 1000 -p iCentral_p >hpc/slurm/ego-facebook/ego-facebook-iCentral_p.txt
 
 flatpak: symbol lookup error: /lib64/libk5crypto.so.3: undefined symbol: EVP_KDF_ctrl, version OPENSSL_1_1_1b
-slurmstepd: error: *** JOB 49502692 ON cpu-q-208 CANCELLED AT 2024-04-02T15:15:06 ***

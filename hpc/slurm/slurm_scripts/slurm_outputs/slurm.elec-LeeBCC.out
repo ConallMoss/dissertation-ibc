@@ -4,9 +4,9 @@ Loading rhel8/default-icl
     intel-oneapi-mpi/2021.6.0/intel/guxuvcpm
 Changed directory to /rds/user/cm2121/hpc-work/dissertation-ibc.
 
-JobID: 49502708
+JobID: 49503218
 ======
-Time: Tue Apr  2 15:14:59 BST 2024
+Time: Tue Apr  2 15:28:43 BST 2024
 Running on master node: cpu-q-76
 Current directory: /rds/user/cm2121/hpc-work/dissertation-ibc
 
@@ -21,4 +21,3 @@ Executing command:
 python -m hpc.run_dataset elec -r 1000 -p LeeBCC >hpc/slurm/elec/elec-LeeBCC.txt
 
 flatpak: symbol lookup error: /lib64/libk5crypto.so.3: undefined symbol: EVP_KDF_ctrl, version OPENSSL_1_1_1b
-slurmstepd: error: *** JOB 49502708 ON cpu-q-76 CANCELLED AT 2024-04-02T15:15:06 ***
