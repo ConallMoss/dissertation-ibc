@@ -1,6 +1,7 @@
 import networkx as nx
 from src.iCentral import *
 from src.LeeBCC import *
+from src.iCentral_p import *
 import random
 
 def pick_random_nonedge(G, seed=None):
@@ -29,6 +30,18 @@ def dotest_iCentral(G: Graph, e: Edge):
     bc_iCentral = iCentral(G, bc_initial, e)
 
     return bc_new, bc_iCentral
+
+def dotest_iCentral_p(G: Graph, e: Edge):
+    #* Arrange
+    bc_initial = true_bc(G)
+    G2 = G.copy()
+    G2.add_edge(*e)
+    bc_new = true_bc(G2)
+
+    #*Act
+    bc_iCentral_p = iCentral_p(G, bc_initial, e)
+
+    return bc_new, bc_iCentral_p
 
 #* LeeBCC:
 

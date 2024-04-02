@@ -3,12 +3,14 @@ from src.utils.general import *
 from src.utils.bicon_utils import *
 from src.utils.bfs_utils import *
 
-from multiprocessing import Pool, Manager, get_logger
+from multiprocessing import Pool, Manager, get_logger, Process, Queue, Lock
+import multiprocessing
 
 logger = logging.getLogger(__name__)
 
 def iCentral_p(G: Graph, BC: dict[Node, float], e: Edge, PROCESSES=None) -> dict[Node, float]:
-    logger.info("iCentral_p begun")
+    if PROCESSES is None:
+        PROCESSES = multiprocessing.cpu_count()
     v1, v2 = e
     G.add_edge(v1, v2)
     all_bicons = find_biconnected_components(G)
@@ -27,45 +29,57 @@ def iCentral_p(G: Graph, BC: dict[Node, float], e: Edge, PROCESSES=None) -> dict
     d2 = bfs_distances(bicon_old, v2)
 
     #* Line 7:
-    Q = deque() #Queue
+    #* Using threadsafe multi-processing queue
+    Q = Queue() #Queue
     for s in bicon_old.nodes: 
         #* Check if ends of the edge are at different distances from edge endpoints
         #* i.e. if not, then edge would not be used
         if d1[s] != d2[s]: 
-             Q.append(s)
-    logger.info(f"{len(Q)=}")
-    with Pool(processes=PROCESSES) as p, Manager() as manager:
-        #* Required datastructures:
-        #* bicon_old, bicon_new: Graph objects
-        #* our_articulation_points: set of nodes
-        #* articulation_subgraph_size: dict[node: int]
-        bicon_old_manager = manager.dict(nx.to_dict_of_dicts(bicon_old))
-        bicon_new_manager = manager.dict(nx.to_dict_of_dicts(bicon_new))
-        #* manager does not support sets, only dicts 
-        
-        our_articulation_points_manager = manager.dict(dict.fromkeys(our_articulation_points, 0))
-        articulation_subgraph_size_manager = manager.dict(dict.fromkeys(articulation_subgraph_size, 0))
-        
-        all_managers = (bicon_old_manager, bicon_new_manager, our_articulation_points_manager, articulation_subgraph_size_manager)
-        
-        bicon_old_dod = nx.to_dict_of_dicts(bicon_old)
-        bicon_new_dod = nx.to_dict_of_dicts(bicon_new)
-        
-        no_managers = (bicon_old, bicon_new, our_articulation_points, articulation_subgraph_size)
-        logger.info(f"multiprocessing calls: {PROCESSES=}")
-        #* Multiprocessing calls to subfunctions
-        bc_updates = p.starmap(calculate_node_dependencies_p, [(s, *no_managers) for s in Q])
-        
-        #* Add updates
-        for bc_update in bc_updates:
-            for k, v in bc_update.items():
-                if v != 0:
-                    BC[k] += v
+             Q.put(s)
 
+    #* Undefault the dict - used for testing when a default dict is passed in
+    for n in G.nodes:
+        if n not in BC:
+            BC[n] = 0
+    #* Thread safe dictionary update manager
+    with Manager() as manager:
+        #* Setup inputs for each call
+        resources = (bicon_old, bicon_new, our_articulation_points, articulation_subgraph_size)
+        bc_manager = manager.dict(BC)
+        manager_lock = Lock()
+        all_processes = []
+
+        #* Spawn all processes
+        for _ in range(PROCESSES-1):
+            p = Process(target=run, args=(Q, bc_manager, manager_lock, resources))
+            p.start()
+            all_processes.append(p)
+
+        #* Wait for all processes to complete
+        for p in all_processes:
+            p.join()
+
+        BC = dict(bc_manager)
+
+    # #* Redefault the dict
+    # for k, v in list(BC.items()):
+    #     if v == 0:
+    #         del BC[k]
+
+    return BC
+ 
+
+def run(q, bc_manager, manager_lock, resources):
+        while not q.empty():
+            s = q.get()
+            bc_upd = calculate_node_dependencies_p(s, *resources)
+            with manager_lock:
+                for k, v in bc_upd.items():
+                    if v != 0:
+                        bc_manager[k] += v
 
 def calculate_node_dependencies_p(s: Node, bicon_old, bicon_new, our_articulation_points, articulation_subgraph_size) -> dict[Node, float]:
-    logger = get_logger()
-    logger.info(f"Calc on {s}")
+    #print(f"started: {s}")
     BC_upd = defaultdict(float)
 
     shortest_paths_old, preds_old, ordered_nodes_old = bfs_brandes(bicon_old, s) #* σ_s, P_s
@@ -107,5 +121,6 @@ def calculate_node_dependencies_p(s: Node, bicon_old, bicon_new, our_articulatio
         if (s in our_articulation_points):
             BC_upd[w] += pair_dependency_new[w] * articulation_subgraph_size[s]
             BC_upd[w] += external_dependency_new[w] / 2
-    logger.info(f"Calc on {s} complete")
+
+    #print(f"finished: {s}")
     return BC_upd

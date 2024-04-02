@@ -15,6 +15,8 @@ import random
 import time
 import logging
 import sys
+from pytest import approx
+import math
 
 if __name__ == "__main__":
     
@@ -33,6 +35,7 @@ if __name__ == "__main__":
         return node1, node2
 
     G_base = nx.read_edgelist("./datasets/facebook_combined.txt")
+    #G_base = nx.Graph([(1,2), (1, 4), (2, 3), (3, 4), (3, 5), (3, 8), (4, 6), (5, 8), (6,7), (7,8)])
     #G_base =  nx.erdos_renyi_graph(256, 0.5, seed=123, directed=False)
     G = G_base
     e = pick_random_nonedge(G_base)
@@ -48,20 +51,33 @@ if __name__ == "__main__":
     x = iCentral_p(G, bce_initial, e, PROCESSES=16)
     print("Real time Parallel iCentral:")
     print(time.perf_counter() - s)
-
-    #* Real time LeeBCC
-    G = G_base.copy()
-    bce_initial = defaultdict(float)
-    s = time.perf_counter()
-    x = LeeBCC(G, bce_initial, e)
-    print("Real time LeeBCC:")
-    print(time.perf_counter() - s)
+    #print(x)
+    # #* Real time LeeBCC
+    # G = G_base.copy()
+    # bce_initial = defaultdict(float)
+    # s = time.perf_counter()
+    # x = LeeBCC(G, bce_initial, e)
+    # print("Real time LeeBCC:")
+    # print(time.perf_counter() - s)
 
     # %%
     #* Real time iCentral
     G = G_base.copy()
     bce_initial = defaultdict(float)
     s = time.perf_counter()
-    x = iCentral(G, bce_initial, e)
+    y = iCentral(G, bce_initial, e)
     print("Real time iCentral:")
     print(time.perf_counter() - s)
+
+    for n in G.nodes():
+        if n not in y:
+            y[n] = 0
+        if n not in x:
+            x[n] = 0
+
+    print("equal?")
+    print(x == approx(y))
+    print("parallel")
+    print(x)
+    print("seq")
+    print(y)
