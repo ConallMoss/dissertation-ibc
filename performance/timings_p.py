@@ -68,16 +68,3 @@ if __name__ == "__main__":
     y = iCentral(G, bce_initial, e)
     print("Real time iCentral:")
     print(time.perf_counter() - s)
-
-    for n in G.nodes():
-        if n not in y:
-            y[n] = 0
-        if n not in x:
-            x[n] = 0
-
-    print("equal?")
-    print(x == approx(y))
-    print("parallel")
-    print(x)
-    print("seq")
-    print(y)

@@ -30,9 +30,12 @@ def iCentral(G: Graph, BC: dict[Node, float], e: Edge) -> dict[Node, float]:
         if d1[s] != d2[s]: 
              Q.append(s)
     
+    bicon_old_adj = bicon_old._adj
+    bicon_new_adj = bicon_new._adj
+
     #* Line 10: 
     for s in Q:
-        shortest_paths_old, preds_old, ordered_nodes_old = bfs_brandes(bicon_old, s) #* σ_s, P_s
+        shortest_paths_old, preds_old, ordered_nodes_old = bfs_brandes(bicon_old_adj, s) #* σ_s, P_s
         pair_dependency_old = defaultdict(float) #* δ_sdot
         external_dependency_old = defaultdict(float) #* δ_G_sdot
 
@@ -53,7 +56,7 @@ def iCentral(G: Graph, BC: dict[Node, float], e: Edge) -> dict[Node, float]:
                 BC[w] -= external_dependency_old[w] / 2
 
         #* Line 26:
-        shortest_paths_new, preds_new, ordered_nodes_new = bfs_brandes(bicon_new, s) #* σ_s', P_s'
+        shortest_paths_new, preds_new, ordered_nodes_new = bfs_brandes(bicon_new_adj, s) #* σ_s', P_s'
         pair_dependency_new = defaultdict(float) #* δ_sdot'
         external_dependency_new = defaultdict(float) #* δ_G_sdot'
 
