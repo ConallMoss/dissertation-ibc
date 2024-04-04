@@ -8,7 +8,7 @@ import multiprocessing
 
 logger = logging.getLogger(__name__)
 
-def iCentral_p(G: Graph, BC: dict[Node, float], e: Edge, PROCESSES=None) -> dict[Node, float]:
+def iCentral_p(G: Graph, BC: dict[Node, float], e: Edge, PROCESSES=20) -> dict[Node, float]:
     if PROCESSES is None:
         PROCESSES = multiprocessing.cpu_count()
 

@@ -12,28 +12,29 @@ def LeeBCC(G: Graph, BCe: dict[Edge, float], e: Edge, V_ins: list[Node] = None) 
     v1, v2 = e
 
     #* Changed ordering to use graph before edge added
+    G.add_nodes_from(V_ins)
     subgraphs = find_bridge_subgraphs(G, e)
     G.add_edge(v1, v2)
-    G.add_nodes_from(V_ins)
 
-    #* Line 4:
-    for v in V_ins:
-        edge_pair_dependency = find_edge_pair_dependencies(G, v)
-        for e in G.edges:
-            BCe[e] += edge_pair_dependency[e]
-
-    #* Line 9:
+    #* Line 4: - check this, TODO: Write tests
+    # for v in V_ins:
+    #     edge_pair_dependency = find_edge_pair_dependencies(G, v)
+    #     for e in G.edges:
+    #         BCe[e] = BCe.get(e, 0) + edge_pair_dependency[e] #Use .get in case edge doesn't exist in BCe
+    
+    #* Line 9: edge is a bridge between two subgraphs
     if (subgraphs):
         v_s, v_t = e 
         subgraph_s, subgraph_t = subgraphs
         #* Since we are only looking at edges within subgraph, can just use subgraph itself instead of full graph
         edge_pair_dependency_s = find_edge_pair_dependencies(subgraph_s, v_s) 
         edge_pair_dependency_t = find_edge_pair_dependencies(subgraph_t, v_t) 
-        for e in subgraph_s.edges:
+        for e_s in subgraph_s.edges:
             #speed improvement on creating "norm" function
-            BCe[(e if e[0] <= e[1] else (e[1], e[0]))] += len(subgraph_t) * edge_pair_dependency_s[e]
-        for e in subgraph_t.edges:
-            BCe[(e if e[0] <= e[1] else (e[1], e[0]))] += len(subgraph_s) * edge_pair_dependency_t[e]
+            BCe[(e_s if e_s[0] <= e_s[1] else (e_s[1], e_s[0]))] += len(subgraph_t) * edge_pair_dependency_s[e_s]
+        for e_t in subgraph_t.edges:
+            BCe[(e_t if e_t[0] <= e_t[1] else (e_t[1], e_t[0]))] += len(subgraph_s) * edge_pair_dependency_t[e_t]
+        BCe[(e if e[0] <= e[1] else (e[1], e[0]))] = 1.0 * len(subgraph_s) * len(subgraph_t)
 
     #* Line 18:
     #* Since we only have one edge, is either bridge edge or not

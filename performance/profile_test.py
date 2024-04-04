@@ -25,8 +25,11 @@ def pick_random_nonedge(G, seed=None):
 
 # %%
 if __name__ == "__main__":
-    G2 = nx.read_edgelist("./datasets/facebook_combined.txt")
-    e = ('693', '2379')
+    # G2 = nx.read_edgelist("./datasets/facebook_combined.txt")
+    # e = ('693', '2379')
+
+    G2 = nx.read_edgelist("./datasets/slashdot-threads/out.slashdot-threads", nodetype=str, comments="%", data=False)
+    e = ('1095', '3289')
 
     print(e)
     print(G2.number_of_nodes())
@@ -34,7 +37,7 @@ if __name__ == "__main__":
     bc1 = defaultdict(float)
 
     with cProfile.Profile() as pr:
-        x = iCentral(G2, bc1, e)
+        x = LeeBCC(G2, bc1, e)
         stats = pstats.Stats(pr)
-        print("iCentral:")
+        print("LeeBCC:")
         stats.sort_stats(pstats.SortKey.CUMULATIVE).print_stats()

@@ -8,6 +8,7 @@ import random
 import os
 import argparse
 import copy
+from datetime import datetime
 
 start_time = time.perf_counter()
 
@@ -45,6 +46,7 @@ if __name__ == "__main__":
     max_runs = args.max_runs
     max_secs = 20000
 
+    print(datetime.now())
     print(f"{dataset=}")
     print(f"{prog=}")
     print(f"{max_runs=}")
