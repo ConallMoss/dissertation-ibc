@@ -52,6 +52,7 @@ def edge_betweenness(G: Graph, articulation_subgraph_sizes: dict[Node, int]) -> 
     #* Brandes-style BC calculation, modified for BC on edges
     BCe_upd = defaultdict(float)
     articulation_points = set(articulation_subgraph_sizes.keys())
+    G_adj = G._adj
     for v_s in G.nodes:
         S = deque() #Stack
         Q = deque((v_s,)) #Queue
@@ -63,7 +64,7 @@ def edge_betweenness(G: Graph, articulation_subgraph_sizes: dict[Node, int]) -> 
         while Q:
             v_i = Q.popleft()
             S.append(v_i)
-            for v_n in G[v_i]:
+            for v_n in G_adj[v_i]:
                 if d[v_n] == -1:
                     Q.append(v_n)
                     d[v_n] = d[v_i] + 1

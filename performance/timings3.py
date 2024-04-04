@@ -19,11 +19,14 @@ from pytest import approx
 import math
 
 # %%
-G2 = nx.read_edgelist("../datasets/facebook_combined.txt")
-e = ('693', '2379')
+#G2 = nx.read_edgelist("./datasets/facebook_combined.txt")
+#e = ('693', '2379')
 
 #G2 = nx.read_edgelist("../datasets/slashdot-threads/out.slashdot-threads", nodetype=str, comments="%", data=False)
 #e = ('1095', '3289')
+
+G2 = nx.read_edgelist("../datasets/pajek-erdos/out.pajek-erdos", nodetype=str, comments="%", data=False)
+e = ('760', '229')
 
 bc1 = defaultdict(float)
 # %%
