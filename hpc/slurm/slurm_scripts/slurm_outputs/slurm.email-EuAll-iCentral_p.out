@@ -4,23 +4,21 @@ Loading rhel8/default-icl
     intel-oneapi-mpi/2021.6.0/intel/guxuvcpm
 Changed directory to /rds/user/cm2121/hpc-work/dissertation-ibc.
 
-JobID: 49503210
+JobID: 49930390
 ======
-Time: Tue Apr  2 15:28:45 BST 2024
-Running on master node: cpu-q-208
+Time: Thu Apr  4 13:23:59 BST 2024
+Running on master node: cpu-q-288
 Current directory: /rds/user/cm2121/hpc-work/dissertation-ibc
 
 Nodes allocated:
 ================
-cpu-q-208
+cpu-q-288
 
 numtasks=1, numnodes=1, mpi_tasks_per_node=1 (OMP_NUM_THREADS=1)
 
 Executing command:
 ==================
-python -m hpc.run_dataset email-EuAll -r 1 -p iCentral_p >hpc/slurm/email-EuAll/email-EuAll-iCentral_p.txt
+python -m hpc.run_dataset email-EuAll -r 1000 -p iCentral_p >hpc/slurm/email-EuAll/email-EuAll-iCentral_p.txt
 
 flatpak: symbol lookup error: /lib64/libk5crypto.so.3: undefined symbol: EVP_KDF_ctrl, version OPENSSL_1_1_1b
-/var/spool/slurm/slurmd/job49503210/slurm_script: line 137: 844673 Killed                  python -m hpc.run_dataset email-EuAll -r 1 -p iCentral_p > hpc/slurm/email-EuAll/email-EuAll-iCentral_p.txt
-Process Process-11:
-slurmstepd: error: Detected 6 oom_kill events in StepId=49503210.batch. Some of the step tasks have been OOM Killed.
+slurmstepd: error: Detected 20 oom_kill events in StepId=49930390.batch. Some of the step tasks have been OOM Killed.

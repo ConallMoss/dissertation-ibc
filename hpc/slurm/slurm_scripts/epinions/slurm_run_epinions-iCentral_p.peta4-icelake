@@ -60,7 +60,7 @@ module load miniconda/3
 
 name=epinions-iCentral_p
 dataset=epinions
-runs=1
+runs=1000
 prog=iCentral_p
 
 #! Full path to application executable: 
@@ -131,7 +131,7 @@ echo -e "\nnumtasks=$numtasks, numnodes=$numnodes, mpi_tasks_per_node=$mpi_tasks
 echo -e "\nExecuting command:\n==================\n$CMD\n"
 
 eval "source ~/.bashrc"
-eval "source activate main"
+eval "source activate main-pypy"
 eval "export PATH="/home/cm2121/.conda/envs/main/bin:$PATH""
 
 eval $CMD 

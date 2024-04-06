@@ -1,0 +1,10 @@
+dataset='email-EuAll'
+prog='iCentral'
+max_runs=1
+max_secs=20000
+
+Graph read time:
+4.7253826460801065
+
+Run times:
+9718.921403196175
