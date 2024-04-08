@@ -142,3 +142,33 @@ def test_iCentral_randEdge_ER256():
 
 #     #* Assert
 #     assert bc_new == approx(bc_iCentral)
+
+def test_iCentral_bridge_edge():
+    """
+    Test iCentral on adding new bridge edge between disconnected components
+    """
+    #* Arrange
+    G = nx.Graph([(0,1), (1,2), (2,3), (0,3), (4,5), (5,6), (6,7), (7,8), (4,8), (6,8)])
+    e = (3,4)
+
+    #* Act
+    bc_new, bc_iCentral = dotest_iCentral(G, e)
+    print(bc_iCentral)
+
+    #* Assert
+    assert bc_new == approx(bc_iCentral)
+
+def test_iCentral_new_vertex():
+    """
+    Test iCentral on adding new vertex and edge
+    """
+    #* Arrange
+    G = nx.Graph([(0,1), (1,2), (2,3), (0,3), (4,5), (5,6), (6,7), (7,8), (4,8), (6,8), (3,4)])
+    e = (9,8)
+
+    #* Act
+    bc_new, bc_iCentral = dotest_iCentral(G, e)
+    print(bc_iCentral)
+
+    #* Assert
+    assert bc_new == approx(bc_iCentral)

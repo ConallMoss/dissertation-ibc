@@ -1,27 +1,25 @@
 from src.utils.my_imports import *
 from src.utils.general import *
-from src.utils.bicon_utils import *
-from src.utils.leebcc_utils import *
+from src.utils.component_utils import *
+from src.utils.dependency_utils import *
 
 #* Modified for only single edge additions, to match iCentral
 #* updates contains singular updating edge, and list of new nodes
 #* Note: uses *edge* BCe not *node* BC
-def LeeBCC(G: Graph, BCe: dict[Edge, float], e: Edge, V_ins: list[Node] = None) -> dict[Edge, float]:
-    if V_ins is None:
-        V_ins = []
+def LeeBCC(G: Graph, BCe: dict[Edge, float], e: Edge) -> dict[Edge, float]:
     v1, v2 = e
+
+    V_ins = [] #* Check if either node is new to the graph
+    #* Modified from paper to implicitly check for new nodes, instead of taking as arg
+    for v in e:
+        if v not in G.nodes:
+            V_ins.append(v)
 
     #* Changed ordering to use graph before edge added
     G.add_nodes_from(V_ins)
     subgraphs = find_bridge_subgraphs(G, e)
     G.add_edge(v1, v2)
 
-    #* Line 4: - check this, TODO: Write tests
-    # for v in V_ins:
-    #     edge_pair_dependency = find_edge_pair_dependencies(G, v)
-    #     for e in G.edges:
-    #         BCe[e] = BCe.get(e, 0) + edge_pair_dependency[e] #Use .get in case edge doesn't exist in BCe
-    
     #* Line 9: edge is a bridge between two subgraphs
     if (subgraphs):
         v_s, v_t = e 

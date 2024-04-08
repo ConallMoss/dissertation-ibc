@@ -143,3 +143,33 @@ def test_LeeBCC_randEdge_ER256():
 
 #     #* Assert
 #     assert bce_new == approx(bce_LeeBCC)
+
+def test_LeeBCC_bridge_edge():
+    """
+    Test LeeBCC on adding new bridge edge between disconnected components
+    """
+    #* Arrange
+    G = nx.Graph([(0,1), (1,2), (2,3), (0,3), (4,5), (5,6), (6,7), (7,8), (4,8), (6,8)])
+
+    e = (3,4)
+    #* Act
+    bce_new, bce_LeeBCC = dotest_LeeBCC(G, e)
+    print(bce_LeeBCC)
+
+    #* Assert
+    assert bce_new == approx(bce_LeeBCC)
+
+def test_LeeBCC_new_vertex():
+    """
+    Test LeeBCC on adding new vertex and edge
+    """
+    #* Arrange
+    G = nx.Graph([(0,1), (1,2), (2,3), (0,3), (4,5), (5,6), (6,7), (7,8), (4,8), (6,8), (3,4)])
+    e = (8,9)
+
+    #* Act
+    bce_new, bce_LeeBCC = dotest_LeeBCC(G, e)
+    print(bce_LeeBCC)
+
+    #* Assert
+    assert bce_new == approx(bce_LeeBCC)

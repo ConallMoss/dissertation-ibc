@@ -1,6 +1,19 @@
 from src.utils.my_imports import *
 from src.utils.general import *
 
+def find_bridge_subgraphs(G: Graph, e: Edge) -> Optional[tuple[Graph, Graph]]:
+    """
+    If e is a bridge edge between two subgraphs, will return those two subgraphs, else will return None
+    """
+    v1, v2 = e
+    subgraph_nodes1 = nx.node_connected_component(G, v1)
+    subgraph_nodes2 = nx.node_connected_component(G, v2)
+    
+    if subgraph_nodes1 != subgraph_nodes2:
+        return G.subgraph(subgraph_nodes1).copy(), G.subgraph(subgraph_nodes2).copy()
+    else:
+        return None
+
 def find_biconnected_components(G: Graph) -> list[set[Node]]: 
     """
     Returns all biconnected components of graph
