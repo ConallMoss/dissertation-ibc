@@ -130,5 +130,6 @@ def calculate_node_dependencies_p(s: Node, bicon_old, bicon_new, our_articulatio
         if (s in our_articulation_points):
             BC_upd[w] += pair_dependency_new[w] * articulation_subgraph_size[s]
             BC_upd[w] += external_dependency_new[w] / 2
-
+    
+    del bicon_old, bicon_new, our_articulation_points, articulation_subgraph_size
     return BC_upd
