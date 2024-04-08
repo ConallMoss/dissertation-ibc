@@ -4,20 +4,20 @@ Loading rhel8/default-icl
     intel-oneapi-mpi/2021.6.0/intel/guxuvcpm
 Changed directory to /rds/user/cm2121/hpc-work/dissertation-ibc.
 
-JobID: 49503212
+JobID: 49930392
 ======
-Time: Tue Apr  2 15:28:45 BST 2024
-Running on master node: cpu-q-208
+Time: Thu Apr  4 13:23:59 BST 2024
+Running on master node: cpu-q-395
 Current directory: /rds/user/cm2121/hpc-work/dissertation-ibc
 
 Nodes allocated:
 ================
-cpu-q-208
+cpu-q-395
 
 numtasks=1, numnodes=1, mpi_tasks_per_node=1 (OMP_NUM_THREADS=1)
 
 Executing command:
 ==================
-python -m hpc.run_dataset email-EuAll -r 1 -p LeeBCC >hpc/slurm/email-EuAll/email-EuAll-LeeBCC.txt
+python -m hpc.run_dataset email-EuAll -r 1000 -p LeeBCC >hpc/slurm/email-EuAll/email-EuAll-LeeBCC.txt
 
 flatpak: symbol lookup error: /lib64/libk5crypto.so.3: undefined symbol: EVP_KDF_ctrl, version OPENSSL_1_1_1b

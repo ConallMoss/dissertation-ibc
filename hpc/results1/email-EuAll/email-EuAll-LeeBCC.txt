@@ -1,0 +1,10 @@
+dataset='email-EuAll'
+prog='LeeBCC'
+max_runs=1
+max_secs=20000
+
+Graph read time:
+4.748532977886498
+
+Run times:
+12058.193548608106

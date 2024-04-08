@@ -131,7 +131,7 @@ echo -e "\nnumtasks=$numtasks, numnodes=$numnodes, mpi_tasks_per_node=$mpi_tasks
 echo -e "\nExecuting command:\n==================\n$CMD\n"
 
 eval "source ~/.bashrc"
-eval "source activate main"
+eval "source activate main-pypy"
 eval "export PATH="/home/cm2121/.conda/envs/main/bin:$PATH""
 
 eval $CMD 

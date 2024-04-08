@@ -25,11 +25,11 @@ def pick_random_new_nonedge(G, seed=None, G_nodes=None):
 
 def get_dataset(name):
     if name == "facebook_combined":
-        return nx.read_edgelist(f"../datasets/facebook_combined.txt", nodetype=int, comments="%", data=False)
-    return nx.read_edgelist(f"../datasets/{name}/out.{name}", nodetype=int, comments="%", data=False)
+        return nx.read_edgelist(f"../datasets/facebook_combined.txt", nodetype=str , comments="%", data=False)
+    return nx.read_edgelist(f"../datasets/{name}/out.{name}", nodetype=str, comments="%", data=False)
 
 def get_lcc(G):
-    return G.subgraph(max(nx.connected_components(G), key=len)).copy()
+    return G.subgraph(max(nx.biconnected_components(G), key=len)).copy()
 
 parser = argparse.ArgumentParser()
 parser.add_argument("dataset", help="Dataset to use", type=str)
@@ -69,6 +69,7 @@ if __name__ == "__main__":
     start_time = time.perf_counter()
     G_base = get_lcc(get_dataset(dataset))
     graph_read_time = time.perf_counter() - start_time
+    print(f"graph size: N={G_base.number_of_nodes()}, E={G_base.size()}")
 
     print("Graph read time:")
     print(graph_read_time)
