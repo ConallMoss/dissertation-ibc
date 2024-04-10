@@ -4,15 +4,15 @@ Loading rhel8/default-icl
     intel-oneapi-mpi/2021.6.0/intel/guxuvcpm
 Changed directory to /rds/user/cm2121/hpc-work/dissertation-ibc.
 
-JobID: 49930393
+JobID: 50181083
 ======
-Time: Thu Apr  4 13:23:59 BST 2024
-Running on master node: cpu-q-395
+Time: Mon Apr  8 23:26:20 BST 2024
+Running on master node: cpu-q-292
 Current directory: /rds/user/cm2121/hpc-work/dissertation-ibc
 
 Nodes allocated:
 ================
-cpu-q-395
+cpu-q-292
 
 numtasks=1, numnodes=1, mpi_tasks_per_node=1 (OMP_NUM_THREADS=1)
 
@@ -21,5 +21,393 @@ Executing command:
 python -m hpc.run_dataset epinions -r 1000 -p iCentral_p >hpc/slurm/epinions/epinions-iCentral_p.txt
 
 flatpak: symbol lookup error: /lib64/libk5crypto.so.3: undefined symbol: EVP_KDF_ctrl, version OPENSSL_1_1_1b
-/var/spool/slurm/slurmd/job49930393/slurm_script: line 137: 1503819 Killed                  python -m hpc.run_dataset epinions -r 1000 -p iCentral_p > hpc/slurm/epinions/epinions-iCentral_p.txt
-slurmstepd: error: Detected 10 oom_kill events in StepId=49930393.batch. Some of the step tasks have been OOM Killed.
+slurmstepd: error: *** JOB 50079005 ON cpu-q-365 CANCELLED AT 2024-04-09T01:33:20 DUE TO TIME LIMIT ***
+slurmstepd: error: Detected 1 oom_kill event in StepId=50079005.batch. Some of the step tasks have been OOM Killed.
+Process Process-13:
+Process Process-16:
+Traceback (most recent call last):
+  File "/home/cm2121/.conda/envs/main/lib/python3.10/multiprocessing/process.py", line 315, in _bootstrap
+    self.run()
+  File "/home/cm2121/.conda/envs/main/lib/python3.10/multiprocessing/process.py", line 108, in run
+    self._target(*self._args, **self._kwargs)
+  File "/rds/user/cm2121/hpc-work/dissertation-ibc/src/iCentral_p.py", line 89, in run
+    bc_manager[k] += v
+  File "<string>", line 2, in __getitem__
+  File "/home/cm2121/.conda/envs/main/lib/python3.10/multiprocessing/managers.py", line 817, in _callmethod
+    conn.send((self._id, methodname, args, kwds))
+  File "/home/cm2121/.conda/envs/main/lib/python3.10/multiprocessing/connection.py", line 211, in send
+    self._send_bytes(_ForkingPickler.dumps(obj))
+  File "/home/cm2121/.conda/envs/main/lib/python3.10/multiprocessing/connection.py", line 416, in _send_bytes
+    self._send(header + buf)
+  File "/home/cm2121/.conda/envs/main/lib/python3.10/multiprocessing/connection.py", line 373, in _send
+    n = write(self._handle, buf)
+BrokenPipeError: [Errno 32] Broken pipe
+Traceback (most recent call last):
+  File "/home/cm2121/.conda/envs/main/lib/python3.10/multiprocessing/process.py", line 315, in _bootstrap
+    self.run()
+  File "/home/cm2121/.conda/envs/main/lib/python3.10/multiprocessing/process.py", line 108, in run
+    self._target(*self._args, **self._kwargs)
+  File "/rds/user/cm2121/hpc-work/dissertation-ibc/src/iCentral_p.py", line 89, in run
+    bc_manager[k] += v
+  File "<string>", line 2, in __getitem__
+  File "/home/cm2121/.conda/envs/main/lib/python3.10/multiprocessing/managers.py", line 817, in _callmethod
+    conn.send((self._id, methodname, args, kwds))
+  File "/home/cm2121/.conda/envs/main/lib/python3.10/multiprocessing/connection.py", line 211, in send
+    self._send_bytes(_ForkingPickler.dumps(obj))
+  File "/home/cm2121/.conda/envs/main/lib/python3.10/multiprocessing/connection.py", line 416, in _send_bytes
+    self._send(header + buf)
+  File "/home/cm2121/.conda/envs/main/lib/python3.10/multiprocessing/connection.py", line 373, in _send
+    n = write(self._handle, buf)
+BrokenPipeError: [Errno 32] Broken pipe
+Process Process-9:
+Traceback (most recent call last):
+  File "/home/cm2121/.conda/envs/main/lib/python3.10/multiprocessing/process.py", line 315, in _bootstrap
+    self.run()
+  File "/home/cm2121/.conda/envs/main/lib/python3.10/multiprocessing/process.py", line 108, in run
+    self._target(*self._args, **self._kwargs)
+  File "/rds/user/cm2121/hpc-work/dissertation-ibc/src/iCentral_p.py", line 89, in run
+    bc_manager[k] += v
+  File "<string>", line 2, in __getitem__
+  File "/home/cm2121/.conda/envs/main/lib/python3.10/multiprocessing/managers.py", line 817, in _callmethod
+    conn.send((self._id, methodname, args, kwds))
+  File "/home/cm2121/.conda/envs/main/lib/python3.10/multiprocessing/connection.py", line 211, in send
+    self._send_bytes(_ForkingPickler.dumps(obj))
+  File "/home/cm2121/.conda/envs/main/lib/python3.10/multiprocessing/connection.py", line 416, in _send_bytes
+    self._send(header + buf)
+  File "/home/cm2121/.conda/envs/main/lib/python3.10/multiprocessing/connection.py", line 373, in _send
+    n = write(self._handle, buf)
+BrokenPipeError: [Errno 32] Broken pipe
+Process Process-2:
+Traceback (most recent call last):
+  File "/home/cm2121/.conda/envs/main/lib/python3.10/multiprocessing/process.py", line 315, in _bootstrap
+    self.run()
+  File "/home/cm2121/.conda/envs/main/lib/python3.10/multiprocessing/process.py", line 108, in run
+    self._target(*self._args, **self._kwargs)
+  File "/rds/user/cm2121/hpc-work/dissertation-ibc/src/iCentral_p.py", line 89, in run
+    bc_manager[k] += v
+  File "<string>", line 2, in __getitem__
+  File "/home/cm2121/.conda/envs/main/lib/python3.10/multiprocessing/managers.py", line 817, in _callmethod
+    conn.send((self._id, methodname, args, kwds))
+  File "/home/cm2121/.conda/envs/main/lib/python3.10/multiprocessing/connection.py", line 211, in send
+    self._send_bytes(_ForkingPickler.dumps(obj))
+  File "/home/cm2121/.conda/envs/main/lib/python3.10/multiprocessing/connection.py", line 416, in _send_bytes
+    self._send(header + buf)
+  File "/home/cm2121/.conda/envs/main/lib/python3.10/multiprocessing/connection.py", line 373, in _send
+    n = write(self._handle, buf)
+BrokenPipeError: [Errno 32] Broken pipe
+Process Process-10:
+Traceback (most recent call last):
+  File "/home/cm2121/.conda/envs/main/lib/python3.10/multiprocessing/process.py", line 315, in _bootstrap
+    self.run()
+  File "/home/cm2121/.conda/envs/main/lib/python3.10/multiprocessing/process.py", line 108, in run
+    self._target(*self._args, **self._kwargs)
+  File "/rds/user/cm2121/hpc-work/dissertation-ibc/src/iCentral_p.py", line 89, in run
+    bc_manager[k] += v
+  File "<string>", line 2, in __getitem__
+  File "/home/cm2121/.conda/envs/main/lib/python3.10/multiprocessing/managers.py", line 817, in _callmethod
+    conn.send((self._id, methodname, args, kwds))
+  File "/home/cm2121/.conda/envs/main/lib/python3.10/multiprocessing/connection.py", line 211, in send
+    self._send_bytes(_ForkingPickler.dumps(obj))
+  File "/home/cm2121/.conda/envs/main/lib/python3.10/multiprocessing/connection.py", line 416, in _send_bytes
+    self._send(header + buf)
+  File "/home/cm2121/.conda/envs/main/lib/python3.10/multiprocessing/connection.py", line 373, in _send
+    n = write(self._handle, buf)
+BrokenPipeError: [Errno 32] Broken pipe
+Process Process-19:
+Traceback (most recent call last):
+  File "/home/cm2121/.conda/envs/main/lib/python3.10/multiprocessing/process.py", line 315, in _bootstrap
+    self.run()
+  File "/home/cm2121/.conda/envs/main/lib/python3.10/multiprocessing/process.py", line 108, in run
+    self._target(*self._args, **self._kwargs)
+  File "/rds/user/cm2121/hpc-work/dissertation-ibc/src/iCentral_p.py", line 89, in run
+    bc_manager[k] += v
+  File "<string>", line 2, in __getitem__
+  File "/home/cm2121/.conda/envs/main/lib/python3.10/multiprocessing/managers.py", line 817, in _callmethod
+    conn.send((self._id, methodname, args, kwds))
+  File "/home/cm2121/.conda/envs/main/lib/python3.10/multiprocessing/connection.py", line 211, in send
+    self._send_bytes(_ForkingPickler.dumps(obj))
+  File "/home/cm2121/.conda/envs/main/lib/python3.10/multiprocessing/connection.py", line 416, in _send_bytes
+    self._send(header + buf)
+  File "/home/cm2121/.conda/envs/main/lib/python3.10/multiprocessing/connection.py", line 373, in _send
+    n = write(self._handle, buf)
+BrokenPipeError: [Errno 32] Broken pipe
+Process Process-3:
+Traceback (most recent call last):
+  File "/home/cm2121/.conda/envs/main/lib/python3.10/multiprocessing/process.py", line 315, in _bootstrap
+    self.run()
+  File "/home/cm2121/.conda/envs/main/lib/python3.10/multiprocessing/process.py", line 108, in run
+    self._target(*self._args, **self._kwargs)
+  File "/rds/user/cm2121/hpc-work/dissertation-ibc/src/iCentral_p.py", line 89, in run
+    bc_manager[k] += v
+  File "<string>", line 2, in __getitem__
+  File "/home/cm2121/.conda/envs/main/lib/python3.10/multiprocessing/managers.py", line 817, in _callmethod
+    conn.send((self._id, methodname, args, kwds))
+  File "/home/cm2121/.conda/envs/main/lib/python3.10/multiprocessing/connection.py", line 211, in send
+    self._send_bytes(_ForkingPickler.dumps(obj))
+  File "/home/cm2121/.conda/envs/main/lib/python3.10/multiprocessing/connection.py", line 416, in _send_bytes
+    self._send(header + buf)
+  File "/home/cm2121/.conda/envs/main/lib/python3.10/multiprocessing/connection.py", line 373, in _send
+    n = write(self._handle, buf)
+BrokenPipeError: [Errno 32] Broken pipe
+Process Process-21:
+Traceback (most recent call last):
+  File "/home/cm2121/.conda/envs/main/lib/python3.10/multiprocessing/process.py", line 315, in _bootstrap
+    self.run()
+  File "/home/cm2121/.conda/envs/main/lib/python3.10/multiprocessing/process.py", line 108, in run
+    self._target(*self._args, **self._kwargs)
+  File "/rds/user/cm2121/hpc-work/dissertation-ibc/src/iCentral_p.py", line 89, in run
+    bc_manager[k] += v
+  File "<string>", line 2, in __getitem__
+  File "/home/cm2121/.conda/envs/main/lib/python3.10/multiprocessing/managers.py", line 817, in _callmethod
+    conn.send((self._id, methodname, args, kwds))
+  File "/home/cm2121/.conda/envs/main/lib/python3.10/multiprocessing/connection.py", line 211, in send
+    self._send_bytes(_ForkingPickler.dumps(obj))
+  File "/home/cm2121/.conda/envs/main/lib/python3.10/multiprocessing/connection.py", line 416, in _send_bytes
+    self._send(header + buf)
+  File "/home/cm2121/.conda/envs/main/lib/python3.10/multiprocessing/connection.py", line 373, in _send
+    n = write(self._handle, buf)
+BrokenPipeError: [Errno 32] Broken pipe
+Process Process-12:
+Traceback (most recent call last):
+  File "/home/cm2121/.conda/envs/main/lib/python3.10/multiprocessing/process.py", line 315, in _bootstrap
+    self.run()
+  File "/home/cm2121/.conda/envs/main/lib/python3.10/multiprocessing/process.py", line 108, in run
+    self._target(*self._args, **self._kwargs)
+  File "/rds/user/cm2121/hpc-work/dissertation-ibc/src/iCentral_p.py", line 89, in run
+    bc_manager[k] += v
+  File "<string>", line 2, in __getitem__
+  File "/home/cm2121/.conda/envs/main/lib/python3.10/multiprocessing/managers.py", line 817, in _callmethod
+    conn.send((self._id, methodname, args, kwds))
+  File "/home/cm2121/.conda/envs/main/lib/python3.10/multiprocessing/connection.py", line 211, in send
+    self._send_bytes(_ForkingPickler.dumps(obj))
+  File "/home/cm2121/.conda/envs/main/lib/python3.10/multiprocessing/connection.py", line 416, in _send_bytes
+    self._send(header + buf)
+  File "/home/cm2121/.conda/envs/main/lib/python3.10/multiprocessing/connection.py", line 373, in _send
+    n = write(self._handle, buf)
+BrokenPipeError: [Errno 32] Broken pipe
+Process Process-5:
+Traceback (most recent call last):
+  File "/home/cm2121/.conda/envs/main/lib/python3.10/multiprocessing/process.py", line 315, in _bootstrap
+    self.run()
+  File "/home/cm2121/.conda/envs/main/lib/python3.10/multiprocessing/process.py", line 108, in run
+    self._target(*self._args, **self._kwargs)
+  File "/rds/user/cm2121/hpc-work/dissertation-ibc/src/iCentral_p.py", line 89, in run
+    bc_manager[k] += v
+  File "<string>", line 2, in __getitem__
+  File "/home/cm2121/.conda/envs/main/lib/python3.10/multiprocessing/managers.py", line 817, in _callmethod
+    conn.send((self._id, methodname, args, kwds))
+  File "/home/cm2121/.conda/envs/main/lib/python3.10/multiprocessing/connection.py", line 211, in send
+    self._send_bytes(_ForkingPickler.dumps(obj))
+  File "/home/cm2121/.conda/envs/main/lib/python3.10/multiprocessing/connection.py", line 416, in _send_bytes
+    self._send(header + buf)
+  File "/home/cm2121/.conda/envs/main/lib/python3.10/multiprocessing/connection.py", line 373, in _send
+    n = write(self._handle, buf)
+BrokenPipeError: [Errno 32] Broken pipe
+Process Process-17:
+Traceback (most recent call last):
+  File "/home/cm2121/.conda/envs/main/lib/python3.10/multiprocessing/process.py", line 315, in _bootstrap
+    self.run()
+  File "/home/cm2121/.conda/envs/main/lib/python3.10/multiprocessing/process.py", line 108, in run
+    self._target(*self._args, **self._kwargs)
+  File "/rds/user/cm2121/hpc-work/dissertation-ibc/src/iCentral_p.py", line 89, in run
+    bc_manager[k] += v
+  File "<string>", line 2, in __getitem__
+  File "/home/cm2121/.conda/envs/main/lib/python3.10/multiprocessing/managers.py", line 817, in _callmethod
+    conn.send((self._id, methodname, args, kwds))
+  File "/home/cm2121/.conda/envs/main/lib/python3.10/multiprocessing/connection.py", line 211, in send
+    self._send_bytes(_ForkingPickler.dumps(obj))
+  File "/home/cm2121/.conda/envs/main/lib/python3.10/multiprocessing/connection.py", line 416, in _send_bytes
+    self._send(header + buf)
+  File "/home/cm2121/.conda/envs/main/lib/python3.10/multiprocessing/connection.py", line 373, in _send
+    n = write(self._handle, buf)
+BrokenPipeError: [Errno 32] Broken pipe
+Process Process-8:
+Traceback (most recent call last):
+  File "/home/cm2121/.conda/envs/main/lib/python3.10/multiprocessing/process.py", line 315, in _bootstrap
+    self.run()
+  File "/home/cm2121/.conda/envs/main/lib/python3.10/multiprocessing/process.py", line 108, in run
+    self._target(*self._args, **self._kwargs)
+  File "/rds/user/cm2121/hpc-work/dissertation-ibc/src/iCentral_p.py", line 89, in run
+    bc_manager[k] += v
+  File "<string>", line 2, in __getitem__
+  File "/home/cm2121/.conda/envs/main/lib/python3.10/multiprocessing/managers.py", line 817, in _callmethod
+    conn.send((self._id, methodname, args, kwds))
+  File "/home/cm2121/.conda/envs/main/lib/python3.10/multiprocessing/connection.py", line 211, in send
+    self._send_bytes(_ForkingPickler.dumps(obj))
+  File "/home/cm2121/.conda/envs/main/lib/python3.10/multiprocessing/connection.py", line 416, in _send_bytes
+    self._send(header + buf)
+  File "/home/cm2121/.conda/envs/main/lib/python3.10/multiprocessing/connection.py", line 373, in _send
+    n = write(self._handle, buf)
+BrokenPipeError: [Errno 32] Broken pipe
+Process Process-6:
+Traceback (most recent call last):
+  File "/home/cm2121/.conda/envs/main/lib/python3.10/multiprocessing/process.py", line 315, in _bootstrap
+    self.run()
+  File "/home/cm2121/.conda/envs/main/lib/python3.10/multiprocessing/process.py", line 108, in run
+    self._target(*self._args, **self._kwargs)
+  File "/rds/user/cm2121/hpc-work/dissertation-ibc/src/iCentral_p.py", line 89, in run
+    bc_manager[k] += v
+  File "<string>", line 2, in __getitem__
+  File "/home/cm2121/.conda/envs/main/lib/python3.10/multiprocessing/managers.py", line 817, in _callmethod
+    conn.send((self._id, methodname, args, kwds))
+  File "/home/cm2121/.conda/envs/main/lib/python3.10/multiprocessing/connection.py", line 211, in send
+    self._send_bytes(_ForkingPickler.dumps(obj))
+  File "/home/cm2121/.conda/envs/main/lib/python3.10/multiprocessing/connection.py", line 416, in _send_bytes
+    self._send(header + buf)
+  File "/home/cm2121/.conda/envs/main/lib/python3.10/multiprocessing/connection.py", line 373, in _send
+    n = write(self._handle, buf)
+BrokenPipeError: [Errno 32] Broken pipe
+Process Process-20:
+Traceback (most recent call last):
+  File "/home/cm2121/.conda/envs/main/lib/python3.10/multiprocessing/process.py", line 315, in _bootstrap
+    self.run()
+  File "/home/cm2121/.conda/envs/main/lib/python3.10/multiprocessing/process.py", line 108, in run
+    self._target(*self._args, **self._kwargs)
+  File "/rds/user/cm2121/hpc-work/dissertation-ibc/src/iCentral_p.py", line 89, in run
+    bc_manager[k] += v
+  File "<string>", line 2, in __getitem__
+  File "/home/cm2121/.conda/envs/main/lib/python3.10/multiprocessing/managers.py", line 817, in _callmethod
+    conn.send((self._id, methodname, args, kwds))
+  File "/home/cm2121/.conda/envs/main/lib/python3.10/multiprocessing/connection.py", line 211, in send
+    self._send_bytes(_ForkingPickler.dumps(obj))
+  File "/home/cm2121/.conda/envs/main/lib/python3.10/multiprocessing/connection.py", line 416, in _send_bytes
+    self._send(header + buf)
+  File "/home/cm2121/.conda/envs/main/lib/python3.10/multiprocessing/connection.py", line 373, in _send
+    n = write(self._handle, buf)
+BrokenPipeError: [Errno 32] Broken pipe
+Process Process-11:
+Traceback (most recent call last):
+  File "/home/cm2121/.conda/envs/main/lib/python3.10/multiprocessing/process.py", line 315, in _bootstrap
+    self.run()
+  File "/home/cm2121/.conda/envs/main/lib/python3.10/multiprocessing/process.py", line 108, in run
+    self._target(*self._args, **self._kwargs)
+  File "/rds/user/cm2121/hpc-work/dissertation-ibc/src/iCentral_p.py", line 89, in run
+    bc_manager[k] += v
+  File "<string>", line 2, in __getitem__
+  File "/home/cm2121/.conda/envs/main/lib/python3.10/multiprocessing/managers.py", line 817, in _callmethod
+    conn.send((self._id, methodname, args, kwds))
+  File "/home/cm2121/.conda/envs/main/lib/python3.10/multiprocessing/connection.py", line 211, in send
+    self._send_bytes(_ForkingPickler.dumps(obj))
+  File "/home/cm2121/.conda/envs/main/lib/python3.10/multiprocessing/connection.py", line 416, in _send_bytes
+    self._send(header + buf)
+  File "/home/cm2121/.conda/envs/main/lib/python3.10/multiprocessing/connection.py", line 373, in _send
+    n = write(self._handle, buf)
+BrokenPipeError: [Errno 32] Broken pipe
+Process Process-18:
+Traceback (most recent call last):
+  File "/home/cm2121/.conda/envs/main/lib/python3.10/multiprocessing/process.py", line 315, in _bootstrap
+    self.run()
+  File "/home/cm2121/.conda/envs/main/lib/python3.10/multiprocessing/process.py", line 108, in run
+    self._target(*self._args, **self._kwargs)
+  File "/rds/user/cm2121/hpc-work/dissertation-ibc/src/iCentral_p.py", line 89, in run
+    bc_manager[k] += v
+  File "<string>", line 2, in __getitem__
+  File "/home/cm2121/.conda/envs/main/lib/python3.10/multiprocessing/managers.py", line 817, in _callmethod
+    conn.send((self._id, methodname, args, kwds))
+  File "/home/cm2121/.conda/envs/main/lib/python3.10/multiprocessing/connection.py", line 211, in send
+    self._send_bytes(_ForkingPickler.dumps(obj))
+  File "/home/cm2121/.conda/envs/main/lib/python3.10/multiprocessing/connection.py", line 416, in _send_bytes
+    self._send(header + buf)
+  File "/home/cm2121/.conda/envs/main/lib/python3.10/multiprocessing/connection.py", line 373, in _send
+    n = write(self._handle, buf)
+BrokenPipeError: [Errno 32] Broken pipe
+Process Process-15:
+Traceback (most recent call last):
+  File "/home/cm2121/.conda/envs/main/lib/python3.10/multiprocessing/process.py", line 315, in _bootstrap
+    self.run()
+  File "/home/cm2121/.conda/envs/main/lib/python3.10/multiprocessing/process.py", line 108, in run
+    self._target(*self._args, **self._kwargs)
+  File "/rds/user/cm2121/hpc-work/dissertation-ibc/src/iCentral_p.py", line 89, in run
+    bc_manager[k] += v
+  File "<string>", line 2, in __getitem__
+  File "/home/cm2121/.conda/envs/main/lib/python3.10/multiprocessing/managers.py", line 817, in _callmethod
+    conn.send((self._id, methodname, args, kwds))
+  File "/home/cm2121/.conda/envs/main/lib/python3.10/multiprocessing/connection.py", line 211, in send
+    self._send_bytes(_ForkingPickler.dumps(obj))
+  File "/home/cm2121/.conda/envs/main/lib/python3.10/multiprocessing/connection.py", line 416, in _send_bytes
+    self._send(header + buf)
+  File "/home/cm2121/.conda/envs/main/lib/python3.10/multiprocessing/connection.py", line 373, in _send
+    n = write(self._handle, buf)
+BrokenPipeError: [Errno 32] Broken pipe
+Process Process-7:
+Traceback (most recent call last):
+  File "/home/cm2121/.conda/envs/main/lib/python3.10/multiprocessing/process.py", line 315, in _bootstrap
+    self.run()
+  File "/home/cm2121/.conda/envs/main/lib/python3.10/multiprocessing/process.py", line 108, in run
+    self._target(*self._args, **self._kwargs)
+  File "/rds/user/cm2121/hpc-work/dissertation-ibc/src/iCentral_p.py", line 89, in run
+    bc_manager[k] += v
+  File "<string>", line 2, in __getitem__
+  File "/home/cm2121/.conda/envs/main/lib/python3.10/multiprocessing/managers.py", line 817, in _callmethod
+    conn.send((self._id, methodname, args, kwds))
+  File "/home/cm2121/.conda/envs/main/lib/python3.10/multiprocessing/connection.py", line 211, in send
+    self._send_bytes(_ForkingPickler.dumps(obj))
+  File "/home/cm2121/.conda/envs/main/lib/python3.10/multiprocessing/connection.py", line 416, in _send_bytes
+    self._send(header + buf)
+  File "/home/cm2121/.conda/envs/main/lib/python3.10/multiprocessing/connection.py", line 373, in _send
+    n = write(self._handle, buf)
+BrokenPipeError: [Errno 32] Broken pipe
+Process Process-14:
+Traceback (most recent call last):
+  File "/home/cm2121/.conda/envs/main/lib/python3.10/multiprocessing/process.py", line 315, in _bootstrap
+    self.run()
+  File "/home/cm2121/.conda/envs/main/lib/python3.10/multiprocessing/process.py", line 108, in run
+    self._target(*self._args, **self._kwargs)
+  File "/rds/user/cm2121/hpc-work/dissertation-ibc/src/iCentral_p.py", line 89, in run
+    bc_manager[k] += v
+  File "<string>", line 2, in __getitem__
+  File "/home/cm2121/.conda/envs/main/lib/python3.10/multiprocessing/managers.py", line 817, in _callmethod
+    conn.send((self._id, methodname, args, kwds))
+  File "/home/cm2121/.conda/envs/main/lib/python3.10/multiprocessing/connection.py", line 211, in send
+    self._send_bytes(_ForkingPickler.dumps(obj))
+  File "/home/cm2121/.conda/envs/main/lib/python3.10/multiprocessing/connection.py", line 416, in _send_bytes
+    self._send(header + buf)
+  File "/home/cm2121/.conda/envs/main/lib/python3.10/multiprocessing/connection.py", line 373, in _send
+    n = write(self._handle, buf)
+BrokenPipeError: [Errno 32] Broken pipe
+Process Process-4:
+Traceback (most recent call last):
+  File "/home/cm2121/.conda/envs/main/lib/python3.10/multiprocessing/process.py", line 315, in _bootstrap
+    self.run()
+  File "/home/cm2121/.conda/envs/main/lib/python3.10/multiprocessing/process.py", line 108, in run
+    self._target(*self._args, **self._kwargs)
+  File "/rds/user/cm2121/hpc-work/dissertation-ibc/src/iCentral_p.py", line 89, in run
+    bc_manager[k] += v
+  File "<string>", line 2, in __getitem__
+  File "/home/cm2121/.conda/envs/main/lib/python3.10/multiprocessing/managers.py", line 817, in _callmethod
+    conn.send((self._id, methodname, args, kwds))
+  File "/home/cm2121/.conda/envs/main/lib/python3.10/multiprocessing/connection.py", line 211, in send
+    self._send_bytes(_ForkingPickler.dumps(obj))
+  File "/home/cm2121/.conda/envs/main/lib/python3.10/multiprocessing/connection.py", line 416, in _send_bytes
+    self._send(header + buf)
+  File "/home/cm2121/.conda/envs/main/lib/python3.10/multiprocessing/connection.py", line 373, in _send
+    n = write(self._handle, buf)
+BrokenPipeError: [Errno 32] Broken pipe
+Traceback (most recent call last):
+  File "/home/cm2121/.conda/envs/main/lib/python3.10/multiprocessing/managers.py", line 810, in _callmethod
+    conn = self._tls.connection
+AttributeError: 'ForkAwareLocal' object has no attribute 'connection'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/cm2121/.conda/envs/main/lib/python3.10/runpy.py", line 196, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File "/home/cm2121/.conda/envs/main/lib/python3.10/runpy.py", line 86, in _run_code
+    exec(code, run_globals)
+  File "/rds/user/cm2121/hpc-work/dissertation-ibc/hpc/run_dataset.py", line 90, in <module>
+    x = func(G, initial, e)
+  File "/rds/user/cm2121/hpc-work/dissertation-ibc/src/iCentral_p.py", line 72, in iCentral_p
+    BC = dict(bc_manager)
+  File "<string>", line 2, in keys
+  File "/home/cm2121/.conda/envs/main/lib/python3.10/multiprocessing/managers.py", line 814, in _callmethod
+    self._connect()
+  File "/home/cm2121/.conda/envs/main/lib/python3.10/multiprocessing/managers.py", line 801, in _connect
+    conn = self._Client(self._token.address, authkey=self._authkey)
+  File "/home/cm2121/.conda/envs/main/lib/python3.10/multiprocessing/connection.py", line 507, in Client
+    c = SocketClient(address)
+  File "/home/cm2121/.conda/envs/main/lib/python3.10/multiprocessing/connection.py", line 635, in SocketClient
+    s.connect(address)
+ConnectionRefusedError: [Errno 111] Connection refused
+slurmstepd: error: *** JOB 50181083 ON cpu-q-292 CANCELLED AT 2024-04-09T11:26:38 DUE TO TIME LIMIT ***
+slurmstepd: error: Detected 1 oom_kill event in StepId=50181083.batch. Some of the step tasks have been OOM Killed.

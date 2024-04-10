@@ -15,8 +15,6 @@ start_time = time.perf_counter()
 def pick_random_new_nonedge(G, seed=None, G_nodes=None):
     if G_nodes is None:
         G_nodes = set(G.nodes())
-    if seed is not None:
-        random.seed(seed)
     node1 = random.choice(list(G_nodes))
     neighbours = set(G[node1]).union({node1})
     G_nodes -= neighbours
@@ -29,13 +27,16 @@ def get_dataset(name):
     return nx.read_edgelist(f"../datasets/{name}/out.{name}", nodetype=str, comments="%", data=False)
 
 def get_lcc(G):
+    return G.subgraph(max(nx.connected_components(G), key=len)).copy()
+
+def get_bcc(G):
     return G.subgraph(max(nx.biconnected_components(G), key=len)).copy()
 
 parser = argparse.ArgumentParser()
 parser.add_argument("dataset", help="Dataset to use", type=str)
 parser.add_argument("--max_runs", "-r", help="max number of runs", type=int, default=1)
 parser.add_argument("--prog", "-p", help="which program to run", type=str, default="iCentral")
-
+random.seed(42)
 args = parser.parse_args()
 
 if __name__ == "__main__":
@@ -51,8 +52,8 @@ if __name__ == "__main__":
     print(f"{prog=}")
     print(f"{max_runs=}")
     print(f"{max_secs=}")
-    if prog == "iCentral_p":
-        print(f"processes={os.cpu_count()}")
+    #if prog == "iCentral_p":
+    #    print(f"processes={os.cpu_count()}")
     print("")
 
     

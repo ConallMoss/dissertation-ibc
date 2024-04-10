@@ -1,0 +1,14 @@
+2024-04-08 23:26:23.915687
+dataset='email-EuAll'
+prog='iCentral_p'
+max_runs=1000
+max_secs=20000
+
+graph size: N=224832, E=340795
+Graph read time:
+4.698787875997368
+
+Run times:
+8092.726255823014
+7756.05473863901
+7793.225473223021

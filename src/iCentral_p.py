@@ -60,7 +60,7 @@ def iCentral_p(G: Graph, BC: dict[Node, float], e: Edge, PROCESSES=20) -> dict[N
         all_processes = []
 
         #* Spawn all processes
-        for _ in range(PROCESSES-1):
+        for _ in range(PROCESSES):
             p = Process(target=run, args=(Q, bc_manager, manager_lock, resources))
             p.start()
             all_processes.append(p)
@@ -131,5 +131,4 @@ def calculate_node_dependencies_p(s: Node, bicon_old, bicon_new, our_articulatio
             BC_upd[w] += pair_dependency_new[w] * articulation_subgraph_size[s]
             BC_upd[w] += external_dependency_new[w] / 2
     
-    #del bicon_old, bicon_new, our_articulation_points, articulation_subgraph_size
     return BC_upd
