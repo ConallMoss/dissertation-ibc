@@ -36,15 +36,15 @@ e = pick_random_nonedge(G_base)
 print(f"{dataset=}")
 print(f"{e=}")
 
-#* Real time iCentral_p
-G = G_base.copy()
-bc_initial = defaultdict(float)
-s = time.perf_counter()
-x = iCentral_p(G, bc_initial, e)
-print("Real time iCentral_p:")
-print(time.perf_counter() - s)
+# #* Real time iCentral_p
+# G = G_base.copy()
+# bc_initial = defaultdict(float)
+# s = time.perf_counter()
+# x = iCentral_p(G, bc_initial, e)
+# print("Real time iCentral_p:")
+# print(time.perf_counter() - s)
 
-e = pick_random_nonedge(G_base)
+#e = pick_random_nonedge(G_base)
 #* Real time iCentral
 G = G_base.copy()
 bc_initial = defaultdict(float)

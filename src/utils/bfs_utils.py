@@ -1,3 +1,4 @@
+from typing import Any
 from src.utils.my_imports import *
 from src.utils.general import *
 
@@ -7,22 +8,22 @@ def bfs_distances(G: Graph, s: Node) -> dict[Node, int]:
     distance[s] = 0
     Q = deque((s,))
     while Q:
-        n = Q.popleft()
+        n: Node = Q.popleft()
         for i in G[n]:
             if i not in distance:
                 distance[i] = distance[n] + 1
                 Q.append(i)
     return distance
 
-def bfs_brandes(G: Graph, s: Node) -> tuple[dict[Node, int], dict[Node, set[Node]], list[Node]]:
+def bfs_brandes(G: GraphAdj, s: Node) -> tuple[dict[Node, int], dict[Node, list[Node]], Iterable[Node]]:
     """Find node's no. shortest paths, parents and reverse bfs order from given node"""
-    distance = {s: 0}
+    distance: dict[Any, int] = {s: 0}
     parents = defaultdict(list)
     sigma = defaultdict(int); sigma[s] = 1
     Q = deque((s,))
     while Q:
-        n = Q.popleft()
-        d = distance[n]
+        n: Node = Q.popleft()
+        d: int = distance[n]
         for i in G[n]:
             if i not in distance:
                 distance[i] = d + 1

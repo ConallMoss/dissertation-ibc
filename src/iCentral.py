@@ -1,3 +1,6 @@
+from typing import Any
+from networkx.classes.graph import Graph
+from networkx.classes.graph import Graph
 from src.utils.my_imports import *
 from src.utils.general import *
 from src.utils.component_utils import *
@@ -7,7 +10,7 @@ from src.utils.dependency_utils import *
 
 def iCentral(G: Graph, BC: dict[Node, float], e: Edge) -> dict[Node, float]:
     
-    V_ins = [] #Check if either node is new to the graph
+    V_ins: list[Node] = [] #Check if either node is new to the graph
     for v in e:
         if v not in G.nodes:
             V_ins.append(v)
@@ -16,51 +19,51 @@ def iCentral(G: Graph, BC: dict[Node, float], e: Edge) -> dict[Node, float]:
     G.add_nodes_from(V_ins)
     for v in V_ins:
         BC[v] = BC.get(v, 0) #* Initialise into dictionary for new nodes
-    subgraphs = find_bridge_subgraphs(G, e)
+    subgraphs: Optional[tuple[Graph, Graph]] = find_bridge_subgraphs(G, e)
     G.add_edge(v1, v2)
+
     if (subgraphs):
         v_s, v_t = e 
         subgraph_s, subgraph_t = subgraphs
-        node_pair_dependency_s = find_node_pair_dependencies(subgraph_s, v_s)
-        node_pair_dependency_t = find_node_pair_dependencies(subgraph_t, v_t)
-        print(f"{node_pair_dependency_s}")
-        print(f"{node_pair_dependency_t}")
+        node_pair_dependency_s: dict[Node, float] = find_node_pair_dependencies(subgraph_s, v_s)
+        node_pair_dependency_t: dict[Node, float] = find_node_pair_dependencies(subgraph_t, v_t)
         for n_s in subgraph_s.nodes:
             BC[n_s] += len(subgraph_t) * node_pair_dependency_s[n_s]
         for n_t in subgraph_t.nodes:
             BC[n_t] += len(subgraph_s) * node_pair_dependency_t[n_t]
+
     else:
-        all_bicons = find_biconnected_components(G)
-        all_articulation_points = find_articulation_points(G)
+        all_bicons: list[set[Node]] = find_biconnected_components(G)
+        all_articulation_points: set[Node] = find_articulation_points(G)
 
         #* We only care about the bicon with our new edge
-        bicon_new = G.subgraph(find_bicon_with_edge(all_bicons, e)).copy() #* B_e'
-        bicon_old = deepcopy(bicon_new) #* B_e in paper
+        bicon_new: Graph = G.subgraph(find_bicon_with_edge(all_bicons, e)).copy() #* B_e'
+        bicon_old: Graph = deepcopy(bicon_new) #* B_e in paper
         bicon_old.remove_edge(v1, v2)
 
-        our_articulation_points = all_articulation_points.intersection(bicon_new.nodes)
-        articulation_subgraph_size = find_connected_subgraph_size(G, our_articulation_points, bicon_new.nodes)
+        our_articulation_points: set[Node] = all_articulation_points.intersection(bicon_new.nodes)
+        articulation_subgraph_size: dict[Node, int] = find_connected_subgraph_size(G, our_articulation_points, bicon_new.nodes) # type: ignore
 
         #* Line 4:
-        d1 = bfs_distances(bicon_old, v1)
-        d2 = bfs_distances(bicon_old, v2)
+        d1: dict[Node, int] = bfs_distances(bicon_old, v1)
+        d2: dict[Node, int] = bfs_distances(bicon_old, v2)
 
         #* Line 7:
-        Q = deque() #Queue
+        Q: deque[Node] = deque() #Queue
         for s in bicon_old.nodes: 
             #* Check if ends of the edge are at different distances from edge endpoints
             #* i.e. if not, then edge would not be used
             if d1[s] != d2[s]: 
                 Q.append(s)
         
-        bicon_old_adj = bicon_old._adj
-        bicon_new_adj = bicon_new._adj
+        bicon_old_adj: GraphAdj = bicon_old._adj
+        bicon_new_adj: GraphAdj = bicon_new._adj
 
         #* Line 10: 
         for s in Q:
             shortest_paths_old, preds_old, ordered_nodes_old = bfs_brandes(bicon_old_adj, s) #* σ_s, P_s
-            pair_dependency_old = defaultdict(float) #* δ_sdot
-            external_dependency_old = defaultdict(float) #* δ_G_sdot
+            pair_dependency_old: dict[Node, float] = defaultdict(float) #* δ_sdot
+            external_dependency_old: dict[Node, float] = defaultdict(float) #* δ_G_sdot
 
             for w in ordered_nodes_old:
                 if (s in our_articulation_points) and (w in our_articulation_points):
@@ -80,8 +83,8 @@ def iCentral(G: Graph, BC: dict[Node, float], e: Edge) -> dict[Node, float]:
 
             #* Line 26:
             shortest_paths_new, preds_new, ordered_nodes_new = bfs_brandes(bicon_new_adj, s) #* σ_s', P_s'
-            pair_dependency_new = defaultdict(float) #* δ_sdot'
-            external_dependency_new = defaultdict(float) #* δ_G_sdot'
+            pair_dependency_new: dict[Node, float] = defaultdict(float) #* δ_sdot'
+            external_dependency_new: dict[Node, float] = defaultdict(float) #* δ_G_sdot'
 
             for w in ordered_nodes_new:
                 if (s in our_articulation_points) and (w in our_articulation_points): 
