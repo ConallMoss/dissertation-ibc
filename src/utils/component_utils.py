@@ -47,7 +47,7 @@ def find_bicon_with_node(bicons: list[set[Node]], n: Node) -> set[Node]:
     raise ValueError("Node not found in any biconnected components")
         
 
-def find_connected_subgraph_size(G: Graph, our_ap: set[Node], our_bicon: set[Node]) -> dict[Node, int]:
+def find_connected_subgraph_size(G: Graph, our_ap: set[Node], our_bicon: Iterable[Node]) -> dict[Node, int]:
     """Finds size of full subgraph connected to bicon through each articulation point of bicon"""
     #TODO: Copy bfs, blacklist bicon edges/nodes
     G2: Graph = G.copy()
