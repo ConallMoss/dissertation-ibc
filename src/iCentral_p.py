@@ -13,9 +13,10 @@ import multiprocessing
 
 logger = logging.getLogger(__name__)
 
-def iCentral_p(G: Graph, BC: dict[Node, float], e: Edge, PROCESSES: int=20) -> dict[Node, float]:
+def iCentral_p(G: Graph, BC: dict[Node, float], e: Edge, PROCESSES: int) -> dict[Node, float]:
     if PROCESSES is None:
         PROCESSES = multiprocessing.cpu_count()
+    print(f"Processes={PROCESSES}")
 
     v1, v2 = e
     G.add_edge(v1, v2)
@@ -37,11 +38,15 @@ def iCentral_p(G: Graph, BC: dict[Node, float], e: Edge, PROCESSES: int=20) -> d
     #* Line 7:
     #* Using threadsafe multi-processing queue
     Q: Queue = Queue() #Queue
+    item_count = 0 #Count of number of items to process
     for s in bicon_old.nodes: 
         #* Check if ends of the edge are at different distances from edge endpoints
         #* i.e. if not, then edge would not be used
         if d1[s] != d2[s]: 
              Q.put(s)
+             item_count += 1
+
+    print(f"recalculation size: {item_count}")
 
     #* Undefault the dict - used for testing when a default dict is passed in
     for n in G.nodes:
@@ -51,47 +56,40 @@ def iCentral_p(G: Graph, BC: dict[Node, float], e: Edge, PROCESSES: int=20) -> d
     with Manager() as manager:
         #* Setup inputs for each call
 
-        #bicon_old_manager = manager.dict(nx.to_dict_of_dicts(bicon_old))
-        #bicon_new_manager = manager.dict(nx.to_dict_of_dicts(bicon_new))
-        #our_articulation_points_manager = manager.dict(dict.fromkeys(our_articulation_points, 0))
-        #articulation_subgraph_size_manager = manager.dict(dict.fromkeys(articulation_subgraph_size, 0))
-
         bicon_old_adj: GraphAdj = bicon_old._adj
         bicon_new_adj: GraphAdj = bicon_new._adj
 
         resources: tuple = (bicon_old_adj, bicon_new_adj, our_articulation_points, articulation_subgraph_size)
-        bc_manager: DictProxy[Node, float] = manager.dict(BC)
         manager_lock: LockBase = Lock()
         all_processes: list[Process] = []
 
+        result_queue: Queue = Queue()
+
         #* Spawn all processes
         for _ in range(PROCESSES):
-            p: Process = Process(target=run, args=(Q, bc_manager, manager_lock, resources))
+            p: Process = Process(target=run, args=(Q, result_queue, resources))
+            print(p.pid)
             p.start()
             all_processes.append(p)
 
-        #* Wait for all processes to complete
-        for p in all_processes:
-            p.join()
+        #* We require all items to have been processed, and can stop once they have been
+        #* Handle data on main thread
+        for _ in range(item_count):
+            bc_upd = result_queue.get(True) #* Blocks until data available in queue
+            for k, v in bc_upd.items():
+                if v != 0:
+                    BC[k] += v
 
-        BC = dict(bc_manager)
-
-    # #* Redefault the dict
-    # for k, v in list(BC.items()):
-    #     if v == 0:
-    #         del BC[k]
-
+        
     return BC
  
 
-def run(q: Queue, bc_manager: DictProxy, manager_lock: LockBase, resources: tuple):
+def run(q: Queue, result_queue: Queue, resources: tuple):
         while not q.empty():
             s: Node = q.get()
             bc_upd: dict[Node, float] = calculate_node_dependencies_p(s, *resources)
-            with manager_lock:
-                for k, v in bc_upd.items():
-                    if v != 0:
-                        bc_manager[k] += v
+            result_queue.put(bc_upd)
+        
 
 def calculate_node_dependencies_p(s: Node, bicon_old: GraphAdj, bicon_new: GraphAdj, our_articulation_points: set[Node], articulation_subgraph_size: dict[Node, int]) -> dict[Node, float]:
     BC_upd = defaultdict(float)
