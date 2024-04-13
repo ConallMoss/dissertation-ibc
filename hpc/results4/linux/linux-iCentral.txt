@@ -1,0 +1,14 @@
+2024-04-11 02:44:27.282804
+dataset='linux'
+prog='iCentral'
+max_runs=1000
+max_secs=20000
+
+graph size: N=30817, E=213735
+Graph read time:
+1.5810718149878085
+
+Run times:
+8740.803852240031
+8234.573411008983
+3719.390616211982

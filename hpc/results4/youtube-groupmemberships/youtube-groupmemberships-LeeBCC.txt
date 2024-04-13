@@ -1,0 +1,12 @@
+2024-04-11 03:08:01.581174
+dataset='youtube-groupmemberships'
+prog='LeeBCC'
+max_runs=1000
+max_secs=20000
+
+graph size: N=94238, E=293342
+Graph read time:
+3.012678923958447
+
+Run times:
+28905.814431931998

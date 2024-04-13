@@ -1,0 +1,12 @@
+2024-04-11 02:44:27.408131
+dataset='facebook-wosn-links'
+prog='iCentral'
+max_runs=1000
+max_secs=20000
+
+graph size: N=63392, E=816831
+Graph read time:
+7.625516496016644
+
+Run times:
+33002.950887793035

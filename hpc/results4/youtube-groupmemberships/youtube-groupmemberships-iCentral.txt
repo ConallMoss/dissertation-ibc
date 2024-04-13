@@ -1,0 +1,12 @@
+2024-04-11 03:03:13.109625
+dataset='youtube-groupmemberships'
+prog='iCentral'
+max_runs=1000
+max_secs=20000
+
+graph size: N=94238, E=293342
+Graph read time:
+3.246098253002856
+
+Run times:
+28170.554744465975

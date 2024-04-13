@@ -9,7 +9,7 @@
 
 #! sbatch directives begin here ###############################
 #! Name of the job:
-#SBATCH -J elec-iCentral
+#SBATCH -J youtube-groupmemberships-iCentral
 #! Which project should be charged:
 #SBATCH -A TGRIFFIN-SL3-CPU
 #SBATCH -p icelake-himem
@@ -58,8 +58,8 @@ module load rhel8/default-icl              # REQUIRED - loads the basic environm
 module load miniconda/3
 #! Insert additional module load commands after this line if needed:
 
-name=elec-iCentral
-dataset=elec
+name=youtube-groupmemberships-iCentral
+dataset=youtube-groupmemberships
 runs=1000
 prog=iCentral
 

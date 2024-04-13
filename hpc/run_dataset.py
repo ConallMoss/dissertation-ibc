@@ -21,6 +21,20 @@ def pick_random_new_nonedge(G, seed=None, G_nodes=None):
     node2 = random.choice(list(G_nodes))
     return node1, node2
 
+def pick_random_safe_edge(G, edges=None):
+    if edges is None:
+        edges = list(G.edges)
+    G2 = G.copy()
+    edges = list(G.edges)
+    e = random.choice(edges)
+    G2.remove_edge(e[0], e[1])
+    #Greedy edge removal
+    while len(list(nx.connected_components(G2))) != 1:
+        G2.add_edge(e[0], e[1])
+        e = random.choice(edges)
+        G2.remove_edge(e[0], e[1])
+    return G2, e
+
 def get_dataset(name):
     if name == "facebook_combined":
         return nx.read_edgelist(f"../datasets/facebook_combined.txt", nodetype=str , comments="%", data=False)
@@ -81,7 +95,7 @@ if __name__ == "__main__":
     run = 0
     while ((time.perf_counter()-start_time)<max_secs) and (run < max_runs):
         run += 1
-        e = pick_random_new_nonedge(G_base)
+        G, e = pick_random_safe_edge(G_base)
         
         G = copy.deepcopy(G_base)
         initial = defaultdict(float)

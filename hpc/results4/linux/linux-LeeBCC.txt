@@ -1,0 +1,14 @@
+2024-04-11 02:44:27.282592
+dataset='linux'
+prog='LeeBCC'
+max_runs=1000
+max_secs=20000
+
+graph size: N=30817, E=213735
+Graph read time:
+1.539041128999088
+
+Run times:
+7387.088734603021
+7454.853253848967
+7436.17544169398

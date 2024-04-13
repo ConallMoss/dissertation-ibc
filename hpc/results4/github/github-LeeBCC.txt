@@ -1,0 +1,12 @@
+2024-04-12 00:19:51.559869
+dataset='github'
+prog='LeeBCC'
+max_runs=1000
+max_secs=20000
+
+graph size: N=120865, E=439928
+Graph read time:
+5.130540367972571
+
+Run times:
+42565.16870575299

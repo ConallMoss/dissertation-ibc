@@ -1,0 +1,14 @@
+2024-04-11 02:20:56.907376
+dataset='email-EuAll'
+prog='LeeBCC'
+max_runs=1000
+max_secs=20000
+
+graph size: N=224832, E=340795
+Graph read time:
+4.4478968910407275
+
+Run times:
+8737.026652532979
+9498.163228060992
+9688.852138262999
