@@ -59,6 +59,8 @@ def iCentral(G: Graph, BC: dict[Node, float], e: Edge) -> dict[Node, float]:
         bicon_old_adj: GraphAdj = bicon_old._adj
         bicon_new_adj: GraphAdj = bicon_new._adj
 
+        print(f"recalculation size: {len(Q)}")
+
         #* Line 10: 
         for s in Q:
             shortest_paths_old, preds_old, ordered_nodes_old = bfs_brandes(bicon_old_adj, s) #* σ_s, P_s

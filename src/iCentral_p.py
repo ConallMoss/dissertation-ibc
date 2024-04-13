@@ -36,7 +36,7 @@ def iCentral_p(G: Graph, BC: dict[Node, float], e: Edge, PROCESSES: int=20) -> d
 
     #* Line 7:
     #* Using threadsafe multi-processing queue
-    Q: Queue[Node] = Queue() #Queue
+    Q: Queue = Queue() #Queue
     for s in bicon_old.nodes: 
         #* Check if ends of the edge are at different distances from edge endpoints
         #* i.e. if not, then edge would not be used
@@ -84,7 +84,7 @@ def iCentral_p(G: Graph, BC: dict[Node, float], e: Edge, PROCESSES: int=20) -> d
     return BC
  
 
-def run(q: Queue[Node], bc_manager: DictProxy[Node, float], manager_lock: LockBase, resources: tuple):
+def run(q: Queue, bc_manager: DictProxy, manager_lock: LockBase, resources: tuple):
         while not q.empty():
             s: Node = q.get()
             bc_upd: dict[Node, float] = calculate_node_dependencies_p(s, *resources)
