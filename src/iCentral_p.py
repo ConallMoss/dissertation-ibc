@@ -68,8 +68,8 @@ def iCentral_p(G: Graph, BC: dict[Node, float], e: Edge, PROCESSES: int) -> dict
         #* Spawn all processes
         for _ in range(PROCESSES):
             p: Process = Process(target=run, args=(Q, result_queue, resources))
-            print(p.pid)
             p.start()
+            print(p.pid)
             all_processes.append(p)
 
         #* We require all items to have been processed, and can stop once they have been
