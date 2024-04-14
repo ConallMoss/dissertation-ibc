@@ -10,6 +10,7 @@ from multiprocessing import Pool, Manager, get_logger, Process, Queue, Lock
 from multiprocessing.managers import DictProxy
 from multiprocessing.synchronize import Lock as LockBase
 import multiprocessing
+import os
 
 logger = logging.getLogger(__name__)
 
@@ -69,26 +70,30 @@ def iCentral_p(G: Graph, BC: dict[Node, float], e: Edge, PROCESSES: int) -> dict
         for _ in range(PROCESSES):
             p: Process = Process(target=run, args=(Q, result_queue, resources))
             p.start()
-            print(p.pid)
+            #print(p.pid)
             all_processes.append(p)
 
         #* We require all items to have been processed, and can stop once they have been
         #* Handle data on main thread
+        pid_work = defaultdict(int)
         for _ in range(item_count):
-            bc_upd = result_queue.get(True) #* Blocks until data available in queue
+            bc_upd, pid = result_queue.get(True) #* Blocks until data available in queue
+            pid_work[pid] += 1
             for k, v in bc_upd.items():
                 if v != 0:
                     BC[k] += v
 
         
-    return BC
+    return BC, pid_work
  
 
+
 def run(q: Queue, result_queue: Queue, resources: tuple):
+        pid = os.getpid()
         while not q.empty():
             s: Node = q.get()
             bc_upd: dict[Node, float] = calculate_node_dependencies_p(s, *resources)
-            result_queue.put(bc_upd)
+            result_queue.put((bc_upd, pid))
         
 
 def calculate_node_dependencies_p(s: Node, bicon_old: GraphAdj, bicon_new: GraphAdj, our_articulation_points: set[Node], articulation_subgraph_size: dict[Node, int]) -> dict[Node, float]:

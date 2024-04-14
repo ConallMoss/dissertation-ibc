@@ -39,7 +39,7 @@ def find_bicon_with_edge(bicons: list[set[Node]], e: Edge) -> set[Node]:
             return bicon
     raise ValueError("Edge not found in any biconnected components")
         
-def find_bicon_with_node(bicons: list[set[Node]], n: Node) -> set[Node]:
+def find_bicon_with_nodea(bicons: list[set[Node]], n: Node) -> set[Node]:
     """Finds and returns bicon from given bicon contains node"""
     for bicon in bicons:
         if n in bicon:
