@@ -12,6 +12,8 @@ from multiprocessing.synchronize import Lock as LockBase
 import multiprocessing
 import os
 
+import time
+
 logger = logging.getLogger(__name__)
 
 def iCentral_p(G: Graph, BC: dict[Node, float], e: Edge, PROCESSES: int) -> dict[Node, float]:
@@ -67,11 +69,13 @@ def iCentral_p(G: Graph, BC: dict[Node, float], e: Edge, PROCESSES: int) -> dict
         result_queue: Queue = Queue()
 
         #* Spawn all processes
-        for _ in range(PROCESSES):
+        for _ in range(PROCESSES-1):
+            process_start = time.perf_counter()
             p: Process = Process(target=run, args=(Q, result_queue, resources))
             p.start()
             #print(p.pid)
             all_processes.append(p)
+            print(f"process creation: {time.perf_counter() - process_start}")
 
         #* We require all items to have been processed, and can stop once they have been
         #* Handle data on main thread
@@ -89,11 +93,18 @@ def iCentral_p(G: Graph, BC: dict[Node, float], e: Edge, PROCESSES: int) -> dict
 
 
 def run(q: Queue, result_queue: Queue, resources: tuple):
+        real_work = 0
+        work_start = time.perf_counter()
         pid = os.getpid()
         while not q.empty():
             s: Node = q.get()
+            real_work_start = time.perf_counter()
             bc_upd: dict[Node, float] = calculate_node_dependencies_p(s, *resources)
+            real_work += time.perf_counter() - real_work_start
             result_queue.put((bc_upd, pid))
+        print(f"total work ({pid}): {time.perf_counter()-work_start}")
+        print(f"real work ({pid}): {real_work}")
+        
         
 
 def calculate_node_dependencies_p(s: Node, bicon_old: GraphAdj, bicon_new: GraphAdj, our_articulation_points: set[Node], articulation_subgraph_size: dict[Node, int]) -> dict[Node, float]:

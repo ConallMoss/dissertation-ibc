@@ -43,7 +43,7 @@ if __name__ == "__main__":
     # #e = ('693', '2379')#('1095', '3289')
     # print(e)
 
-    G_base = nx.read_edgelist("./datasets/slashdot-threads/out.slashdot-threads", nodetype=str, comments="%", data=False)
+    G_base = nx.read_edgelist("../datasets/slashdot-threads/out.slashdot-threads", nodetype=str, comments="%", data=False)
     e = ('1095', '3289')
 
     #* Real time iCentral_p
@@ -51,7 +51,7 @@ if __name__ == "__main__":
     G = G_base.copy()
     bce_initial = defaultdict(float)
     s = time.perf_counter()
-    x, pid_work = iCentral_p(G, bce_initial, e, PROCESSES=16)
+    x, pid_work = iCentral_p(G, bce_initial, e, PROCESSES=64)
     print(pid_work)
     print("Real time Parallel iCentral:")
     print(time.perf_counter() - s)
@@ -64,11 +64,11 @@ if __name__ == "__main__":
     # print("Real time LeeBCC:")
     # print(time.perf_counter() - s)
 
-    # %%
-    # #* Real time iCentral
-    # G = G_base.copy()
-    # bce_initial = defaultdict(float)
-    # s = time.perf_counter()
-    # y = iCentral(G, bce_initial, e)
-    # print("Real time iCentral:")
-    # print(time.perf_counter() - s)
+    #%%
+    #* Real time iCentral
+    G = G_base.copy()
+    bce_initial = defaultdict(float)
+    s = time.perf_counter()
+    y = iCentral(G, bce_initial, e)
+    print("Real time iCentral:")
+    print(time.perf_counter() - s)
