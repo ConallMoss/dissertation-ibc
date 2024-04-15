@@ -20,7 +20,7 @@ def iCentral_p(G: Graph, BC: dict[Node, float], e: Edge, PROCESSES: int) -> dict
     if PROCESSES is None:
         PROCESSES = multiprocessing.cpu_count()
     print(f"Processes={PROCESSES}")
-
+    prep_start = time.perf_counter()
     v1, v2 = e
     G.add_edge(v1, v2)
     all_bicons: list[set[Node]] = find_biconnected_components(G)
@@ -67,7 +67,7 @@ def iCentral_p(G: Graph, BC: dict[Node, float], e: Edge, PROCESSES: int) -> dict
         all_processes: list[Process] = []
 
         result_queue: Queue = Queue()
-
+        print(f"prep finish: {time.perf_counter() - prep_start}")
         #* Spawn all processes
         for _ in range(PROCESSES-1):
             process_start = time.perf_counter()

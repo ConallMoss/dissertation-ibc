@@ -34,16 +34,16 @@ if __name__ == "__main__":
         node2 = random.choice(list(possible_nodes))
         return node1, node2
 
-    # G_base = nx.read_edgelist("./datasets/facebook_combined.txt")
+    #G_base = nx.read_edgelist("./datasets/facebook_combined.txt")
     # #G_base = nx.Graph([(1,2), (1, 4), (2, 3), (3, 4), (3, 5), (3, 8), (4, 6), (5, 8), (6,7), (7,8)])
     # #G_base =  nx.erdos_renyi_graph(256, 0.5, seed=123, directed=False)
     # G = G_base
     # e = pick_random_nonedge(G_base)
-    # #e = ('3997', '660')
+    #e = ('3997', '660')
     # #e = ('693', '2379')#('1095', '3289')
     # print(e)
 
-    G_base = nx.read_edgelist("../datasets/slashdot-threads/out.slashdot-threads", nodetype=str, comments="%", data=False)
+    G_base = nx.read_edgelist("./datasets/slashdot-threads/out.slashdot-threads", nodetype=str, comments="%", data=False)
     e = ('1095', '3289')
 
     #* Real time iCentral_p
@@ -51,7 +51,7 @@ if __name__ == "__main__":
     G = G_base.copy()
     bce_initial = defaultdict(float)
     s = time.perf_counter()
-    x, pid_work = iCentral_p(G, bce_initial, e, PROCESSES=64)
+    x, pid_work = iCentral_p(G, bce_initial, e, PROCESSES=16)
     print(pid_work)
     print("Real time Parallel iCentral:")
     print(time.perf_counter() - s)
@@ -65,10 +65,10 @@ if __name__ == "__main__":
     # print(time.perf_counter() - s)
 
     #%%
-    #* Real time iCentral
-    G = G_base.copy()
-    bce_initial = defaultdict(float)
-    s = time.perf_counter()
-    y = iCentral(G, bce_initial, e)
-    print("Real time iCentral:")
-    print(time.perf_counter() - s)
+    # #* Real time iCentral
+    # G = G_base.copy()
+    # bce_initial = defaultdict(float)
+    # s = time.perf_counter()
+    # y = iCentral(G, bce_initial, e)
+    # print("Real time iCentral:")
+    # print(time.perf_counter() - s)
