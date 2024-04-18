@@ -1,0 +1,4 @@
+------------
+Running iCentral_p:
+Processes=1
+recalculation size: 19082

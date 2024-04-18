@@ -1,0 +1,7 @@
+------------
+Running iCentral_p:
+Processes=2
+recalculation size: 19082
+prep finish: 1.243744120001793
+total work (1524810): 2075.7245177659206
+real work (1524810): 2072.018852618872

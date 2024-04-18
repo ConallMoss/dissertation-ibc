@@ -1,0 +1,20 @@
+Running iCentral_p:
+Processes=16
+recalculation size: 19082
+prep finish: 1.2614842099137604
+process creation: 0.003430850920267403
+process creation: 0.0026914229383692145
+process creation: 0.0017075620125979185
+process creation: 0.0016807790379971266
+process creation: 0.0016705180751159787
+process creation: 0.0023162789875641465
+process creation: 0.0016841109609231353
+process creation: 0.0016806829953566194
+process creation: 0.001687970943748951
+process creation: 0.0017024100525304675
+process creation: 0.0017291950061917305
+process creation: 0.0017345550004392862
+process creation: 0.0018119619926437736
+process creation: 0.0027579580200836062
+process creation: 0.002343183965422213
+total process creation: 0.03099719202145934
