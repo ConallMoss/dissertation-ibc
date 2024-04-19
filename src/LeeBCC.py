@@ -1,12 +1,12 @@
-from typing import Any
-from networkx.classes.graph import Graph
-from src.utils.my_imports import *
-from src.utils.general import *
+from src.utils.typing_utils import *
 from src.utils.component_utils import *
 from src.utils.dependency_utils import *
 
+from collections import defaultdict, deque
+from typing import Optional, Any
+
 #* Modified for only single edge additions, to match iCentral
-#* updates contains singular updating edge, and list of new nodes
+#* Allows for new nodes to be added if edge-nodes don't already exist
 #* Note: uses *edge* BCe not *node* BC
 def LeeBCC(G: Graph, BCe: dict[Edge, float], e: Edge) -> dict[Edge, float]:
     v1, v2 = e
@@ -30,7 +30,6 @@ def LeeBCC(G: Graph, BCe: dict[Edge, float], e: Edge) -> dict[Edge, float]:
         edge_pair_dependency_s: dict[Edge, float] = find_edge_pair_dependencies(subgraph_s, v_s) 
         edge_pair_dependency_t: dict[Edge, float] = find_edge_pair_dependencies(subgraph_t, v_t) 
         for e_s in subgraph_s.edges:
-            #speed improvement on creating "norm" function
             BCe[(e_s if e_s[0] <= e_s[1] else (e_s[1], e_s[0]))] += len(subgraph_t) * edge_pair_dependency_s[e_s]
         for e_t in subgraph_t.edges:
             BCe[(e_t if e_t[0] <= e_t[1] else (e_t[1], e_t[0]))] += len(subgraph_s) * edge_pair_dependency_t[e_t]
@@ -41,11 +40,12 @@ def LeeBCC(G: Graph, BCe: dict[Edge, float], e: Edge) -> dict[Edge, float]:
     else:
         all_bicons: list[set[Any]] = find_biconnected_components(G)
         recalc_component: set[Any] = find_bicon_with_edge(all_bicons, e) #* Our bicon we are interested in
-        print(f"recalculation size: {len(recalc_component)}")
+        print(f"Recalculation Size: {len(recalc_component)}")
         our_articulation_points: set[Any] = (find_articulation_points(G)).intersection(recalc_component)
-        articulation_subgraph_size: dict[Node, int] = find_connected_subgraph_size(G, our_articulation_points, recalc_component)
-        BCe_updated: dict[Edge, float] = edge_betweenness(G.subgraph(recalc_component).copy(), articulation_subgraph_size)
-        BCe.update(BCe_updated)
+        articulation_subgraph_sizes: dict[Node, int] = find_connected_subgraph_size(G, our_articulation_points, recalc_component)
+        print(articulation_subgraph_sizes)
+        BCe_updates: dict[Edge, float] = edge_betweenness(G.subgraph(recalc_component).copy(), articulation_subgraph_sizes)
+        BCe.update(BCe_updates)
 
     return BCe
 
@@ -55,45 +55,49 @@ def edge_betweenness(G: Graph, articulation_subgraph_sizes: dict[Node, int]) -> 
     BCe_upd: dict[Edge, float] = defaultdict(float)
     articulation_points: set[Node] = set(articulation_subgraph_sizes.keys())
     G_adj: GraphAdj = G._adj
+
     for v_s in G.nodes:
         S: deque[Node] = deque() #Stack
         Q: deque[Node] = deque((v_s,)) #Queue
-        P: dict[Node, list[Node]] = defaultdict(list) #empty set for each v in V
-        σ: dict[Node, int] = defaultdict(int); σ[v_s] = 1
-        d: dict[Node, int] = defaultdict(lambda: -1); d[v_s] = 0 #Use -1 for inf
+        P: dict[Node, list[Node]] = defaultdict(list) #empty list for each v in V
+        σ: dict[Node, int] = defaultdict(int)
+        d: dict[Node, int] = defaultdict(lambda: -1) #Use -1 for inf
         σ_t: dict[Node, int] = defaultdict(int) #No. type 2 SP for each v
+
+        #* Initialise dict values
+        d[v_s] = 0
+        σ[v_s] = 1
 
         while Q:
             v_i: Node = Q.popleft()
             S.append(v_i)
             for v_n in G_adj[v_i]:
-                if d[v_n] == -1:
+                if d[v_n] < 0:
                     Q.append(v_n)
                     d[v_n] = d[v_i] + 1
                 if d[v_n] == d[v_i] + 1:
                     σ[v_n] += σ[v_i]
                     P[v_n].append(v_i)
 
-        δ = defaultdict(float)  
+        δ: dict[Node, float] = defaultdict(float)  
 
         while S:
             v_n: Node = S.pop()
             if (v_s in articulation_points) and (v_n in articulation_points) and (v_n != v_s):
-                #Add contribution from combined subgraph connections
+                #* Add contribution from combined subgraph connections
                 σ_t[v_n] += articulation_subgraph_sizes[v_s] * articulation_subgraph_sizes[v_n]
 
             for v_p in P[v_n]:
                 δ[v_p] += σ[v_p]/σ[v_n] * (1 + δ[v_n])
                 edge_increase: float = σ[v_p]/σ[v_n] * (1 + δ[v_n])
                 if v_s in articulation_points:
-                    #Increase for Type 2 SPs
+                    #* Increase for Type 2 SPs
                     σ_t[v_p] += σ_t[v_n] * σ[v_p] / σ[v_n] #type: ignore
-                    #Add increase for Type 2 SPs
-                    edge_increase += σ_t[v_p]
-                    #Calc/add incr. for Type 1 SPs
+                    #* Add increase for Type 2 SPs
+                    edge_increase += σ_t[v_n] * σ[v_p] / σ[v_n]
+                    #* Calculate and add increment for Type 1 SPs
                     edge_increase += articulation_subgraph_sizes[v_s] * σ[v_p] / σ[v_n] * (1 + δ[v_n]) * 2
                 if edge_increase:
-                    #speed improvement on creating norm function
-                    #Halved as undirected graph
+                    #Halve total edge increase (since undirected graph - convention chosen)
                     BCe_upd[(v_p, v_n) if v_p <= v_n else (v_n, v_p)] += edge_increase/2
     return BCe_upd

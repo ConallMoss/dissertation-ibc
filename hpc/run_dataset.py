@@ -36,9 +36,7 @@ def pick_random_safe_edge(G, edges=None):
     return G2, e
 
 def get_dataset(name):
-    if name == "facebook_combined":
-        return nx.read_edgelist(f"../datasets/facebook_combined.txt", nodetype=str , comments="%", data=False)
-    return nx.read_edgelist(f"../datasets/{name}/out.{name}", nodetype=str, comments="%", data=False)
+    return nx.read_edgelist(f"datasets/facebook_combined.txt", nodetype=str , comments="%", data=False)
 
 def get_lcc(G):
     return G.subgraph(max(nx.connected_components(G), key=len)).copy()
@@ -50,6 +48,7 @@ parser = argparse.ArgumentParser()
 parser.add_argument("dataset", help="Dataset to use", type=str)
 parser.add_argument("--max_runs", "-r", help="max number of runs", type=int, default=1)
 parser.add_argument("--prog", "-p", help="which program to run", type=str, default="iCentral")
+
 random.seed(42)
 args = parser.parse_args()
 
@@ -79,12 +78,10 @@ if __name__ == "__main__":
     func = funcs[prog]
 
 
-
-
     start_time = time.perf_counter()
     G_base = get_lcc(get_dataset(dataset))
     graph_read_time = time.perf_counter() - start_time
-    print(f"graph size: N={G_base.number_of_nodes()}, E={G_base.size()}")
+    print(f"graph size: N={G_base.number_of_nodes()}, E={G_base.number_of_edges()}")
 
     print("Graph read time:")
     print(graph_read_time)
@@ -101,5 +98,5 @@ if __name__ == "__main__":
         initial = defaultdict(float)
         s = time.perf_counter()
         x = func(G, initial, e)
-        print(time.perf_counter()-s)
+        print(time.perf_counter()-s, flush=True)
 

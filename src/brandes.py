@@ -1,11 +1,12 @@
-from src.utils.my_imports import *
-from src.utils.general import *
+from src.utils.typing_utils import *
+from collections import defaultdict, deque
+from typing import Iterable
 
 def brandes(G: Graph) -> dict[Node, float]:
     """Implementation of Brandes algorithm for generic comparison"""
     #* Uses naming convention from Brandes paper, which may differ from my other BC implementations
-    C = defaultdict(float)
-    V = G.nodes
+    C: defaultdict[Node, float] = defaultdict(float)
+    V: Iterable[Node] = G.nodes
     for s in V:
         S = deque() #Stack
         P = defaultdict(list)

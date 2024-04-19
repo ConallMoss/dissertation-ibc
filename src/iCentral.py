@@ -1,11 +1,11 @@
-from typing import Any
-from networkx.classes.graph import Graph
-from networkx.classes.graph import Graph
-from src.utils.my_imports import *
-from src.utils.general import *
+from src.utils.typing_utils import *
 from src.utils.component_utils import *
 from src.utils.bfs_utils import *
 from src.utils.dependency_utils import *
+
+from collections import defaultdict, deque
+from typing import Optional
+import copy
 
 
 def iCentral(G: Graph, BC: dict[Node, float], e: Edge) -> dict[Node, float]:
@@ -38,31 +38,32 @@ def iCentral(G: Graph, BC: dict[Node, float], e: Edge) -> dict[Node, float]:
 
         #* We only care about the bicon with our new edge
         bicon_new: Graph = G.subgraph(find_bicon_with_edge(all_bicons, e)).copy() #* B_e'
-        bicon_old: Graph = deepcopy(bicon_new) #* B_e in paper
+        bicon_old: Graph = copy.deepcopy(bicon_new) #* B_e in paper
         bicon_old.remove_edge(v1, v2)
 
         our_articulation_points: set[Node] = all_articulation_points.intersection(bicon_new.nodes)
-        articulation_subgraph_size: dict[Node, int] = find_connected_subgraph_size(G, our_articulation_points, bicon_new.nodes) # type: ignore
+        articulation_subgraph_size: dict[Node, int] = find_connected_subgraph_size(G, our_articulation_points, bicon_new.nodes)
 
         #* Line 4:
-        d1: dict[Node, int] = bfs_distances(bicon_old, v1)
-        d2: dict[Node, int] = bfs_distances(bicon_old, v2)
+        distances_v1: dict[Node, int] = bfs_distances(bicon_old, v1)
+        distances_v2: dict[Node, int] = bfs_distances(bicon_old, v2)
 
         #* Line 7:
-        Q: deque[Node] = deque() #Queue
+        recalculation_queue: deque[Node] = deque() #Queue
         for s in bicon_old.nodes: 
             #* Check if ends of the edge are at different distances from edge endpoints
             #* i.e. if not, then edge would not be used
-            if d1[s] != d2[s]: 
-                Q.append(s)
+            if distances_v1[s] != distances_v2[s]: 
+                recalculation_queue.append(s)
         
         bicon_old_adj: GraphAdj = bicon_old._adj
         bicon_new_adj: GraphAdj = bicon_new._adj
 
-        print(f"recalculation size: {len(Q)}")
+        #* Show number of nodes to recalculate over
+        print(f"Recalculation Size: {len(recalculation_queue)}")
 
         #* Line 10: 
-        for s in Q:
+        for s in recalculation_queue:
             shortest_paths_old, preds_old, ordered_nodes_old = bfs_brandes(bicon_old_adj, s) #* σ_s, P_s
             pair_dependency_old: dict[Node, float] = defaultdict(float) #* δ_sdot
             external_dependency_old: dict[Node, float] = defaultdict(float) #* δ_G_sdot

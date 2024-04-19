@@ -16,8 +16,8 @@ def pick_random_nonedge(G, seed=None):
 
 #* iCentral:
 
-def true_bc(G):
-    return nx.betweenness_centrality(G, normalized=False, endpoints=False)
+def true_bc(G) -> dict[Node, float]:
+    return nx.betweenness_centrality(G, normalized=False, endpoints=False) #type: ignore
 
 def dotest_iCentral(G: Graph, e: Edge):
     #* Arrange
@@ -39,7 +39,7 @@ def dotest_iCentral_p(G: Graph, e: Edge):
     bc_new = true_bc(G2)
 
     #*Act
-    bc_iCentral_p = iCentral_p(G, bc_initial, e)
+    bc_iCentral_p = iCentral_p(G, bc_initial, e, PROCESSES=4)
 
     return bc_new, bc_iCentral_p
 
@@ -51,7 +51,7 @@ def norm(e: tuple[Node, Node]) -> tuple[Node, Node]:
     """
     return (e if e[0] <= e[1] else (e[1], e[0])) 
 
-def true_bce(G):
+def true_bce(G) -> dict[Edge, float]:
     bce = nx.edge_betweenness_centrality(G, normalized=False)
     return {norm(k): v for k, v in bce.items()}
 

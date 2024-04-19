@@ -1,6 +1,5 @@
-from src.utils.my_imports import *
-from src.utils.general import *
-
+from src.utils.typing_utils import *
+from collections import deque, defaultdict
    
 def find_edge_pair_dependencies(G: Graph, s: Node) -> dict[Edge, float]:
     """
@@ -9,9 +8,13 @@ def find_edge_pair_dependencies(G: Graph, s: Node) -> dict[Edge, float]:
     """
     S: deque[Node] = deque() # Stack
     P: dict[Node, list[Node]] = defaultdict(list) #empty list for each W \in V
-    σ: dict[Node, int] = defaultdict(int); σ[s] = 1
-    d: dict[Node, int] = defaultdict(lambda: -1); d[s] = 0
-    Q: deque[Node] = deque((s,)) #Queue
+    σ: dict[Node, int] = defaultdict(int)
+    d: dict[Node, int] = defaultdict(lambda: -1)
+    Q: deque[Node] = deque((s,)) # Queue
+
+    d[s] = 0 #* Set initial values
+    σ[s] = 1
+
     while len(Q):
         v: Node = Q.popleft()
         S.append(v)
@@ -25,10 +28,10 @@ def find_edge_pair_dependencies(G: Graph, s: Node) -> dict[Edge, float]:
                 σ[w] = σ[w] + σ[v]
                 P[w].append(v)
 
-    δ_v = defaultdict(float)
-    δ_e: dict[Edge, float] = {(e if e[0] <= e[1] else (e[1], e[0])): 0.0 for e in G.edges}
+    δ_v: dict[Node, float] = defaultdict(float)
+    δ_e: dict[Edge, float] = defaultdict(float)
 
-    #S returns vertices in non-increasing distance order from s
+    #* S returns vertices in non-increasing distance order from s
     while len(S):
         w: Node = S.pop()
         for v in P[w]:
@@ -38,14 +41,16 @@ def find_edge_pair_dependencies(G: Graph, s: Node) -> dict[Edge, float]:
     return δ_e  
 
 def find_node_pair_dependencies(G: Graph, s: Node) -> dict[Node, float]:
-    """
-    Finds node source dependencies, using Brandes method
-    """
+    """Finds node source dependencies, using Brandes method"""
     S: deque[Node] = deque() # Stack
     P: dict[Node, list[Node]] = defaultdict(list) #empty list for each W \in V
-    σ: dict[Node, int] = defaultdict(int); σ[s] = 1
-    d: dict[Node, int] = defaultdict(lambda: -1); d[s] = 0
-    Q: deque[Node] = deque((s,)) #Queue
+    σ: dict[Node, int] = defaultdict(int)
+    d: dict[Node, int] = defaultdict(lambda: -1)
+    Q: deque[Node] = deque((s,)) # Queue
+
+    d[s] = 0 #* Set initial values
+    σ[s] = 1
+
     while len(Q):
         v: Node = Q.popleft()
         S.append(v)
@@ -59,9 +64,9 @@ def find_node_pair_dependencies(G: Graph, s: Node) -> dict[Node, float]:
                 σ[w] = σ[w] + σ[v]
                 P[w].append(v)
 
-    δ_v = defaultdict(float)
+    δ_v: defaultdict[Node, float] = defaultdict(float)
 
-    #S returns vertices in non-increasing distance order from s
+    #* S returns vertices in non-increasing distance order from s
     while len(S):
         w: Node = S.pop()
         for v in P[w]:

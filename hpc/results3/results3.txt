@@ -1,5 +1,0 @@
-20 procs
-lcc
-
-pypy
-seeded - badly!!!

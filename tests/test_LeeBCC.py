@@ -173,3 +173,29 @@ def test_LeeBCC_new_vertex():
 
     #* Assert
     assert bce_new == approx(bce_LeeBCC)
+
+
+def test_LeeBCC_many_components2():
+    """
+    Test LeeBCC on: Example Biconnected Components Graph from paper (pg_)
+    """
+    #* Arrange
+    G = nx.Graph({
+    9: [10, 11],
+    10: [9,11,1],
+    11: [9, 1],
+    1: [2, 4],
+    6: [4, 7, 20, 21],
+    7:[6, 8],
+    8: [5, 7],
+    4: [1,3,6],
+    2:[1,3],
+    3: [2,4,5],
+    5: [3,8],
+    })
+    e = (4,8)
+    #* Act
+    bce_new, bce_LeeBCC = dotest_LeeBCC(G, e)
+
+    #* Assert
+    assert bce_new == approx(bce_LeeBCC)
