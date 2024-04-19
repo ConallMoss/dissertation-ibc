@@ -67,7 +67,7 @@ prog=
 application="python -m hpc.run_dataset $dataset -r $runs -p $prog"
 
 #! Run options for the application:
-options=">hpc/slurm/$dataset/$name.txt"
+options=">hpc/slurm/slurm_results/$dataset/$name.txt"
 
 #! Work directory (i.e. where the job will run):
 workdir="$SLURM_SUBMIT_DIR/.."  # The value of SLURM_SUBMIT_DIR sets workdir to the directory
