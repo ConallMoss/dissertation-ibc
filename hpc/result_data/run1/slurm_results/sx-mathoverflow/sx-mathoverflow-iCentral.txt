@@ -1,0 +1,49 @@
+2024-04-20 13:34:06.495042
+dataset='sx-mathoverflow'
+prog='iCentral'
+max_runs=1000
+max_secs=40000
+
+graph size: N=24668, E=199851
+Graph read time:
+2.1750482940115035
+
+Run times:
+Recalculation Size: 8863
+2471.898020809982
+Recalculation Size: 13076
+3521.430271680001
+Recalculation Size: 10204
+2736.8863170971163
+Recalculation Size: 0
+26.722619216889143
+Recalculation Size: 5514
+1489.5106864089612
+Recalculation Size: 9910
+2725.314051040914
+Recalculation Size: 12180
+3291.748357497854
+Recalculation Size: 6475
+1752.7060837510508
+Recalculation Size: 15702
+4214.938671818003
+Recalculation Size: 16918
+4624.613555822987
+Recalculation Size: 0
+28.887552221072838
+Recalculation Size: 6457
+1754.0406351189595
+Recalculation Size: 0
+29.65696373791434
+Recalculation Size: 9460
+2594.7216417558957
+Recalculation Size: 8366
+2343.2745622680523
+Recalculation Size: 7542
+2124.8888847669587
+Recalculation Size: 5836
+1597.077638495015
+Recalculation Size: 9653
+2629.38999943994
+Recalculation Size: 6865
+1897.2124293809757

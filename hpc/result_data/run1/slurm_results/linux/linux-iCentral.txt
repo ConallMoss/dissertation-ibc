@@ -1,0 +1,25 @@
+2024-04-20 13:34:04.541277
+dataset='linux'
+prog='iCentral'
+max_runs=1000
+max_secs=40000
+
+graph size: N=30817, E=213735
+Graph read time:
+1.8536374010145664
+
+Run times:
+Recalculation Size: 23696
+10653.481648236979
+Recalculation Size: 22626
+10286.112372264965
+Recalculation Size: 10255
+4599.7723742558155
+Recalculation Size: 5575
+2492.8576923119836
+Recalculation Size: 14987
+6888.209827135084
+Recalculation Size: 9286
+4225.41322979494
+Recalculation Size: 8629
+3844.1022053121123

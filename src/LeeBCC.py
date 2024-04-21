@@ -40,10 +40,9 @@ def LeeBCC(G: Graph, BCe: dict[Edge, float], e: Edge) -> dict[Edge, float]:
     else:
         all_bicons: list[set[Any]] = find_biconnected_components(G)
         recalc_component: set[Any] = find_bicon_with_edge(all_bicons, e) #* Our bicon we are interested in
-        print(f"Recalculation Size: {len(recalc_component)}")
+        print(f"RS: {len(recalc_component)}")
         our_articulation_points: set[Any] = (find_articulation_points(G)).intersection(recalc_component)
         articulation_subgraph_sizes: dict[Node, int] = find_connected_subgraph_size(G, our_articulation_points, recalc_component)
-        print(articulation_subgraph_sizes)
         BCe_updates: dict[Edge, float] = edge_betweenness(G.subgraph(recalc_component).copy(), articulation_subgraph_sizes)
         BCe.update(BCe_updates)
 

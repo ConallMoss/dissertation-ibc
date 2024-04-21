@@ -1,0 +1,14 @@
+2024-04-21 14:27:01.551417
+dataset='slashdot-zoo'
+prog='iCentral'
+max_runs=1000
+max_secs=40000
+
+graph size: N=48168, E=436497
+Subgraphing: bcc
+Graph read time:
+382.7317249859916
+
+Run times:
+RS: 27439
+24994.432659626007

@@ -1,0 +1,241 @@
+2024-04-20 13:34:04.539067
+dataset='chess'
+prog='LeeBCC'
+max_runs=1000
+max_secs=40000
+
+graph size: N=7115, E=55779
+Graph read time:
+0.4654434190597385
+
+Run times:
+Recalculation Size: 6250
+354.5688603990711
+Recalculation Size: 6250
+358.91462245513685
+Recalculation Size: 6250
+359.2993993049022
+Recalculation Size: 6250
+358.543813804863
+Recalculation Size: 6250
+359.88944383198395
+Recalculation Size: 6250
+360.7541830430273
+Recalculation Size: 6250
+360.39220148697495
+Recalculation Size: 6250
+359.67079890309833
+Recalculation Size: 6250
+360.011196190957
+Recalculation Size: 6250
+359.863244531909
+Recalculation Size: 6250
+359.87060884200037
+Recalculation Size: 6250
+359.3278918180149
+Recalculation Size: 6250
+360.0258935599122
+Recalculation Size: 6250
+360.0433407649398
+Recalculation Size: 6250
+360.0132922199555
+Recalculation Size: 6250
+360.33585294894874
+Recalculation Size: 6250
+361.0490026380867
+Recalculation Size: 6250
+360.20034568803385
+Recalculation Size: 6250
+343.5252802220639
+Recalculation Size: 6250
+343.00648035504855
+Recalculation Size: 6250
+342.570494446205
+Recalculation Size: 6250
+347.6345331191551
+Recalculation Size: 6250
+354.40276965289377
+Recalculation Size: 6250
+366.7454232110176
+Recalculation Size: 6250
+364.92847930197604
+Recalculation Size: 6250
+356.52283136104234
+Recalculation Size: 6250
+365.23740949109197
+Recalculation Size: 6250
+354.275789455045
+Recalculation Size: 6250
+351.33748562494293
+Recalculation Size: 6250
+361.1382553500589
+Recalculation Size: 6250
+354.5544450059533
+Recalculation Size: 6250
+360.49574555293657
+Recalculation Size: 6250
+362.1235514858272
+Recalculation Size: 6250
+359.6586353192106
+Recalculation Size: 6250
+360.21433127089404
+Recalculation Size: 6250
+348.2848345451057
+Recalculation Size: 6250
+352.480388679076
+Recalculation Size: 6250
+346.0698875261005
+Recalculation Size: 6250
+354.94128030189313
+Recalculation Size: 6250
+354.4347195941955
+Recalculation Size: 6250
+345.1676720569376
+Recalculation Size: 6250
+345.7709120789077
+Recalculation Size: 6250
+342.468699373072
+Recalculation Size: 6250
+351.75960895814933
+Recalculation Size: 6250
+361.893342011841
+Recalculation Size: 6250
+375.20520401000977
+Recalculation Size: 6250
+367.2324392311275
+Recalculation Size: 6250
+354.7381136799231
+Recalculation Size: 6250
+365.44735703687184
+Recalculation Size: 6250
+344.44400268699974
+Recalculation Size: 6250
+343.9557300549932
+Recalculation Size: 6250
+342.9163233260624
+Recalculation Size: 6250
+343.30171470879577
+Recalculation Size: 6250
+343.01862617302686
+Recalculation Size: 6250
+343.56086338707246
+Recalculation Size: 6250
+343.87310871481895
+Recalculation Size: 6250
+343.4790897460189
+Recalculation Size: 6250
+343.72605094802566
+Recalculation Size: 6250
+345.09260356705636
+Recalculation Size: 6250
+342.71290662605315
+Recalculation Size: 6250
+342.3122907120269
+Recalculation Size: 6250
+342.64154877793044
+Recalculation Size: 6250
+342.6816646901425
+Recalculation Size: 6250
+343.9456448450219
+Recalculation Size: 6250
+342.03791836299933
+Recalculation Size: 6250
+343.5115101360716
+Recalculation Size: 6250
+344.6028912370093
+Recalculation Size: 6250
+345.6308259489015
+Recalculation Size: 6250
+345.78795165289193
+Recalculation Size: 6250
+346.3272917259019
+Recalculation Size: 6250
+346.6703868859913
+Recalculation Size: 6250
+348.32301963306963
+Recalculation Size: 6250
+347.19353994191624
+Recalculation Size: 6250
+346.67150094313547
+Recalculation Size: 6250
+346.2037162100896
+Recalculation Size: 6250
+346.11008157394826
+Recalculation Size: 6250
+345.4494108748622
+Recalculation Size: 6250
+349.9952738438733
+Recalculation Size: 6250
+348.4707117860671
+Recalculation Size: 6250
+347.7840903007891
+Recalculation Size: 6250
+346.3761749579571
+Recalculation Size: 6250
+346.7568597320933
+Recalculation Size: 6250
+345.93333788518794
+Recalculation Size: 6250
+346.0778083829209
+Recalculation Size: 6250
+344.6195019369479
+Recalculation Size: 6250
+344.2871852160897
+Recalculation Size: 6250
+344.60824751202017
+Recalculation Size: 6250
+345.440774586983
+Recalculation Size: 6250
+347.64044532505795
+Recalculation Size: 6250
+342.10189726785757
+Recalculation Size: 6250
+347.71804655413143
+Recalculation Size: 6250
+348.302587646991
+Recalculation Size: 6250
+346.9560758750886
+Recalculation Size: 6250
+345.7058912620414
+Recalculation Size: 6250
+345.41763844387606
+Recalculation Size: 6250
+346.6796184221748
+Recalculation Size: 6250
+347.67180188093334
+Recalculation Size: 6250
+347.2654722458683
+Recalculation Size: 6250
+346.3038265861105
+Recalculation Size: 6250
+346.0320183758158
+Recalculation Size: 6250
+345.6138168750331
+Recalculation Size: 6250
+346.93544519809075
+Recalculation Size: 6250
+343.3416890371591
+Recalculation Size: 6250
+348.4042792059481
+Recalculation Size: 6250
+349.6118490018416
+Recalculation Size: 6250
+346.30276690400206
+Recalculation Size: 6250
+347.9324291679077
+Recalculation Size: 6250
+346.8441845669877
+Recalculation Size: 6250
+346.80408205697313
+Recalculation Size: 6250
+345.52188161807135
+Recalculation Size: 6250
+345.5088923240546
+Recalculation Size: 6250
+345.55602327920496
+Recalculation Size: 6250
+345.08210215182044
+Recalculation Size: 6250
+345.00779962399974
+Recalculation Size: 6250
+339.78263900079764

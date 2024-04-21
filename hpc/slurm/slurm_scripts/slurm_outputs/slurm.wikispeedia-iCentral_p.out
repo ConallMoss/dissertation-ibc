@@ -1,0 +1,42 @@
+Loading rhel8/default-icl
+  Loading requirement: dot rhel8/slurm singularity/current rhel8/global
+    cuda/11.4 vgl/2.5.1/64 intel-oneapi-compilers/2022.1.0/gcc/b6zld2mz
+    intel-oneapi-mpi/2021.6.0/intel/guxuvcpm
+Changed directory to /rds/user/cm2121/hpc-work/dissertation-ibc.
+
+JobID: 51269154
+======
+Time: Sun Apr 21 14:42:52 BST 2024
+Running on master node: cpu-q-348
+Current directory: /rds/user/cm2121/hpc-work/dissertation-ibc
+
+Nodes allocated:
+================
+cpu-q-348
+
+numtasks=1, numnodes=1, mpi_tasks_per_node=1 (OMP_NUM_THREADS=1)
+
+Executing command:
+==================
+python -m hpc.run_dataset wikispeedia -r 1000 -p iCentral_p >hpc/slurm/slurm_results/wikispeedia/wikispeedia-iCentral_p.txt
+
+flatpak: symbol lookup error: /lib64/libk5crypto.so.3: undefined symbol: EVP_KDF_ctrl, version OPENSSL_1_1_1b
+Traceback (most recent call last):
+  File "/rds/user/cm2121/hpc-work/dissertation-ibc/src/iCentral_p.py", line 64, in iCentral_p
+    bc_update = result_queue.get(block=True, timeout=60*60) #* Blocks until data available in queue, or timeouts after an hour of waiting as safety measure
+  File "/home/cm2121/.conda/envs/main/lib/python3.10/multiprocessing/queues.py", line 114, in get
+    raise Empty
+_queue.Empty
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/cm2121/.conda/envs/main/lib/python3.10/runpy.py", line 196, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File "/home/cm2121/.conda/envs/main/lib/python3.10/runpy.py", line 86, in _run_code
+    exec(code, run_globals)
+  File "/rds/user/cm2121/hpc-work/dissertation-ibc/hpc/run_dataset.py", line 108, in <module>
+    x = func(G, initial, e, PROCESSES=20)
+  File "/rds/user/cm2121/hpc-work/dissertation-ibc/src/iCentral_p.py", line 68, in iCentral_p
+    except mp.queue.Empty:
+AttributeError: module 'multiprocessing' has no attribute 'queue'. Did you mean: 'Queue'?

@@ -1,0 +1,203 @@
+2024-04-20 13:34:06.262923
+dataset='elec'
+prog='LeeBCC'
+max_runs=1000
+max_secs=40000
+
+graph size: N=7066, E=100721
+Graph read time:
+0.9363147330004722
+
+Run times:
+Recalculation Size: 4786
+547.5631108521484
+Recalculation Size: 4786
+550.7040816838853
+Recalculation Size: 4786
+546.3788755468559
+Recalculation Size: 4786
+534.9148102127947
+Recalculation Size: 4786
+527.5692225580569
+Recalculation Size: 4786
+527.9736245980021
+Recalculation Size: 4786
+525.9695603831206
+Recalculation Size: 4786
+526.3045983898919
+Recalculation Size: 4786
+525.2674408250023
+Recalculation Size: 4786
+524.1811171381269
+Recalculation Size: 4786
+519.311994986143
+Recalculation Size: 4786
+523.9321201730054
+Recalculation Size: 4786
+527.3130060040858
+Recalculation Size: 4786
+528.0893032189924
+Recalculation Size: 4786
+531.5683235828765
+Recalculation Size: 4786
+531.6495589429978
+Recalculation Size: 4786
+532.9243540649768
+Recalculation Size: 4786
+527.3376709949225
+Recalculation Size: 4786
+531.4235653178766
+Recalculation Size: 4786
+525.0016030620318
+Recalculation Size: 4786
+524.8903823900037
+Recalculation Size: 4786
+525.7721502089407
+Recalculation Size: 4786
+517.6869032150134
+Recalculation Size: 4786
+516.2071766909212
+Recalculation Size: 4786
+517.8211932908744
+Recalculation Size: 4786
+516.9447890480515
+Recalculation Size: 4786
+521.7646543087903
+Recalculation Size: 4786
+518.6892078248784
+Recalculation Size: 4786
+518.8497599519324
+Recalculation Size: 4786
+518.0051769921556
+Recalculation Size: 4786
+514.2958195079118
+Recalculation Size: 4786
+516.5319682150148
+Recalculation Size: 4786
+519.3576247710735
+Recalculation Size: 4786
+520.4388700139243
+Recalculation Size: 4786
+516.5151839798782
+Recalculation Size: 4786
+515.8449210829567
+Recalculation Size: 4786
+509.227538817795
+Recalculation Size: 4786
+505.35584790678695
+Recalculation Size: 4786
+503.13135959091596
+Recalculation Size: 4786
+476.3926724609919
+Recalculation Size: 4786
+361.44631359004416
+Recalculation Size: 4786
+356.3595042459201
+Recalculation Size: 4786
+341.05873000994325
+Recalculation Size: 4786
+341.6473416858353
+Recalculation Size: 4786
+340.95810743793845
+Recalculation Size: 4786
+341.5476435800083
+Recalculation Size: 4786
+341.1603576429188
+Recalculation Size: 4786
+341.32069243490696
+Recalculation Size: 4786
+343.17547558806837
+Recalculation Size: 4786
+341.37134203105234
+Recalculation Size: 4786
+339.2286011830438
+Recalculation Size: 4786
+339.11962855397724
+Recalculation Size: 4786
+342.2182247841265
+Recalculation Size: 4786
+339.1167798980605
+Recalculation Size: 4786
+340.2568172211759
+Recalculation Size: 4786
+339.3397084660828
+Recalculation Size: 4786
+340.4111828720197
+Recalculation Size: 4786
+340.8381585769821
+Recalculation Size: 4786
+344.21954681002535
+Recalculation Size: 4786
+338.737496974878
+Recalculation Size: 4786
+339.44857148081064
+Recalculation Size: 4786
+339.632231567055
+Recalculation Size: 4786
+344.3444956901949
+Recalculation Size: 4786
+343.35894937301055
+Recalculation Size: 4786
+338.8991958950646
+Recalculation Size: 4786
+339.21775289205834
+Recalculation Size: 4786
+337.6636354071088
+Recalculation Size: 4786
+339.9177243320737
+Recalculation Size: 4786
+339.39496249705553
+Recalculation Size: 4786
+341.7859898649622
+Recalculation Size: 4786
+340.56053581507877
+Recalculation Size: 4786
+340.9117359640077
+Recalculation Size: 4786
+342.2779772959184
+Recalculation Size: 4786
+341.05364347202703
+Recalculation Size: 4786
+340.2274381709285
+Recalculation Size: 4786
+340.2385762119666
+Recalculation Size: 4786
+338.7360286798794
+Recalculation Size: 4786
+343.2581846381072
+Recalculation Size: 4786
+340.0819785299245
+Recalculation Size: 4786
+339.3197727368679
+Recalculation Size: 4786
+338.3887857340742
+Recalculation Size: 4786
+341.382893624017
+Recalculation Size: 4786
+338.6417324519716
+Recalculation Size: 4786
+342.74080944107845
+Recalculation Size: 4786
+341.2778727929108
+Recalculation Size: 4786
+342.6630041960161
+Recalculation Size: 4786
+339.72912129899487
+Recalculation Size: 4786
+339.4009926300496
+Recalculation Size: 4786
+338.03963605011813
+Recalculation Size: 4786
+340.84701062901877
+Recalculation Size: 4786
+341.9491764740087
+Recalculation Size: 4786
+345.245502528036
+Recalculation Size: 4786
+339.3953668749891
+Recalculation Size: 4786
+343.89311653305776
+Recalculation Size: 4786
+342.5079282200895
+Recalculation Size: 4786
+339.87182919005863

@@ -1,0 +1,37 @@
+2024-04-20 13:34:07.620428
+dataset='slashdot-threads'
+prog='LeeBCC'
+max_runs=1000
+max_secs=40000
+
+graph size: N=51083, E=117378
+Graph read time:
+1.786142777884379
+
+Run times:
+Recalculation Size: 19506
+4385.506828288082
+Recalculation Size: 19506
+4470.584090508986
+Recalculation Size: 19506
+4395.706262508174
+Recalculation Size: 19506
+4264.214347669156
+Recalculation Size: 19506
+3910.3953132489696
+Recalculation Size: 19506
+2573.3699654459488
+Recalculation Size: 19506
+2443.7321437359788
+Recalculation Size: 19506
+2387.209562971024
+Recalculation Size: 19506
+2756.2494616408367
+Recalculation Size: 19506
+2711.436305579962
+Recalculation Size: 19506
+2475.6431387281045
+Recalculation Size: 19506
+2535.833268594928
+Recalculation Size: 19506
+2493.435761414934

@@ -1,0 +1,35 @@
+2024-04-20 13:34:06.495039
+dataset='topology'
+prog='iCentral'
+max_runs=1000
+max_secs=40000
+
+graph size: N=34761, E=107720
+Graph read time:
+1.2285414640791714
+
+Run times:
+Recalculation Size: 22453
+4831.369185376912
+Recalculation Size: 13634
+2957.778507332783
+Recalculation Size: 21386
+4624.856276926119
+Recalculation Size: 22938
+4969.784735935973
+Recalculation Size: 6174
+1348.2240985089447
+Recalculation Size: 21623
+4683.651401862036
+Recalculation Size: 11337
+2502.83732054499
+Recalculation Size: 6500
+1447.1478948548902
+Recalculation Size: 14350
+3160.021353055956
+Recalculation Size: 8919
+2018.990806962829
+Recalculation Size: 19146
+4281.142252298072
+Recalculation Size: 11665
+2608.5845518449787

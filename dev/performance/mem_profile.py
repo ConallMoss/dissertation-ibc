@@ -40,6 +40,7 @@ def get_bc():
 
 
 if __name__ == "__main__":
-    print(memory_usage((get_bc), include_children=True, multiprocess=True, interval=1, timestamps=True))
+    print(max(memory_usage((get_bc), include_children=True, multiprocess=True, interval=1)))
+    
 
 

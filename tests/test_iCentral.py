@@ -19,7 +19,7 @@ def test_iCentral_basic():
 
 def test_iCentral_from_paper():
     """
-    Test iCentral on: Example BC Graph from paper (pg_)
+    Test iCentral on: Example BC Graph from iCentral paper (p661)
     """
     #* Arrange
     G = nx.Graph()
@@ -34,7 +34,7 @@ def test_iCentral_from_paper():
 
 def test_iCentral_many_components():
     """
-    Test iCentral on: Example Biconnected Components Graph from paper (pg_)
+    Test iCentral on: Example Biconnected Components Graph from iCentral paper (pg662)
     """
     #* Arrange
     G = nx.Graph({
@@ -128,21 +128,6 @@ def test_iCentral_randEdge_ER256():
     #* Assert
     assert bc_new == approx(bc_iCentral)
 
-# def test_iCentral_randEdge_ER1024():
-#     """
-#     Test iCentral on: Erdos-Reyni (n=1024, p=1/32) graph, with randomly generated insert edge
-#     """
-#     #* Arrange
-#     G =  nx.erdos_renyi_graph(1024, 1/32, seed=123, directed=False)
-#     e = pick_random_nonedge(G, seed=42)
-    
-#     #* Act
-#     bc_new, bc_iCentral = dotest_iCentral(G, e)
-#     print(bc_iCentral)
-
-#     #* Assert
-#     assert bc_new == approx(bc_iCentral)
-
 def test_iCentral_bridge_edge():
     """
     Test iCentral on adding new bridge edge between disconnected components
@@ -172,3 +157,21 @@ def test_iCentral_new_vertex():
 
     #* Assert
     assert bc_new == approx(bc_iCentral)
+
+def test_iCentral_all_nxsocial_karate():
+    """
+    Test iCentral on: nx social: karate club graph, across all edges
+    """
+    #* Arrange
+    G_base = nx.karate_club_graph()
+    all_edges = list(G.edges())
+    
+    for e in all_edges:
+        G = G_base.copy()
+        G.remove_edge(*e)
+        #* Act
+        bc_new, bc_iCentral = dotest_iCentral(G, e)
+        print(bc_iCentral)
+
+        #* Assert
+        assert bc_new == approx(bc_iCentral)

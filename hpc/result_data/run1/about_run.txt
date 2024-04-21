@@ -1,0 +1,4 @@
+- 1000 max runs
+- LCC
+- had issues with parallel run running all of them
+    - have now added max 1hr timeout to parallel

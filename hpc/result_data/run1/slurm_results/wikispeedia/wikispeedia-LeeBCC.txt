@@ -1,0 +1,551 @@
+2024-04-20 13:34:05.449435
+dataset='wikispeedia'
+prog='LeeBCC'
+max_runs=1000
+max_secs=40000
+
+graph size: N=4179, E=50500
+Graph read time:
+0.8002885589376092
+
+Run times:
+Recalculation Size: 4105
+151.3500672520604
+Recalculation Size: 4105
+149.693968083011
+Recalculation Size: 4105
+149.84402781305835
+Recalculation Size: 4105
+152.5484324800782
+Recalculation Size: 4105
+152.43030308792368
+Recalculation Size: 4105
+152.80693328497
+Recalculation Size: 4105
+151.41525744693354
+Recalculation Size: 4105
+154.0185364780482
+Recalculation Size: 4105
+151.5186843071133
+Recalculation Size: 4105
+154.17215714999475
+Recalculation Size: 4105
+152.92855618195608
+Recalculation Size: 4105
+154.42160435603
+Recalculation Size: 4105
+152.1165361739695
+Recalculation Size: 4105
+152.15469334018417
+Recalculation Size: 4105
+150.14379159291275
+Recalculation Size: 4105
+146.99925301386975
+Recalculation Size: 4105
+145.98521636193618
+Recalculation Size: 4105
+147.0078945469577
+Recalculation Size: 4105
+146.04735458595678
+Recalculation Size: 4105
+148.0228975159116
+Recalculation Size: 4105
+146.5049832300283
+Recalculation Size: 4105
+147.8701040770393
+Recalculation Size: 4105
+146.23451351583935
+Recalculation Size: 4105
+147.38674500398338
+Recalculation Size: 4105
+146.4489383609034
+Recalculation Size: 4105
+146.96585150482133
+Recalculation Size: 4105
+146.5036141499877
+Recalculation Size: 4105
+148.19794333796017
+Recalculation Size: 4105
+147.1322288371157
+Recalculation Size: 4105
+147.57505741296336
+Recalculation Size: 4105
+146.61933126300573
+Recalculation Size: 4105
+147.28136850101873
+Recalculation Size: 4105
+146.47197217005305
+Recalculation Size: 4105
+147.21247243019752
+Recalculation Size: 4105
+146.76223144098185
+Recalculation Size: 4105
+147.64240276417695
+Recalculation Size: 4105
+146.4152069319971
+Recalculation Size: 4105
+147.9005208190065
+Recalculation Size: 4105
+146.6489956160076
+Recalculation Size: 4105
+148.5616539400071
+Recalculation Size: 4105
+146.9257050808519
+Recalculation Size: 4105
+148.0086135121528
+Recalculation Size: 4105
+146.78564906003885
+Recalculation Size: 4105
+148.22691536322236
+Recalculation Size: 4105
+148.53129455493763
+Recalculation Size: 4105
+148.35639068717137
+Recalculation Size: 4105
+147.78620332595892
+Recalculation Size: 4105
+147.9894785610959
+Recalculation Size: 4105
+147.58832918503322
+Recalculation Size: 4105
+147.3652534498833
+Recalculation Size: 4105
+148.26920532388613
+Recalculation Size: 4105
+148.28175614518113
+Recalculation Size: 4105
+148.13472724310122
+Recalculation Size: 4105
+149.19195410911925
+Recalculation Size: 4105
+148.88392216316424
+Recalculation Size: 4105
+148.9973041098565
+Recalculation Size: 4105
+149.26882425090298
+Recalculation Size: 4105
+149.78234999999404
+Recalculation Size: 4105
+147.9429001880344
+Recalculation Size: 4105
+149.3900870778598
+Recalculation Size: 4105
+147.80528175085783
+Recalculation Size: 4105
+147.6718324010726
+Recalculation Size: 4105
+147.19574436894618
+Recalculation Size: 4105
+147.25118858693168
+Recalculation Size: 4105
+147.88683442398906
+Recalculation Size: 4105
+146.98104702215642
+Recalculation Size: 4105
+147.08361291512847
+Recalculation Size: 4105
+147.5639006239362
+Recalculation Size: 4105
+147.229153590044
+Recalculation Size: 4105
+147.62163813598454
+Recalculation Size: 4105
+147.71896254899912
+Recalculation Size: 4105
+147.64774987101555
+Recalculation Size: 4105
+147.8619943719823
+Recalculation Size: 4105
+147.83580133202486
+Recalculation Size: 4105
+147.81080792401917
+Recalculation Size: 4105
+147.7699460790027
+Recalculation Size: 4105
+148.23292839806527
+Recalculation Size: 4105
+148.38252588920295
+Recalculation Size: 4105
+147.79312496702187
+Recalculation Size: 4105
+148.03674099594355
+Recalculation Size: 4105
+148.29023659788072
+Recalculation Size: 4105
+148.45244092307985
+Recalculation Size: 4105
+148.38999317912385
+Recalculation Size: 4105
+147.88560685305856
+Recalculation Size: 4105
+147.4776408530306
+Recalculation Size: 4105
+147.89943158300593
+Recalculation Size: 4105
+146.97111672000028
+Recalculation Size: 4105
+146.4920220731292
+Recalculation Size: 4105
+146.0628985951189
+Recalculation Size: 4105
+146.7131723528728
+Recalculation Size: 4105
+147.02632169006392
+Recalculation Size: 4105
+147.11197193479165
+Recalculation Size: 4105
+147.00157418102026
+Recalculation Size: 4105
+146.24614275898784
+Recalculation Size: 4105
+146.5841719720047
+Recalculation Size: 4105
+146.1523801428266
+Recalculation Size: 4105
+146.2451387711335
+Recalculation Size: 4105
+146.95476012700237
+Recalculation Size: 4105
+146.7471215298865
+Recalculation Size: 4105
+146.37397349905223
+Recalculation Size: 4105
+146.45296010910533
+Recalculation Size: 4105
+147.62002859800123
+Recalculation Size: 4105
+147.64795355685055
+Recalculation Size: 4105
+147.8178656809032
+Recalculation Size: 4105
+147.6534728400875
+Recalculation Size: 4105
+147.6965620459523
+Recalculation Size: 4105
+147.3363234049175
+Recalculation Size: 4105
+146.97769884415902
+Recalculation Size: 4105
+147.12909396085888
+Recalculation Size: 4105
+147.57595275295898
+Recalculation Size: 4105
+147.2908142239321
+Recalculation Size: 4105
+147.71515261381865
+Recalculation Size: 4105
+147.3076097550802
+Recalculation Size: 4105
+147.1464388880413
+Recalculation Size: 4105
+147.82082592509687
+Recalculation Size: 4105
+148.0668226419948
+Recalculation Size: 4105
+147.87516428390518
+Recalculation Size: 4105
+147.7314647079911
+Recalculation Size: 4105
+147.31633249507286
+Recalculation Size: 4105
+147.52446583798155
+Recalculation Size: 4105
+149.69692897005007
+Recalculation Size: 4105
+147.86814232892357
+Recalculation Size: 4105
+149.11971458490007
+Recalculation Size: 4105
+148.18926430493593
+Recalculation Size: 4105
+148.860303923022
+Recalculation Size: 4105
+148.24762338818982
+Recalculation Size: 4105
+149.21210087114014
+Recalculation Size: 4105
+148.2832277349662
+Recalculation Size: 4105
+147.92517277714796
+Recalculation Size: 4105
+146.83654563012533
+Recalculation Size: 4105
+147.95350998803042
+Recalculation Size: 4105
+147.72298424108885
+Recalculation Size: 4105
+146.87210925878026
+Recalculation Size: 4105
+147.13741328613833
+Recalculation Size: 4105
+146.96230714791454
+Recalculation Size: 4105
+147.2065060569439
+Recalculation Size: 4105
+147.2623623230029
+Recalculation Size: 4105
+146.5817172699608
+Recalculation Size: 4105
+147.29116808599792
+Recalculation Size: 4105
+146.971503773937
+Recalculation Size: 4105
+147.02467120205984
+Recalculation Size: 4105
+147.8503243289888
+Recalculation Size: 4105
+147.23686193791218
+Recalculation Size: 4105
+147.14941614307463
+Recalculation Size: 4105
+147.01029069605283
+Recalculation Size: 4105
+147.26714759296738
+Recalculation Size: 4105
+147.28918152605183
+Recalculation Size: 4105
+147.19364706194028
+Recalculation Size: 4105
+146.889230807079
+Recalculation Size: 4105
+146.40238640992902
+Recalculation Size: 4105
+146.52547398000024
+Recalculation Size: 4105
+147.27322166389786
+Recalculation Size: 4105
+146.7818443030119
+Recalculation Size: 4105
+146.87388108787127
+Recalculation Size: 4105
+146.9579060159158
+Recalculation Size: 4105
+147.54141198005527
+Recalculation Size: 4105
+146.89789462601766
+Recalculation Size: 4105
+147.25462683010846
+Recalculation Size: 4105
+147.357838279102
+Recalculation Size: 4105
+149.50396011793055
+Recalculation Size: 4105
+149.31421866384335
+Recalculation Size: 4105
+149.917562474031
+Recalculation Size: 4105
+148.5037982359063
+Recalculation Size: 4105
+148.40291261393577
+Recalculation Size: 4105
+150.3798244020436
+Recalculation Size: 4105
+148.57220578286797
+Recalculation Size: 4105
+149.8595189678017
+Recalculation Size: 4105
+149.984840355115
+Recalculation Size: 4105
+149.41948300716467
+Recalculation Size: 4105
+149.96427830704488
+Recalculation Size: 4105
+148.97221186989918
+Recalculation Size: 4105
+148.11727864597924
+Recalculation Size: 4105
+148.26806823303923
+Recalculation Size: 4105
+146.7009653430432
+Recalculation Size: 4105
+146.99426024407148
+Recalculation Size: 4105
+146.49106163391843
+Recalculation Size: 4105
+146.9244904750958
+Recalculation Size: 4105
+146.97705715498887
+Recalculation Size: 4105
+146.9786980340723
+Recalculation Size: 4105
+148.08918625093065
+Recalculation Size: 4105
+148.12417835206725
+Recalculation Size: 4105
+148.43976494902745
+Recalculation Size: 4105
+148.30644142185338
+Recalculation Size: 4105
+148.05156779615209
+Recalculation Size: 4105
+148.37994855595753
+Recalculation Size: 4105
+149.4858486780431
+Recalculation Size: 4105
+147.99632318597287
+Recalculation Size: 4105
+148.13825924694538
+Recalculation Size: 4105
+147.76183263980784
+Recalculation Size: 4105
+149.182196296053
+Recalculation Size: 4105
+147.37564002210274
+Recalculation Size: 4105
+148.46150506311096
+Recalculation Size: 4105
+148.60257587209344
+Recalculation Size: 4105
+148.32091002212837
+Recalculation Size: 4105
+147.55772848497145
+Recalculation Size: 4105
+146.9267139621079
+Recalculation Size: 4105
+146.8708078658674
+Recalculation Size: 4105
+146.63427564199083
+Recalculation Size: 4105
+146.84797152504325
+Recalculation Size: 4105
+146.4193918821402
+Recalculation Size: 4105
+146.23032463993877
+Recalculation Size: 4105
+145.87623841897584
+Recalculation Size: 4105
+146.16814588103443
+Recalculation Size: 4105
+146.95718837203458
+Recalculation Size: 4105
+147.4922548281029
+Recalculation Size: 4105
+147.52482594898902
+Recalculation Size: 4105
+147.83053870801814
+Recalculation Size: 4105
+147.3923308479134
+Recalculation Size: 4105
+147.20387075701728
+Recalculation Size: 4105
+146.58425386995077
+Recalculation Size: 4105
+148.88828591210768
+Recalculation Size: 4105
+148.77854839502834
+Recalculation Size: 4105
+147.79022112092935
+Recalculation Size: 4105
+147.70279471809044
+Recalculation Size: 4105
+147.4261607711669
+Recalculation Size: 4105
+147.11324616405182
+Recalculation Size: 4105
+148.41557763889432
+Recalculation Size: 4105
+147.3917622868903
+Recalculation Size: 4105
+147.4243199680932
+Recalculation Size: 4105
+148.0088135220576
+Recalculation Size: 4105
+148.12451159604825
+Recalculation Size: 4105
+147.09776927297935
+Recalculation Size: 4105
+146.74128897092305
+Recalculation Size: 4105
+146.7768190810457
+Recalculation Size: 4105
+146.6385803730227
+Recalculation Size: 4105
+146.96147138997912
+Recalculation Size: 4105
+147.9571944461204
+Recalculation Size: 4105
+148.04593550693244
+Recalculation Size: 4105
+147.61721303104423
+Recalculation Size: 4105
+148.12249095807783
+Recalculation Size: 4105
+148.20274876407348
+Recalculation Size: 4105
+147.7214873789344
+Recalculation Size: 4105
+148.62942670402117
+Recalculation Size: 4105
+147.15740207210183
+Recalculation Size: 4105
+148.7576931458898
+Recalculation Size: 4105
+148.0119381819386
+Recalculation Size: 4105
+147.8579431970138
+Recalculation Size: 4105
+148.75414551002905
+Recalculation Size: 4105
+148.1682579049375
+Recalculation Size: 4105
+148.92678778688423
+Recalculation Size: 4105
+147.53857287717983
+Recalculation Size: 4105
+148.05087953805923
+Recalculation Size: 4105
+147.00803752290085
+Recalculation Size: 4105
+147.74368694098666
+Recalculation Size: 4105
+147.1415179639589
+Recalculation Size: 4105
+148.03878783807158
+Recalculation Size: 4105
+147.18674634001218
+Recalculation Size: 4105
+147.79384974902496
+Recalculation Size: 4105
+147.42046578298323
+Recalculation Size: 4105
+147.5856185220182
+Recalculation Size: 4105
+147.73191506182775
+Recalculation Size: 4105
+148.2121842331253
+Recalculation Size: 4105
+147.08283276902512
+Recalculation Size: 4105
+148.24184486689046
+Recalculation Size: 4105
+148.22957547893748
+Recalculation Size: 4105
+148.4965736081358
+Recalculation Size: 4105
+147.57155987713486
+Recalculation Size: 4105
+148.33290992910042
+Recalculation Size: 4105
+147.7820333901327
+Recalculation Size: 4105
+148.4974987679161
+Recalculation Size: 4105
+147.50587439211085
+Recalculation Size: 4105
+148.35097361216322
+Recalculation Size: 4105
+147.21242407080717
+Recalculation Size: 4105
+148.93875335808843
+Recalculation Size: 4105
+148.2064601299353
+Recalculation Size: 4105
+147.78797190194018
+Recalculation Size: 4105
+147.099704220891
+Recalculation Size: 4105
+147.99756516190246
+Recalculation Size: 4105
+147.55813016509637
+Recalculation Size: 4105
+147.57402674201876

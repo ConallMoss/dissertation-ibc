@@ -37,6 +37,8 @@ def iCentral_p(G: Graph, BC: dict[Node, float], e: Edge, PROCESSES: int) -> dict
         if distances_v1[s] != distances_v2[s]: 
              recalculation_queue.put(s)
 
+    print(f"RS: {recalculation_queue.qsize()}")
+
     #* Undefault the dict - used for testing when a default dict is passed in
     for n in G.nodes:
         if n not in BC:
@@ -49,17 +51,30 @@ def iCentral_p(G: Graph, BC: dict[Node, float], e: Edge, PROCESSES: int) -> dict
     result_queue: mp.Queue = mp.Queue() #* Threadsafe queue for main thread to read results from
 
     #* Spawn all processes
+    workers = []
     for _ in range(PROCESSES-1):
         p: mp.Process = mp.Process(target=run, args=(recalculation_queue, result_queue, resources))
         p.start()
+        workers.append(p)
 
     #* We require all processes to have finished their work (which can happen in any order)
     #* Handle dictionary updates on main thread
-    for _ in range(PROCESSES-1): 
-        bc_update = result_queue.get(block=True) #* Blocks until data available in queue
-        for k, v in bc_update.items():
-            if v != 0:
-                BC[k] += v
+    try:
+        for _ in range(PROCESSES-1): 
+            bc_update = result_queue.get(block=True, timeout=60*60) #* Blocks until data available in queue, or timeouts after an hour of waiting as safety measure
+            for k, v in bc_update.items():
+                if v != 0:
+                    BC[k] += v
+    except mp.queue.Empty:
+        print("Queue get timeout exceeded, ignore result")
+
+    for worker in workers:
+        worker.join()
+
+    recalculation_queue.close()
+    result_queue.close()
+    recalculation_queue.join_thread()
+    result_queue.join_thread()
         
     return BC
  

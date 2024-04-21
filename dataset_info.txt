@@ -1,0 +1,33 @@
+Graph: chess
+Nodes: 7,301
+Edges: 55,899
+LCC:
+Nodes: 7,115
+Edges: 55,779
+BCC:
+Nodes: 6,250
+Edges: 54,884
+Diamteter: 13
+
+Graph: ego-facebook
+Nodes: 2,888
+Edges: 2,981
+LCC:
+Nodes: 2,888
+Edges: 2,981
+BCC:
+Nodes: 69
+Edges: 140
+Diamteter: 9
+
+Graph: elec
+Nodes: 7,118
+Edges: 100,751
+LCC:
+Nodes: 7,066
+Edges: 100,721
+BCC:
+Nodes: 4,786
+Edges: 98,441
+Diamteter: 7
+

@@ -1,0 +1,2011 @@
+2024-04-20 13:34:04.541241
+dataset='facebook-combined'
+prog='iCentral'
+max_runs=1000
+max_secs=40000
+
+graph size: N=4039, E=88234
+Graph read time:
+0.5558348461054265
+
+Run times:
+Recalculation Size: 88
+5.745680801104754
+Recalculation Size: 731
+36.77449852600694
+Recalculation Size: 782
+39.33704504277557
+Recalculation Size: 481
+23.966929798945785
+Recalculation Size: 73
+4.772782749962062
+Recalculation Size: 167
+9.28602611203678
+Recalculation Size: 61
+4.0025415199343115
+Recalculation Size: 35
+2.691291459137574
+Recalculation Size: 126
+7.406440609833226
+Recalculation Size: 87
+5.483566673938185
+Recalculation Size: 50
+3.6424637709278613
+Recalculation Size: 20
+1.9808161910623312
+Recalculation Size: 3696
+172.30632976908237
+Recalculation Size: 54
+3.626931539038196
+Recalculation Size: 107
+6.4738779289182276
+Recalculation Size: 45
+3.176180637907237
+Recalculation Size: 67
+4.247874334920198
+Recalculation Size: 1065
+51.83197847311385
+Recalculation Size: 63
+4.380410398822278
+Recalculation Size: 45
+3.2549104529898614
+Recalculation Size: 48
+3.6000510898884386
+Recalculation Size: 121
+7.296504280064255
+Recalculation Size: 45
+3.214954682858661
+Recalculation Size: 21
+2.1802246212027967
+Recalculation Size: 40
+3.0055420990101993
+Recalculation Size: 67
+4.424124130047858
+Recalculation Size: 59
+3.870166947832331
+Recalculation Size: 46
+3.5923049501143396
+Recalculation Size: 91
+5.758954017190263
+Recalculation Size: 21
+2.209129807073623
+Recalculation Size: 71
+4.641830220120028
+Recalculation Size: 43
+3.158844650024548
+Recalculation Size: 129
+7.4408121888991445
+Recalculation Size: 118
+7.0631046060007066
+Recalculation Size: 144
+8.553358236793429
+Recalculation Size: 43
+3.203205353114754
+Recalculation Size: 651
+31.586248480016366
+Recalculation Size: 49
+3.550664142007008
+Recalculation Size: 72
+4.940620272187516
+Recalculation Size: 132
+7.593733006855473
+Recalculation Size: 65
+4.369134561857209
+Recalculation Size: 28
+0.6207716511562467
+Recalculation Size: 3
+1.3473831538576633
+Recalculation Size: 84
+5.766627663047984
+Recalculation Size: 616
+33.07557556289248
+Recalculation Size: 2270
+111.79219721094705
+Recalculation Size: 61
+3.9451813858468086
+Recalculation Size: 63
+4.4609041209332645
+Recalculation Size: 144
+8.305377641925588
+Recalculation Size: 99
+5.78039150708355
+Recalculation Size: 73
+4.515423045028001
+Recalculation Size: 42
+3.0882605649530888
+Recalculation Size: 452
+22.82471846602857
+Recalculation Size: 80
+5.31241077487357
+Recalculation Size: 4
+1.3776106860022992
+Recalculation Size: 41
+0.6303768800571561
+Recalculation Size: 54
+3.9650679561309516
+Recalculation Size: 211
+12.002829682081938
+Recalculation Size: 87
+5.664771702839062
+Recalculation Size: 3558
+165.09505713079125
+Recalculation Size: 14
+1.7204174569342285
+Recalculation Size: 614
+28.68864694284275
+Recalculation Size: 450
+22.355186603032053
+Recalculation Size: 123
+7.243710624985397
+Recalculation Size: 92
+5.676773166982457
+Recalculation Size: 768
+38.24055660399608
+Recalculation Size: 89
+5.210599509067833
+Recalculation Size: 76
+4.764689842006192
+Recalculation Size: 16
+1.7914349120110273
+Recalculation Size: 85
+5.401677841786295
+Recalculation Size: 36
+0.6153341999743134
+Recalculation Size: 232
+12.264417565893382
+Recalculation Size: 43
+3.085745863849297
+Recalculation Size: 61
+0.6463299088645726
+Recalculation Size: 117
+6.883716257987544
+Recalculation Size: 36
+2.683954254956916
+Recalculation Size: 363
+18.19126140116714
+Recalculation Size: 5
+1.329951141960919
+Recalculation Size: 86
+5.42617898597382
+Recalculation Size: 108
+6.617908336920664
+Recalculation Size: 67
+4.694712405093014
+Recalculation Size: 138
+7.8982917831745
+Recalculation Size: 62
+4.429801178863272
+Recalculation Size: 110
+6.903749485034496
+Recalculation Size: 130
+7.829176337923855
+Recalculation Size: 89
+5.327708374941722
+Recalculation Size: 88
+5.427411603042856
+Recalculation Size: 359
+18.72218538285233
+Recalculation Size: 82
+5.479070761008188
+Recalculation Size: 65
+4.583686169004068
+Recalculation Size: 797
+41.340889177052304
+Recalculation Size: 667
+32.97986138705164
+Recalculation Size: 3254
+160.46087621804327
+Recalculation Size: 136
+8.060367844998837
+Recalculation Size: 3381
+159.87103316397406
+Recalculation Size: 1550
+75.329346121056
+Recalculation Size: 109
+6.473998580826446
+Recalculation Size: 26
+2.3209966958966106
+Recalculation Size: 210
+11.019999417942017
+Recalculation Size: 129
+7.630435355938971
+Recalculation Size: 54
+3.8684106681030244
+Recalculation Size: 363
+18.22611757996492
+Recalculation Size: 2585
+120.95116255595349
+Recalculation Size: 29
+2.5092258739750832
+Recalculation Size: 75
+4.541826923144981
+Recalculation Size: 70
+4.612782038981095
+Recalculation Size: 57
+4.078036648919806
+Recalculation Size: 62
+3.9455738260876387
+Recalculation Size: 841
+43.119569399859756
+Recalculation Size: 44
+3.2395897549577057
+Recalculation Size: 88
+5.255756326019764
+Recalculation Size: 78
+5.080834930064157
+Recalculation Size: 57
+4.085339196026325
+Recalculation Size: 109
+6.75113963894546
+Recalculation Size: 98
+5.971412546932697
+Recalculation Size: 68
+4.654468456050381
+Recalculation Size: 103
+5.819544289959595
+Recalculation Size: 92
+5.926447470905259
+Recalculation Size: 144
+8.353526246035472
+Recalculation Size: 37
+0.6235561410430819
+Recalculation Size: 2364
+112.15830845199525
+Recalculation Size: 97
+5.543089704820886
+Recalculation Size: 95
+5.923876931890845
+Recalculation Size: 66
+4.069483020110056
+Recalculation Size: 202
+11.065773412119597
+Recalculation Size: 1260
+59.97593140602112
+Recalculation Size: 86
+5.6569850579835474
+Recalculation Size: 109
+6.404161622049287
+Recalculation Size: 79
+5.160107894800603
+Recalculation Size: 149
+8.720830481033772
+Recalculation Size: 19
+1.9927627919241786
+Recalculation Size: 37
+2.9590799941215664
+Recalculation Size: 124
+7.18964354111813
+Recalculation Size: 63
+4.333526237169281
+Recalculation Size: 85
+5.126306632068008
+Recalculation Size: 67
+4.661861125845462
+Recalculation Size: 86
+5.063974536024034
+Recalculation Size: 63
+4.328289886936545
+Recalculation Size: 2580
+120.68668884783983
+Recalculation Size: 95
+5.896489504957572
+Recalculation Size: 19
+1.9958232161588967
+Recalculation Size: 156
+9.044520566007122
+Recalculation Size: 39
+2.9953678550664335
+Recalculation Size: 357
+17.9935236251913
+Recalculation Size: 46
+3.44807216594927
+Recalculation Size: 73
+4.442732166964561
+Recalculation Size: 702
+34.86471966793761
+Recalculation Size: 431
+21.652783722849563
+Recalculation Size: 58
+3.6857417789287865
+Recalculation Size: 182
+10.31114290188998
+Recalculation Size: 29
+2.440635362872854
+Recalculation Size: 783
+38.97535013197921
+Recalculation Size: 1482
+73.23584103398025
+Recalculation Size: 60
+3.8560709229204804
+Recalculation Size: 46
+3.4917039410211146
+Recalculation Size: 57
+4.194909973070025
+Recalculation Size: 693
+35.87703440990299
+Recalculation Size: 97
+6.193498569075018
+Recalculation Size: 123
+7.499714719131589
+Recalculation Size: 51
+3.8616243170108646
+Recalculation Size: 55
+4.114619191037491
+Recalculation Size: 60
+4.386029979912564
+Recalculation Size: 86
+5.653438456822187
+Recalculation Size: 160
+9.055444724159315
+Recalculation Size: 2371
+117.01704180799425
+Recalculation Size: 793
+40.704471319913864
+Recalculation Size: 39
+3.0470841210335493
+Recalculation Size: 55
+4.077234585070983
+Recalculation Size: 3685
+179.99947656597942
+Recalculation Size: 39
+3.287767505971715
+Recalculation Size: 146
+8.14784918515943
+Recalculation Size: 37
+2.9312165959272534
+Recalculation Size: 3658
+182.96164521109313
+Recalculation Size: 897
+48.139405065914616
+Recalculation Size: 49
+0.6673681901302189
+Recalculation Size: 355
+18.947558423969895
+Recalculation Size: 130
+8.29969628690742
+Recalculation Size: 2014
+101.17917819996364
+Recalculation Size: 185
+10.96987759298645
+Recalculation Size: 50
+3.9695591730996966
+Recalculation Size: 73
+4.917531142011285
+Recalculation Size: 130
+8.12185781286098
+Recalculation Size: 72
+4.636258134851232
+Recalculation Size: 768
+41.67510117799975
+Recalculation Size: 2
+1.284881073050201
+Recalculation Size: 59
+4.146571026882157
+Recalculation Size: 114
+7.313857847126201
+Recalculation Size: 78
+5.05163398408331
+Recalculation Size: 74
+4.719514166004956
+Recalculation Size: 40
+3.3954024859704077
+Recalculation Size: 91
+6.079689593054354
+Recalculation Size: 41
+3.280484155053273
+Recalculation Size: 90
+6.048110043862835
+Recalculation Size: 71
+5.079179432941601
+Recalculation Size: 56
+3.8347535349894315
+Recalculation Size: 882
+47.486026861006394
+Recalculation Size: 57
+4.328666713088751
+Recalculation Size: 84
+5.754763949196786
+Recalculation Size: 442
+23.805620880099013
+Recalculation Size: 1257
+66.3115071519278
+Recalculation Size: 48
+3.458419971866533
+Recalculation Size: 62
+4.250208229990676
+Recalculation Size: 45
+3.3999900240451097
+Recalculation Size: 33
+2.7083708660211414
+Recalculation Size: 19
+2.0829048599116504
+Recalculation Size: 120
+6.938169851899147
+Recalculation Size: 40
+3.1327010388486087
+Recalculation Size: 133
+7.700816865079105
+Recalculation Size: 778
+38.9122882632073
+Recalculation Size: 104
+6.08302102307789
+Recalculation Size: 725
+34.20257494109683
+Recalculation Size: 31
+2.575694103958085
+Recalculation Size: 46
+3.4660937669686973
+Recalculation Size: 46
+3.5062143690884113
+Recalculation Size: 65
+4.2071210539434105
+Recalculation Size: 67
+4.565696388948709
+Recalculation Size: 770
+39.4912197010126
+Recalculation Size: 31
+2.653590756934136
+Recalculation Size: 834
+43.1901277450379
+Recalculation Size: 74
+4.9624284310266376
+Recalculation Size: 293
+14.658774960087612
+Recalculation Size: 149
+8.7413102441933
+Recalculation Size: 804
+39.921704817097634
+Recalculation Size: 3695
+167.39232598477975
+Recalculation Size: 1601
+74.25410005217418
+Recalculation Size: 93
+5.576396527001634
+Recalculation Size: 42
+3.129893383011222
+Recalculation Size: 129
+7.322918409015983
+Recalculation Size: 115
+6.481976804090664
+Recalculation Size: 14
+1.6785599689465016
+Recalculation Size: 51
+3.2414698090869933
+Recalculation Size: 167
+9.185751475160941
+Recalculation Size: 40
+3.03165734000504
+Recalculation Size: 66
+4.260430477093905
+Recalculation Size: 53
+3.674140158807859
+Recalculation Size: 61
+4.095729410881177
+Recalculation Size: 77
+4.3406060540582985
+Recalculation Size: 30
+2.422461773036048
+Recalculation Size: 71
+4.11520339990966
+Recalculation Size: 113
+6.452021847013384
+Recalculation Size: 788
+38.244243619032204
+Recalculation Size: 156
+8.715485290857032
+Recalculation Size: 155
+8.702149844029918
+Recalculation Size: 49
+3.278241370106116
+Recalculation Size: 48
+3.125667495885864
+Recalculation Size: 11
+0.5614576272200793
+Recalculation Size: 67
+3.9371504238806665
+Recalculation Size: 1109
+53.08049122011289
+Recalculation Size: 24
+2.1251467659603804
+Recalculation Size: 811
+39.62392813293263
+Recalculation Size: 44
+3.1157244162168354
+Recalculation Size: 13
+1.6943338001146913
+Recalculation Size: 61
+3.9986016298644245
+Recalculation Size: 139
+7.796344314003363
+Recalculation Size: 105
+5.927808278007433
+Recalculation Size: 111
+6.103280465118587
+Recalculation Size: 58
+3.859064148971811
+Recalculation Size: 802
+40.084637922933325
+Recalculation Size: 128
+7.6319752261042595
+Recalculation Size: 939
+48.03248932794668
+Recalculation Size: 68
+4.58584001311101
+Recalculation Size: 71
+4.297719264868647
+Recalculation Size: 127
+7.415276651037857
+Recalculation Size: 61
+3.8403652221895754
+Recalculation Size: 112
+6.782664339989424
+Recalculation Size: 468
+23.67151154601015
+Recalculation Size: 42
+3.0222059341613203
+Recalculation Size: 90
+5.705034818965942
+Recalculation Size: 816
+41.02485189400613
+Recalculation Size: 91
+5.161643109982833
+Recalculation Size: 39
+3.0893939938396215
+Recalculation Size: 42
+3.088902609888464
+Recalculation Size: 2155
+100.78864936321042
+Recalculation Size: 24
+2.222335241967812
+Recalculation Size: 75
+4.921878251014277
+Recalculation Size: 3670
+175.4786861750763
+Recalculation Size: 128
+7.7950151830445975
+Recalculation Size: 118
+7.172182708978653
+Recalculation Size: 75
+5.047570910071954
+Recalculation Size: 90
+5.683438183972612
+Recalculation Size: 59
+3.8158544760663062
+Recalculation Size: 64
+4.049283053027466
+Recalculation Size: 109
+6.677284434903413
+Recalculation Size: 1025
+52.25439120386727
+Recalculation Size: 288
+14.648136168019846
+Recalculation Size: 130
+7.897723157890141
+Recalculation Size: 43
+3.0978200070094317
+Recalculation Size: 3694
+178.71156546007842
+Recalculation Size: 1107
+56.717635369859636
+Recalculation Size: 353
+18.485404097940773
+Recalculation Size: 145
+7.847882644971833
+Recalculation Size: 97
+6.047386552905664
+Recalculation Size: 50
+3.4434752298984677
+Recalculation Size: 45
+3.5134509068448097
+Recalculation Size: 20
+2.07031262293458
+Recalculation Size: 32
+2.597085162997246
+Recalculation Size: 124
+7.594751563156024
+Recalculation Size: 899
+46.88015836500563
+Recalculation Size: 1440
+72.94274502480403
+Recalculation Size: 172
+10.058593180961907
+Recalculation Size: 3143
+154.0797708411701
+Recalculation Size: 104
+6.584469799883664
+Recalculation Size: 59
+4.220918814884499
+Recalculation Size: 157
+8.772495714016259
+Recalculation Size: 457
+23.597319561988115
+Recalculation Size: 726
+34.43847586191259
+Recalculation Size: 2067
+94.60062627797015
+Recalculation Size: 8
+1.4178310809656978
+Recalculation Size: 64
+3.8563921661116183
+Recalculation Size: 31
+2.411159865092486
+Recalculation Size: 73
+4.664105753879994
+Recalculation Size: 113
+6.263093400979415
+Recalculation Size: 2624
+122.37394883506931
+Recalculation Size: 75
+4.923103909008205
+Recalculation Size: 68
+4.516188543988392
+Recalculation Size: 713
+35.84802533406764
+Recalculation Size: 841
+42.86332878982648
+Recalculation Size: 97
+6.063854573993012
+Recalculation Size: 48
+3.355642710113898
+Recalculation Size: 160
+8.738657277077436
+Recalculation Size: 241
+12.733408114872873
+Recalculation Size: 125
+7.3389795308467
+Recalculation Size: 8
+1.4168167698662728
+Recalculation Size: 815
+39.71416439907625
+Recalculation Size: 46
+3.357557936105877
+Recalculation Size: 115
+6.657829587114975
+Recalculation Size: 3677
+166.53597357217222
+Recalculation Size: 105
+6.170211619930342
+Recalculation Size: 122
+6.844136568950489
+Recalculation Size: 43
+2.8697016411460936
+Recalculation Size: 30
+2.388679258991033
+Recalculation Size: 67
+4.34988123504445
+Recalculation Size: 73
+4.6494195989798754
+Recalculation Size: 56
+3.8099680012091994
+Recalculation Size: 1543
+72.76239410485141
+Recalculation Size: 506
+24.305962468963116
+Recalculation Size: 136
+7.719317927956581
+Recalculation Size: 13
+1.6283164941705763
+Recalculation Size: 449
+22.16040659393184
+Recalculation Size: 157
+9.1012614229694
+Recalculation Size: 45
+3.2151662271935493
+Recalculation Size: 1153
+57.4486811500974
+Recalculation Size: 785
+40.610688532935455
+Recalculation Size: 48
+3.2713855360634625
+Recalculation Size: 13
+1.7015673159621656
+Recalculation Size: 425
+21.838413522113115
+Recalculation Size: 74
+4.457284286152571
+Recalculation Size: 570
+28.788798520108685
+Recalculation Size: 32
+2.5422815890051425
+Recalculation Size: 30
+2.465508569031954
+Recalculation Size: 52
+3.4103839318268
+Recalculation Size: 56
+3.9648089041002095
+Recalculation Size: 58
+4.05439490894787
+Recalculation Size: 118
+6.972297400934622
+Recalculation Size: 45
+3.092913413885981
+Recalculation Size: 37
+2.84092962811701
+Recalculation Size: 123
+7.042708002962172
+Recalculation Size: 50
+3.5207068719901145
+Recalculation Size: 353
+17.052540655015036
+Recalculation Size: 161
+8.85679452586919
+Recalculation Size: 3665
+166.78901362302713
+Recalculation Size: 792
+40.48555884696543
+Recalculation Size: 93
+5.427137786988169
+Recalculation Size: 53
+3.560119559057057
+Recalculation Size: 441
+22.70677173207514
+Recalculation Size: 79
+4.964024237822741
+Recalculation Size: 27
+2.2945560591761023
+Recalculation Size: 55
+3.9851912930607796
+Recalculation Size: 428
+21.228928795084357
+Recalculation Size: 112
+6.599206141894683
+Recalculation Size: 20
+1.9009635858237743
+Recalculation Size: 120
+6.854237554129213
+Recalculation Size: 21
+2.0120747110340744
+Recalculation Size: 15
+1.6921085000503808
+Recalculation Size: 80
+4.971386236837134
+Recalculation Size: 57
+3.7167868928518146
+Recalculation Size: 4
+1.2221693829633296
+Recalculation Size: 62
+4.025863622082397
+Recalculation Size: 681
+32.45485251490027
+Recalculation Size: 476
+23.206454784842208
+Recalculation Size: 113
+6.4947499327827245
+Recalculation Size: 150
+8.298478838987648
+Recalculation Size: 95
+5.707629211014137
+Recalculation Size: 76
+4.7383011588826776
+Recalculation Size: 418
+20.193462623050436
+Recalculation Size: 519
+24.895434491103515
+Recalculation Size: 53
+3.642209409037605
+Recalculation Size: 148
+8.046376290963963
+Recalculation Size: 55
+3.4007112751714885
+Recalculation Size: 51
+3.336362265981734
+Recalculation Size: 141
+7.870594897074625
+Recalculation Size: 24
+2.1367043959908187
+Recalculation Size: 28
+2.3156560419593006
+Recalculation Size: 77
+4.309088210808113
+Recalculation Size: 140
+7.919160672929138
+Recalculation Size: 2725
+126.49665997899137
+Recalculation Size: 150
+8.654495800146833
+Recalculation Size: 63
+4.283292131964117
+Recalculation Size: 54
+3.5032263800967485
+Recalculation Size: 426
+21.297242131084204
+Recalculation Size: 2414
+111.9393218581099
+Recalculation Size: 800
+41.068208910990506
+Recalculation Size: 939
+48.19596680486575
+Recalculation Size: 891
+46.030229800147936
+Recalculation Size: 50
+3.7464962359517813
+Recalculation Size: 1364
+68.08040156099014
+Recalculation Size: 53
+3.6109313839115202
+Recalculation Size: 83
+4.878670994890854
+Recalculation Size: 59
+4.191223931964487
+Recalculation Size: 53
+3.563477416988462
+Recalculation Size: 78
+5.083763943053782
+Recalculation Size: 793
+40.836303378921
+Recalculation Size: 814
+42.00450346106663
+Recalculation Size: 132
+8.093158659990877
+Recalculation Size: 170
+9.786427861079574
+Recalculation Size: 111
+6.890979981049895
+Recalculation Size: 3675
+173.75937868189067
+Recalculation Size: 2346
+109.51869552908465
+Recalculation Size: 28
+2.3770883658435196
+Recalculation Size: 47
+3.5193901220336556
+Recalculation Size: 31
+2.5082928941119462
+Recalculation Size: 81
+4.67401002603583
+Recalculation Size: 77
+4.708272961899638
+Recalculation Size: 3690
+167.508363713976
+Recalculation Size: 458
+22.25856733811088
+Recalculation Size: 73
+0.612671738024801
+Recalculation Size: 3683
+167.38055641413666
+Recalculation Size: 8
+0.5278170870151371
+Recalculation Size: 18
+1.83991629187949
+Recalculation Size: 937
+45.24148708418943
+Recalculation Size: 40
+2.803886210080236
+Recalculation Size: 71
+4.299302317900583
+Recalculation Size: 57
+0.6028131030034274
+Recalculation Size: 205
+11.035819343989715
+Recalculation Size: 87
+5.163252597907558
+Recalculation Size: 69
+4.475629343884066
+Recalculation Size: 636
+30.85698648588732
+Recalculation Size: 7
+1.3426033139694482
+Recalculation Size: 197
+10.523822896881029
+Recalculation Size: 35
+2.603943601017818
+Recalculation Size: 70
+4.106060943100601
+Recalculation Size: 51
+3.3974156100302935
+Recalculation Size: 851
+41.5779653431382
+Recalculation Size: 252
+12.426195628009737
+Recalculation Size: 1087
+52.23557795910165
+Recalculation Size: 33
+2.5007535950280726
+Recalculation Size: 88
+5.373548566130921
+Recalculation Size: 355
+17.553810651879758
+Recalculation Size: 47
+3.2098038201220334
+Recalculation Size: 99
+5.913237433182076
+Recalculation Size: 65
+3.9276218749582767
+Recalculation Size: 3627
+164.68949615582824
+Recalculation Size: 62
+3.6622873949818313
+Recalculation Size: 832
+40.460772876860574
+Recalculation Size: 157
+8.67317783483304
+Recalculation Size: 80
+4.461418358143419
+Recalculation Size: 1279
+59.897246185922995
+Recalculation Size: 410
+19.809518488124013
+Recalculation Size: 100
+5.899775746976957
+Recalculation Size: 787
+37.88285336596891
+Recalculation Size: 486
+23.93432786501944
+Recalculation Size: 11
+1.517660073004663
+Recalculation Size: 42
+2.9680694439448416
+Recalculation Size: 1028
+49.505186543101445
+Recalculation Size: 76
+4.4696647501550615
+Recalculation Size: 80
+4.806839880067855
+Recalculation Size: 872
+42.64622074807994
+Recalculation Size: 112
+6.451246654847637
+Recalculation Size: 190
+0.7662872748915106
+Recalculation Size: 81
+5.051655082963407
+Recalculation Size: 102
+6.155398953007534
+Recalculation Size: 1006
+48.34720705403015
+Recalculation Size: 49
+3.512097252998501
+Recalculation Size: 133
+7.233112436020747
+Recalculation Size: 786
+38.41997537901625
+Recalculation Size: 78
+4.926197899039835
+Recalculation Size: 473
+23.047359024873003
+Recalculation Size: 37
+2.733038326026872
+Recalculation Size: 38
+2.8373289541341364
+Recalculation Size: 31
+2.4926623329520226
+Recalculation Size: 3476
+159.38601868995465
+Recalculation Size: 130
+7.555374949937686
+Recalculation Size: 47
+3.3027968779206276
+Recalculation Size: 90
+4.933132373960689
+Recalculation Size: 3668
+166.78494789195247
+Recalculation Size: 415
+20.144609848968685
+Recalculation Size: 77
+4.375773085979745
+Recalculation Size: 75
+4.7124258200638
+Recalculation Size: 31
+2.4360358112026006
+Recalculation Size: 168
+9.14486992591992
+Recalculation Size: 79
+4.759442420909181
+Recalculation Size: 66
+4.271025863941759
+Recalculation Size: 831
+40.16667165909894
+Recalculation Size: 113
+6.6451097840908915
+Recalculation Size: 3560
+163.20754975616
+Recalculation Size: 71
+4.190822657896206
+Recalculation Size: 3688
+170.17661002697423
+Recalculation Size: 97
+5.8789277551695704
+Recalculation Size: 53
+3.708534497069195
+Recalculation Size: 59
+3.688997379038483
+Recalculation Size: 199
+10.80805093399249
+Recalculation Size: 34
+0.5841696730349213
+Recalculation Size: 70
+4.094468228984624
+Recalculation Size: 146
+8.197842547902837
+Recalculation Size: 38
+2.7323704899754375
+Recalculation Size: 1375
+64.77792652696371
+Recalculation Size: 55
+3.7880938379094005
+Recalculation Size: 1445
+70.24004058097489
+Recalculation Size: 4
+1.2403045368846506
+Recalculation Size: 110
+6.481167935067788
+Recalculation Size: 1491
+72.40068931295536
+Recalculation Size: 93
+5.82217493490316
+Recalculation Size: 1442
+69.02829313487746
+Recalculation Size: 79
+4.757909328909591
+Recalculation Size: 1067
+52.4643228740897
+Recalculation Size: 712
+32.953178014140576
+Recalculation Size: 1362
+66.5353167229332
+Recalculation Size: 107
+6.250351769151166
+Recalculation Size: 51
+3.445635822135955
+Recalculation Size: 30
+2.4628612529486418
+Recalculation Size: 58
+3.7861380488611758
+Recalculation Size: 85
+4.810564456973225
+Recalculation Size: 6
+1.329005178064108
+Recalculation Size: 91
+5.282123586162925
+Recalculation Size: 136
+7.866776023060083
+Recalculation Size: 71
+4.689637989969924
+Recalculation Size: 104
+6.318689042003825
+Recalculation Size: 394
+19.704694466898218
+Recalculation Size: 1110
+54.50100867706351
+Recalculation Size: 27
+2.417023766087368
+Recalculation Size: 3691
+172.36080455593765
+Recalculation Size: 1494
+72.31630495307036
+Recalculation Size: 1486
+71.47672279994003
+Recalculation Size: 12
+1.6462325379252434
+Recalculation Size: 126
+6.715873886132613
+Recalculation Size: 67
+4.493885718984529
+Recalculation Size: 69
+4.605626781005412
+Recalculation Size: 47
+3.1785860678646713
+Recalculation Size: 19
+1.889662530971691
+Recalculation Size: 82
+4.6369457938708365
+Recalculation Size: 76
+4.430264169117436
+Recalculation Size: 74
+4.30118932412006
+Recalculation Size: 93
+5.310015174094588
+Recalculation Size: 31
+2.4834394599311054
+Recalculation Size: 59
+3.615548119880259
+Recalculation Size: 113
+6.599424063926563
+Recalculation Size: 48
+3.253923260141164
+Recalculation Size: 800
+40.0548459100537
+Recalculation Size: 430
+21.329862233018503
+Recalculation Size: 129
+7.41587183997035
+Recalculation Size: 45
+3.0969789519440383
+Recalculation Size: 94
+5.725202247034758
+Recalculation Size: 116
+6.85345160914585
+Recalculation Size: 192
+9.666521885897964
+Recalculation Size: 77
+4.8872230460401624
+Recalculation Size: 876
+43.33057963009924
+Recalculation Size: 10
+0.5300313790794462
+Recalculation Size: 129
+7.275937149999663
+Recalculation Size: 791
+37.921548372134566
+Recalculation Size: 785
+38.525314062135294
+Recalculation Size: 125
+7.305931254057214
+Recalculation Size: 4
+1.2446012538857758
+Recalculation Size: 3665
+169.50438172998838
+Recalculation Size: 145
+8.339820542139933
+Recalculation Size: 72
+4.262664176989347
+Recalculation Size: 56
+3.890148554230109
+Recalculation Size: 133
+7.251058893976733
+Recalculation Size: 63
+3.840180865023285
+Recalculation Size: 107
+5.7739883221220225
+Recalculation Size: 35
+2.7013004899490625
+Recalculation Size: 38
+2.7927274520043284
+Recalculation Size: 113
+6.696587451035157
+Recalculation Size: 1202
+58.17795826611109
+Recalculation Size: 89
+5.012713433941826
+Recalculation Size: 148
+8.34361406089738
+Recalculation Size: 108
+6.439760003006086
+Recalculation Size: 796
+39.44466200005263
+Recalculation Size: 44
+3.013052817201242
+Recalculation Size: 61
+3.867988574085757
+Recalculation Size: 63
+3.986205584136769
+Recalculation Size: 57
+3.5830200710333884
+Recalculation Size: 137
+7.433220722945407
+Recalculation Size: 151
+8.460132475942373
+Recalculation Size: 33
+2.5524129138793796
+Recalculation Size: 62
+3.746258544968441
+Recalculation Size: 2001
+93.69972716993652
+Recalculation Size: 87
+5.350606048014015
+Recalculation Size: 116
+6.493925536982715
+Recalculation Size: 125
+7.302919078152627
+Recalculation Size: 51
+3.3304855308961123
+Recalculation Size: 64
+4.29642554698512
+Recalculation Size: 53
+3.3313419530168176
+Recalculation Size: 6
+1.2921358728781343
+Recalculation Size: 27
+2.2604344591964036
+Recalculation Size: 90
+5.493847897043452
+Recalculation Size: 36
+2.795002318918705
+Recalculation Size: 386
+18.68271190300584
+Recalculation Size: 56
+3.4323382650036365
+Recalculation Size: 24
+2.1648176349699497
+Recalculation Size: 1032
+48.74197571515106
+Recalculation Size: 49
+3.1404725171159953
+Recalculation Size: 31
+2.6014813880901784
+Recalculation Size: 59
+3.5596126448363066
+Recalculation Size: 175
+8.9769718979951
+Recalculation Size: 5
+1.2329291158821434
+Recalculation Size: 81
+4.508031096076593
+Recalculation Size: 150
+8.415030597010627
+Recalculation Size: 153
+8.447405308950692
+Recalculation Size: 83
+5.105784496990964
+Recalculation Size: 451
+21.702510371804237
+Recalculation Size: 69
+4.409936306998134
+Recalculation Size: 72
+4.154487821040675
+Recalculation Size: 35
+2.6268213260918856
+Recalculation Size: 168
+9.143053469946608
+Recalculation Size: 80
+4.803789163939655
+Recalculation Size: 77
+4.352556339930743
+Recalculation Size: 904
+43.53614281699993
+Recalculation Size: 1474
+69.14933628588915
+Recalculation Size: 199
+10.804383060894907
+Recalculation Size: 1454
+70.5812236268539
+Recalculation Size: 792
+39.88607825594954
+Recalculation Size: 429
+21.562182647176087
+Recalculation Size: 113
+6.788109211018309
+Recalculation Size: 30
+2.4404698109719902
+Recalculation Size: 281
+14.342826425796375
+Recalculation Size: 141
+8.132919632829726
+Recalculation Size: 66
+4.198068272089586
+Recalculation Size: 165
+9.051970045082271
+Recalculation Size: 89
+5.242316803894937
+Recalculation Size: 104
+6.28784298710525
+Recalculation Size: 689
+34.59499196591787
+Recalculation Size: 66
+4.004613457014784
+Recalculation Size: 60
+4.007826157147065
+Recalculation Size: 1010
+50.6345061538741
+Recalculation Size: 103
+6.487995993113145
+Recalculation Size: 53
+3.570239660097286
+Recalculation Size: 60
+3.8672488660085946
+Recalculation Size: 46
+3.3373233389575034
+Recalculation Size: 139
+8.314412890933454
+Recalculation Size: 79
+4.763775610830635
+Recalculation Size: 158
+9.080280714901164
+Recalculation Size: 79
+5.2847936120815575
+Recalculation Size: 3654
+178.25764707592316
+Recalculation Size: 31
+2.609405846800655
+Recalculation Size: 115
+6.590720054926351
+Recalculation Size: 57
+3.7442489380482584
+Recalculation Size: 49
+3.480610153870657
+Recalculation Size: 188
+0.7962558388244361
+Recalculation Size: 382
+20.13786255195737
+Recalculation Size: 73
+4.819276891183108
+Recalculation Size: 29
+2.3962031269911677
+Recalculation Size: 126
+7.803085580933839
+Recalculation Size: 105
+6.494638270931318
+Recalculation Size: 97
+6.18330854200758
+Recalculation Size: 67
+4.394963911967352
+Recalculation Size: 42
+3.0208588840905577
+Recalculation Size: 38
+2.9350407670717686
+Recalculation Size: 98
+6.092909303959459
+Recalculation Size: 82
+4.812694564927369
+Recalculation Size: 24
+2.2084845930803567
+Recalculation Size: 55
+3.786867316113785
+Recalculation Size: 1117
+56.530860082944855
+Recalculation Size: 119
+6.618413880933076
+Recalculation Size: 38
+2.875545220216736
+Recalculation Size: 182
+10.448360002133995
+Recalculation Size: 159
+9.369813452009112
+Recalculation Size: 82
+4.893622700124979
+Recalculation Size: 636
+32.769349187845364
+Recalculation Size: 50
+3.7619611809495836
+Recalculation Size: 77
+5.158641986083239
+Recalculation Size: 441
+22.59599468903616
+Recalculation Size: 75
+4.982734401943162
+Recalculation Size: 24
+2.198033784981817
+Recalculation Size: 91
+5.645555249182507
+Recalculation Size: 24
+2.158218838972971
+Recalculation Size: 44
+3.066507925046608
+Recalculation Size: 47
+3.224161420017481
+Recalculation Size: 31
+2.5344345280900598
+Recalculation Size: 39
+2.7094817319884896
+Recalculation Size: 191
+10.24277377105318
+Recalculation Size: 15
+1.6893097029533237
+Recalculation Size: 58
+3.725175620056689
+Recalculation Size: 1319
+61.2208930789493
+Recalculation Size: 47
+3.3481715449597687
+Recalculation Size: 63
+4.041255259187892
+Recalculation Size: 1566
+74.59058863902465
+Recalculation Size: 85
+4.962581432890147
+Recalculation Size: 82
+4.567616136977449
+Recalculation Size: 1695
+78.11866366793402
+Recalculation Size: 1484
+69.02956917602569
+Recalculation Size: 69
+4.172091294080019
+Recalculation Size: 541
+26.00707429787144
+Recalculation Size: 72
+4.181658768095076
+Recalculation Size: 127
+7.233626223169267
+Recalculation Size: 119
+6.801817487925291
+Recalculation Size: 58
+3.5058066609781235
+Recalculation Size: 3524
+160.1819666500669
+Recalculation Size: 46
+3.1312232620548457
+Recalculation Size: 866
+39.962492518126965
+Recalculation Size: 40
+0.5529011450707912
+Recalculation Size: 32
+2.5379472780041397
+Recalculation Size: 24
+2.1646419358439744
+Recalculation Size: 796
+40.33536568796262
+Recalculation Size: 51
+3.4621310478542
+Recalculation Size: 3682
+173.98802949488163
+Recalculation Size: 3696
+173.64848629385233
+Recalculation Size: 108
+6.5797022939659655
+Recalculation Size: 173
+9.866058740997687
+Recalculation Size: 3598
+168.57389674289152
+Recalculation Size: 72
+4.72865462093614
+Recalculation Size: 560
+26.716305529000238
+Recalculation Size: 159
+9.328715332085267
+Recalculation Size: 92
+5.986075504915789
+Recalculation Size: 89
+5.197738191112876
+Recalculation Size: 47
+3.2820279689040035
+Recalculation Size: 138
+8.250042537925765
+Recalculation Size: 18
+1.98412147606723
+Recalculation Size: 12
+1.7026100200600922
+Recalculation Size: 126
+6.87132783816196
+Recalculation Size: 871
+45.08362324698828
+Recalculation Size: 2309
+111.83904987503774
+Recalculation Size: 46
+3.4172056859824806
+Recalculation Size: 68
+4.680815462954342
+Recalculation Size: 19
+2.0305893789045513
+Recalculation Size: 164
+9.52036278694868
+Recalculation Size: 76
+5.065677604870871
+Recalculation Size: 390
+20.14315064996481
+Recalculation Size: 99
+6.160581242991611
+Recalculation Size: 81
+5.318852691911161
+Recalculation Size: 46
+3.412914264947176
+Recalculation Size: 366
+18.94953370396979
+Recalculation Size: 42
+3.1049920660443604
+Recalculation Size: 2351
+114.61157192499377
+Recalculation Size: 1177
+59.50052063097246
+Recalculation Size: 144
+8.410860860021785
+Recalculation Size: 52
+3.592771515948698
+Recalculation Size: 112
+6.921460686950013
+Recalculation Size: 90
+5.81712241913192
+Recalculation Size: 140
+8.339813256869093
+Recalculation Size: 201
+10.879898054990917
+Recalculation Size: 74
+4.8113939829636365
+Recalculation Size: 101
+6.407889006892219
+Recalculation Size: 73
+4.767576353158802
+Recalculation Size: 52
+3.8453433548565954
+Recalculation Size: 3682
+178.1714798710309
+Recalculation Size: 3685
+178.5049220758956
+Recalculation Size: 98
+6.22831889311783
+Recalculation Size: 92
+5.295635023154318
+Recalculation Size: 11
+1.6438227510079741
+Recalculation Size: 309
+16.147061843890697
+Recalculation Size: 792
+40.96910907304846
+Recalculation Size: 95
+6.059672609902918
+Recalculation Size: 7
+1.4246302121318877
+Recalculation Size: 167
+9.10637743305415
+Recalculation Size: 2771
+134.76427064603195
+Recalculation Size: 87
+5.106259864056483
+Recalculation Size: 78
+4.69536288199015
+Recalculation Size: 142
+8.439121444011107
+Recalculation Size: 69
+4.335717337904498
+Recalculation Size: 34
+0.599938825936988
+Recalculation Size: 19
+2.0706645210739225
+Recalculation Size: 67
+4.151866758009419
+Recalculation Size: 116
+7.142133959801868
+Recalculation Size: 85
+5.006361123174429
+Recalculation Size: 111
+6.475251947995275
+Recalculation Size: 78
+5.21308036101982
+Recalculation Size: 48
+3.404653624165803
+Recalculation Size: 365
+18.774715271079913
+Recalculation Size: 98
+6.16771310614422
+Recalculation Size: 52
+3.8467210568487644
+Recalculation Size: 63
+4.0007816350553185
+Recalculation Size: 76
+4.56674986705184
+Recalculation Size: 91
+5.273279631044716
+Recalculation Size: 45
+3.350815128069371
+Recalculation Size: 1526
+76.23801080719568
+Recalculation Size: 74
+4.4641860709525645
+Recalculation Size: 150
+8.165691721951589
+Recalculation Size: 166
+9.273797624977306
+Recalculation Size: 85
+5.161373496986926
+Recalculation Size: 43
+2.898661909857765
+Recalculation Size: 92
+5.605371198151261
+Recalculation Size: 52
+3.3092879310715944
+Recalculation Size: 78
+4.9040293069556355
+Recalculation Size: 70
+4.524485031142831
+Recalculation Size: 34
+2.5324539290741086
+Recalculation Size: 147
+7.604924993822351
+Recalculation Size: 1577
+73.80297200591303
+Recalculation Size: 40
+2.882968961028382
+Recalculation Size: 115
+6.09210512903519
+Recalculation Size: 8
+1.3951559560373425
+Recalculation Size: 734
+36.431902406038716
+Recalculation Size: 114
+6.094745313981548
+Recalculation Size: 187
+10.280852407915518
+Recalculation Size: 58
+0.611076437169686
+Recalculation Size: 38
+2.762371864169836
+Recalculation Size: 565
+26.73110845615156
+Recalculation Size: 61
+4.040243429830298
+Recalculation Size: 39
+3.0643192080315202
+Recalculation Size: 89
+5.471265230095014
+Recalculation Size: 51
+3.695895879995078
+Recalculation Size: 51
+3.45257651200518
+Recalculation Size: 113
+6.734872616128996
+Recalculation Size: 63
+4.046430242015049
+Recalculation Size: 125
+7.354903965024278
+Recalculation Size: 814
+40.972504609962925
+Recalculation Size: 56
+3.823561882134527
+Recalculation Size: 99
+5.486506554996595
+Recalculation Size: 91
+5.692931190133095
+Recalculation Size: 799
+40.980567243881524
+Recalculation Size: 108
+5.927957179024816
+Recalculation Size: 44
+3.0509809590876102
+Recalculation Size: 106
+5.857758053811267
+Recalculation Size: 23
+2.09956348198466
+Recalculation Size: 3501
+160.3349620278459
+Recalculation Size: 234
+11.893322998890653
+Recalculation Size: 125
+6.936824487056583
+Recalculation Size: 135
+7.529926789924502
+Recalculation Size: 219
+11.364225740078837
+Recalculation Size: 85
+5.2353521110489964
+Recalculation Size: 1434
+69.72463684598915
+Recalculation Size: 42
+2.985623801127076
+Recalculation Size: 82
+5.280919795157388
+Recalculation Size: 43
+3.084782412974164
+Recalculation Size: 4
+1.2673841258510947
+Recalculation Size: 52
+3.7504382201004773
+Recalculation Size: 121
+7.209002882009372
+Recalculation Size: 75
+4.463826338993385
+Recalculation Size: 88
+4.999046342913061
+Recalculation Size: 65
+4.5547636991832405
+Recalculation Size: 1007
+50.8991682222113
+Recalculation Size: 36
+0.6099659600295126
+Recalculation Size: 65
+4.042660999111831
+Recalculation Size: 1486
+74.16817745007575
+Recalculation Size: 504
+25.339075308060274
+Recalculation Size: 2528
+115.39244915707968
+Recalculation Size: 176
+9.543864879989997
+Recalculation Size: 19
+1.9104156920220703
+Recalculation Size: 907
+44.37726392317563
+Recalculation Size: 589
+29.78028462990187
+Recalculation Size: 64
+4.322356848977506
+Recalculation Size: 66
+4.466373349074274
+Recalculation Size: 109
+6.628172809956595
+Recalculation Size: 106
+6.533310825005174
+Recalculation Size: 837
+42.6563658460509
+Recalculation Size: 96
+5.437378683127463
+Recalculation Size: 1429
+69.99373474204913
+Recalculation Size: 64
+4.417440659832209
+Recalculation Size: 108
+6.745877286884934
+Recalculation Size: 33
+2.853679992025718
+Recalculation Size: 590
+30.566771418089047
+Recalculation Size: 162
+9.373595473123714
+Recalculation Size: 95
+5.866916705155745
+Recalculation Size: 169
+9.79735471890308
+Recalculation Size: 125
+7.547510564792901
+Recalculation Size: 67
+0.6663450868800282
+Recalculation Size: 208
+11.766633871011436
+Recalculation Size: 440
+22.683350048027933
+Recalculation Size: 3669
+175.94900756515563
+Recalculation Size: 62
+4.110491188941523
+Recalculation Size: 110
+6.450645888922736
+Recalculation Size: 1444
+69.25931232888252
+Recalculation Size: 3681
+167.50310327182524
+Recalculation Size: 689
+31.269024417968467
+Recalculation Size: 66
+4.286913336021826
+Recalculation Size: 624
+30.45672983210534
+Recalculation Size: 141
+8.037766529014334
+Recalculation Size: 67
+4.345856982050464
+Recalculation Size: 56
+3.477947046980262
+Recalculation Size: 53
+3.4802632918581367
+Recalculation Size: 36
+2.7085589841008186
+Recalculation Size: 30
+2.5185729949735105
+Recalculation Size: 438
+21.926840682979673
+Recalculation Size: 65
+4.017004628898576
+Recalculation Size: 92
+5.176058945944533
+Recalculation Size: 55
+3.5414968931581825
+Recalculation Size: 58
+3.721287607913837
+Recalculation Size: 852
+43.01482183090411
+Recalculation Size: 3508
+165.63787287287414
+Recalculation Size: 215
+11.910972022917122
+Recalculation Size: 71
+4.213042106945068
+Recalculation Size: 176
+9.914562162011862
+Recalculation Size: 798
+40.863081249874085
+Recalculation Size: 1024
+51.284120715921745
+Recalculation Size: 78
+4.71058485400863
+Recalculation Size: 168
+9.688589286990464
+Recalculation Size: 98
+6.241348462179303
+Recalculation Size: 101
+6.3930003750137985
+Recalculation Size: 1513
+75.69104373804294
+Recalculation Size: 217
+12.397333836881444
+Recalculation Size: 105
+6.456995205953717
+Recalculation Size: 89
+5.784795301966369
+Recalculation Size: 1485
+75.48395158280618
+Recalculation Size: 115
+6.947816547006369
+Recalculation Size: 799
+41.396233275998384
+Recalculation Size: 242
+13.168772869976237
+Recalculation Size: 100
+6.316106774145737
+Recalculation Size: 50
+3.394803993869573
+Recalculation Size: 75
+4.969798373989761
+Recalculation Size: 33
+2.8785620210692286
+Recalculation Size: 64
+4.518967254087329
+Recalculation Size: 81
+5.4131533917970955
+Recalculation Size: 54
+3.883335686987266
+Recalculation Size: 122
+7.045732328901067
+Recalculation Size: 86
+5.193040578858927
+Recalculation Size: 84
+4.864189793122932
+Recalculation Size: 82
+5.305652524810284
+Recalculation Size: 41
+3.262906821910292
+Recalculation Size: 53
+3.5366935718338937
+Recalculation Size: 1474
+73.56511140381917
+Recalculation Size: 71
+4.75167884491384
+Recalculation Size: 52
+3.6481430060230196
+Recalculation Size: 112
+6.54512332403101
+Recalculation Size: 71
+4.778398808091879
+Recalculation Size: 80
+5.043402437120676
+Recalculation Size: 160
+8.800085449125618
+Recalculation Size: 121
+7.449158757925034
+Recalculation Size: 152
+9.060194459045306
+Recalculation Size: 431
+22.165527069941163
+Recalculation Size: 60
+3.9847293051425368
+Recalculation Size: 73
+4.9198163819964975
+Recalculation Size: 739
+37.67310768412426
+Recalculation Size: 176
+10.195930767105892
+Recalculation Size: 136
+8.364090343937278
+Recalculation Size: 29
+2.501458653016016
+Recalculation Size: 142
+8.565309128025547
+Recalculation Size: 141
+7.876692975871265
+Recalculation Size: 17
+1.9068532751407474
+Recalculation Size: 1143
+57.972991223214194
+Recalculation Size: 66
+4.101190068991855
+Recalculation Size: 77
+5.252205176046118
+Recalculation Size: 83
+4.8170920251868665
+Recalculation Size: 125
+7.28827406396158
+Recalculation Size: 2622
+119.17513464298099
+Recalculation Size: 2867
+134.81076220679097
+Recalculation Size: 104
+6.229633498005569
+Recalculation Size: 448
+22.87410597805865
+Recalculation Size: 105
+5.805940985912457
+Recalculation Size: 202
+10.969220241997391
+Recalculation Size: 856
+42.17522976291366
+Recalculation Size: 99
+5.7024104308802634
+Recalculation Size: 185
+10.059524097014219
+Recalculation Size: 73
+4.642546616960317
+Recalculation Size: 14
+1.6683178539387882
+Recalculation Size: 177
+9.947478740941733
+Recalculation Size: 76
+4.515676073962823
+Recalculation Size: 178
+10.071647291071713
+Recalculation Size: 80
+5.185308055020869
+Recalculation Size: 89
+5.602307070046663
+Recalculation Size: 4
+1.2725245070178062
+Recalculation Size: 178
+10.072977874195203
+Recalculation Size: 35
+2.77969733113423
+Recalculation Size: 135
+7.7663300421554595
+Recalculation Size: 117
+7.080127988010645
+Recalculation Size: 2039
+95.39179011201486
+Recalculation Size: 110
+6.505527738016099
+Recalculation Size: 31
+2.536469851853326
+Recalculation Size: 44
+3.3376682789530605
+Recalculation Size: 61
+4.177743494976312
+Recalculation Size: 391
+19.578509812941775
+Recalculation Size: 12
+1.5853927589487284
+Recalculation Size: 712
+36.1067811800167
+Recalculation Size: 74
+4.471372174099088
+Recalculation Size: 69
+4.624967828160152
+Recalculation Size: 1139
+57.97977536008693
+Recalculation Size: 52
+3.7249006601050496
+Recalculation Size: 45
+3.080831762868911
+Recalculation Size: 75
+5.027430042857304
+Recalculation Size: 84
+5.056727766059339
+Recalculation Size: 60
+3.792548988945782
+Recalculation Size: 31
+2.6366348299197853
+Recalculation Size: 46
+3.5029862041119486
+Recalculation Size: 3630
+174.96116064488888
+Recalculation Size: 63
+3.9939687640871853
+Recalculation Size: 43
+3.096365325851366
+Recalculation Size: 88
+5.707381734857336
+Recalculation Size: 96
+6.105628353077918
+Recalculation Size: 12
+1.6835074559785426
+Recalculation Size: 62
+4.354244913905859
+Recalculation Size: 125
+7.503360214177519
+Recalculation Size: 45
+3.494142330950126
+Recalculation Size: 97
+6.1916868321131915
+Recalculation Size: 35
+2.8178282510489225
+Recalculation Size: 10
+0.5689153929706663
+Recalculation Size: 38
+2.951860249042511
+Recalculation Size: 50
+3.787410316988826
+Recalculation Size: 3693
+171.95001193718053
+Recalculation Size: 131
+7.779328859876841
+Recalculation Size: 79
+4.5612820610404015
+Recalculation Size: 55
+3.8765729418955743
+Recalculation Size: 25
+2.215768289985135
+Recalculation Size: 59
+3.6997273231390864
+Recalculation Size: 171
+9.514573046006262
+Recalculation Size: 86
+5.418425270123407
+Recalculation Size: 27
+2.3479311850387603
+Recalculation Size: 94
+5.2905635461211205
+Recalculation Size: 76
+4.954068109858781
+Recalculation Size: 29
+2.344625482102856
+Recalculation Size: 107
+6.539685314055532
+Recalculation Size: 66
+3.895203218096867
+Recalculation Size: 3682
+166.74608241789974

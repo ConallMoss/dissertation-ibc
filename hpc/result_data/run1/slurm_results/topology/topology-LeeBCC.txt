@@ -1,0 +1,35 @@
+2024-04-20 13:34:06.495035
+dataset='topology'
+prog='LeeBCC'
+max_runs=1000
+max_secs=40000
+
+graph size: N=34761, E=107720
+Graph read time:
+1.2455459791235626
+
+Run times:
+Recalculation Size: 23592
+3367.4273018699605
+Recalculation Size: 23592
+3342.893476214027
+Recalculation Size: 23592
+3336.2052153989207
+Recalculation Size: 23592
+3391.4797418760136
+Recalculation Size: 23592
+3363.117987998994
+Recalculation Size: 23592
+3339.9277190479916
+Recalculation Size: 23592
+3381.0519397789612
+Recalculation Size: 23592
+3407.1675365860574
+Recalculation Size: 23592
+3418.996316961944
+Recalculation Size: 23592
+3475.8124697809108
+Recalculation Size: 23592
+3472.9087178178597
+Recalculation Size: 23592
+3435.8700236801524

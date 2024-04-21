@@ -19,7 +19,7 @@ def test_iCentral_p_basic():
 
 def test_iCentral_p_from_paper():
     """
-    Test iCentral_p on: Example BC Graph from paper (pg_)
+    Test iCentral_p on: Example BC Graph from iCentral paper (pg661)
     """
     #* Arrange
     G = nx.Graph()
@@ -37,7 +37,7 @@ def test_iCentral_p_from_paper():
 
 def test_iCentral_p_many_components():
     """
-    Test iCentral_p on: Example Biconnected Components Graph from paper (pg_)
+    Test iCentral_p on: Example Biconnected Components Graph from iCentral paper (pg662)
     """
     #* Arrange
     G = nx.Graph({

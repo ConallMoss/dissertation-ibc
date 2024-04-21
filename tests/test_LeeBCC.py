@@ -18,7 +18,7 @@ def test_LeeBCC_basic():
 
 def test_LeeBCC_from_paper():
     """
-    Test LeeBCC on: Example BC Graph from paper (pg_)
+    Test LeeBCC on: Example BC Graph from iCentral paper (pg661)
     """
     #* Arrange
     G = nx.Graph()
@@ -34,7 +34,7 @@ def test_LeeBCC_from_paper():
 
 def test_LeeBCC_many_components():
     """
-    Test LeeBCC on: Example Biconnected Components Graph from paper (pg_)
+    Test LeeBCC on: Example Biconnected Components Graph from iCentral paper (pg662)
     """
     #* Arrange
     G = nx.Graph({
@@ -127,22 +127,6 @@ def test_LeeBCC_randEdge_ER256():
 
     #* Assert
     assert bce_new == approx(bce_LeeBCC)
-
-# @nottest #Takes too long to run
-# def test_LeeBCC_randEdge_ER1024():
-#     """
-#     Test LeeBCC on: Erdos-Reyni (n=1024, p=1/32) graph, with randomly generated insert edge
-#     """
-#     #* Arrange
-#     G =  nx.erdos_renyi_graph(1024, 1/32, seed=123, directed=False)
-#     e = pick_random_nonedge(G, seed=42)
-    
-#     #* Act
-#     bce_new, bce_LeeBCC = dotest_LeeBCC(G, e)
-#     print(bce_LeeBCC)
-
-#     #* Assert
-#     assert bce_new == approx(bce_LeeBCC)
 
 def test_LeeBCC_bridge_edge():
     """

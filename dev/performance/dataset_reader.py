@@ -11,7 +11,7 @@ def get_lcc(G):
 def get_bcc(G):
     return G.subgraph(max(nx.biconnected_components(G), key=len)).copy()
 
-datasets = ['amazon-ratings', 'chess', 'com-dblp', 'dimacs9-NY', 'ego-facebook', 'elec', 'email-EuAll', 'epinions', 'facebook-combined', 'facebook-wosn-links', 'linux', 'munmun_twitter_social', 'pajek-erdos', 'slashdot-threads', 'slashdot-zoo', 'sx-mathoverflow', 'topology', 'web-NotreDame', 'wikispeedia']
+datasets = ['amazon-ratings', 'chess', 'com-dblp', 'dimacs9-NY', 'ego-facebook', 'elec', 'email-EuAll', 'facebook-combined', 'facebook-wosn-links', 'linux', 'munmun_twitter_social', 'pajek-erdos', 'slashdot-threads', 'slashdot-zoo', 'sx-mathoverflow', 'topology', 'web-NotreDame', 'wikispeedia']
 
 for dataset in datasets:
     s = time.perf_counter()

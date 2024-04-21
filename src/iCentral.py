@@ -60,7 +60,7 @@ def iCentral(G: Graph, BC: dict[Node, float], e: Edge) -> dict[Node, float]:
         bicon_new_adj: GraphAdj = bicon_new._adj
 
         #* Show number of nodes to recalculate over
-        print(f"Recalculation Size: {len(recalculation_queue)}")
+        print(f"RS: {len(recalculation_queue)}")
 
         #* Line 10: 
         for s in recalculation_queue:
