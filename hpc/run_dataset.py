@@ -9,6 +9,7 @@ import os
 import argparse
 import copy
 from datetime import datetime
+from memory_profiler import memory_usage
 
 start_time = time.perf_counter()
 
@@ -77,7 +78,7 @@ if __name__ == "__main__":
     }
     func = funcs[prog]
 
-    subgraping = "bcc"
+    subgraping = "lcc"
     
     subgraph_funcs = {
         "lcc": get_lcc,
@@ -105,9 +106,21 @@ if __name__ == "__main__":
         initial = defaultdict(float)
         s = time.perf_counter()
         if prog == "iCentral_p":
-            x = func(G, initial, e, PROCESSES=20)
+            mem, x = memory_usage(
+                proc=(func, (G, initial, e), {'PROCESSES': 20}),
+                interval=1,
+                retval=True,
+                include_children=True,
+                multiprocess=True,
+            )
         else:
-            x = func(G, initial, e)
-        print(time.perf_counter()-s, flush=True)
+            mem, x = memory_usage(
+                proc=(func, (G, initial, e), {}),
+                interval=1,
+                retval=True
+            )
+
+        print(f"T: {time.perf_counter()-s}", flush=True)
+        print(f"M: {max(mem)}", flush=True)
         print("")
 
