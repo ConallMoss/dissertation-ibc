@@ -40,3 +40,4 @@ Traceback (most recent call last):
   File "/rds/user/cm2121/hpc-work/dissertation-ibc/src/iCentral_p.py", line 68, in iCentral_p
     except mp.queue.Empty:
 AttributeError: module 'multiprocessing' has no attribute 'queue'. Did you mean: 'Queue'?
+slurmstepd: error: *** JOB 51269142 ON cpu-q-385 CANCELLED AT 2024-04-22T02:37:31 DUE TO TIME LIMIT ***

@@ -21,3 +21,4 @@ Executing command:
 python -m hpc.run_dataset slashdot-zoo -r 1000 -p iCentral >hpc/slurm/slurm_results/slashdot-zoo/slashdot-zoo-iCentral.txt
 
 flatpak: symbol lookup error: /lib64/libk5crypto.so.3: undefined symbol: EVP_KDF_ctrl, version OPENSSL_1_1_1b
+slurmstepd: error: *** JOB 51269143 ON cpu-q-344 CANCELLED AT 2024-04-22T02:27:22 DUE TO TIME LIMIT ***

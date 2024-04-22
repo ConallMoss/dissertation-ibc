@@ -59,14 +59,11 @@ def iCentral_p(G: Graph, BC: dict[Node, float], e: Edge, PROCESSES: int) -> dict
 
     #* We require all processes to have finished their work (which can happen in any order)
     #* Handle dictionary updates on main thread
-    try:
-        for _ in range(PROCESSES-1): 
-            bc_update = result_queue.get(block=True, timeout=60*60) #* Blocks until data available in queue, or timeouts after an hour of waiting as safety measure
-            for k, v in bc_update.items():
-                if v != 0:
-                    BC[k] += v
-    except mp.queue.Empty:
-        print("Queue get timeout exceeded, ignore result")
+    for _ in range(PROCESSES-1): 
+        bc_update = result_queue.get(block=True) #* Blocks until data available in queue, or timeouts after an hour of waiting as safety measure
+        for k, v in bc_update.items():
+            if v != 0:
+                BC[k] += v
 
     for worker in workers:
         worker.join()

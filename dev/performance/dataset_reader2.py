@@ -28,7 +28,7 @@ for dataset in datasets:
     print(f"Nodes: {len(G_bcc.nodes):,}")
     print(f"Edges: {len(G_bcc.edges):,}")
     
-    print(f"Diamteter: {nx.diameter(G_lcc)}")
+    #print(f"Diamteter: {nx.diameter(G_lcc)}")
     print("", flush=True)
 
     del G, G_lcc, G_bcc
