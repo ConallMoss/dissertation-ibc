@@ -164,14 +164,13 @@ def test_iCentral_all_nxsocial_karate():
     """
     #* Arrange
     G_base = nx.karate_club_graph()
-    all_edges = list(G.edges())
+    all_edges = list(G_base.edges())
     
     for e in all_edges:
         G = G_base.copy()
         G.remove_edge(*e)
         #* Act
         bc_new, bc_iCentral = dotest_iCentral(G, e)
-        print(bc_iCentral)
 
         #* Assert
         assert bc_new == approx(bc_iCentral)

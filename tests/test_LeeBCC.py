@@ -183,3 +183,21 @@ def test_LeeBCC_many_components2():
 
     #* Assert
     assert bce_new == approx(bce_LeeBCC)
+
+
+def test_LeeBCC_all_nxsocial_karate():
+    """
+    Test LeeBCC on: nx social: karate club graph, across all edges
+    """
+    #* Arrange
+    G_base = nx.karate_club_graph()
+    all_edges = list(G_base.edges())
+    
+    for e in all_edges:
+        G = G_base.copy()
+        G.remove_edge(*e)
+        #* Act
+        bce_new, bce_LeeBCC = dotest_LeeBCC(G, e)
+
+        #* Assert
+        assert bce_new == approx(bce_LeeBCC)

@@ -131,17 +131,21 @@ def test_iCentral_p_randEdge_ER256():
     #* Assert
     assert bc_new == approx(bc_iCentral_p)
 
-# def test_iCentral_p_randEdge_ER1024():
-#     """
-#     Test iCentral_p on: Erdos-Reyni (n=1024, p=1/32) graph, with randomly generated insert edge
-#     """
-#     #* Arrange
-#     G =  nx.erdos_renyi_graph(1024, 1/32, seed=123, directed=False)
-#     e = pick_random_nonedge(G, seed=42)
+def test_iCentral_p_all_nxsocial_karate():
+    """
+    Test iCentral_p on: nx social: karate club graph, across all edges
+    """
+    #* Arrange
+    G_base = nx.karate_club_graph()
+    all_edges = list(G_base.edges())
     
-#     #* Act
-#     bc_new, bc_iCentral_p = dotest_iCentral_p(G, e)
-#     print(bc_iCentral_p)
+    for e in all_edges:
+        G = G_base.copy()
+        G.remove_edge(*e)
+        if len(list(nx.connected_components(G))) != 1:
+            continue
+        #* Act
+        bc_new, bc_iCentral_p = dotest_iCentral_p(G, e)
 
-#     #* Assert
-#     assert bc_new == approx(bc_iCentral_p)
+        #* Assert
+        assert bc_new == approx(bc_iCentral_p)

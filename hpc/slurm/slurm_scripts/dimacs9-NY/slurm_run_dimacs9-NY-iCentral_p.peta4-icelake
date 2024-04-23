@@ -133,6 +133,6 @@ echo -e "\nExecuting command:\n==================\n$CMD\n"
 
 eval "source ~/.bashrc"
 eval "source activate main-pypy"
-eval "export PATH="/home/cm2121/.conda/envs/main/bin:$PATH""
+eval "export PATH="/home/cm2121/.conda/envs/main-pypy/bin:$PATH""
 
 eval $CMD 
