@@ -112,12 +112,14 @@ if __name__ == "__main__":
                 retval=True,
                 include_children=True,
                 multiprocess=True,
+                max_iterations=1
             )
         else:
             mem, x = memory_usage(
                 proc=(func, (G, initial, e), {}),
                 interval=1,
-                retval=True
+                retval=True,
+                max_iterations=1,
             )
 
         print(f"T: {time.perf_counter()-s}", flush=True)

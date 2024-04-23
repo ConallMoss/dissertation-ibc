@@ -58,7 +58,7 @@ module load rhel8/default-icl              # REQUIRED - loads the basic environm
 module load miniconda/3
 #! Insert additional module load commands after this line if needed:
 
-name=pajek_erdos_LeeBCC
+name=pajek-erdos-LeeBCC
 dataset=pajek-erdos
 runs=1000
 prog=LeeBCC

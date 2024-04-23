@@ -3,6 +3,7 @@ from src.utils.component_utils import *
 from src.utils.bfs_utils import *
 
 import multiprocessing as mp
+from queue import Empty
 from collections import defaultdict
 
 def iCentral_p(G: Graph, BC: dict[Node, float], e: Edge, PROCESSES: int) -> dict[Node, float]:
@@ -60,10 +61,13 @@ def iCentral_p(G: Graph, BC: dict[Node, float], e: Edge, PROCESSES: int) -> dict
     #* We require all processes to have finished their work (which can happen in any order)
     #* Handle dictionary updates on main thread
     for _ in range(PROCESSES-1): 
-        bc_update = result_queue.get(block=True) #* Blocks until data available in queue, or timeouts after an hour of waiting as safety measure
+        bc_update = result_queue.get(block=True) #* Blocks until data available in queue
         for k, v in bc_update.items():
             if v != 0:
                 BC[k] += v
+
+
+    #* Ensure safe closure of resources
 
     for worker in workers:
         worker.join()
@@ -78,9 +82,13 @@ def iCentral_p(G: Graph, BC: dict[Node, float], e: Edge, PROCESSES: int) -> dict
 
 def run(recalculation_queue: mp.Queue, result_queue: mp.Queue, resources: tuple) -> None:
         bc_upd = defaultdict(float)
-        while not recalculation_queue.empty():
-            s: Node = recalculation_queue.get()
-            bc_upd = calculate_node_dependencies_p(s, bc_upd, *resources)
+        try:
+            while not recalculation_queue.empty():
+                s: Node = recalculation_queue.get(block=False)
+                bc_upd = calculate_node_dependencies_p(s, bc_upd, *resources)
+        except Empty:
+            pass #* Catch case when empty/get mismatches due to thread timings 
+
         result_queue.put(bc_upd)
 
 
