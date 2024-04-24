@@ -6,9 +6,10 @@ import multiprocessing as mp
 from queue import Empty
 from collections import defaultdict
 
-def iCentral_p(G: Graph, BC: dict[Node, float], e: Edge, PROCESSES: int) -> dict[Node, float]:
-    if PROCESSES is None:
-        PROCESSES = mp.cpu_count()
+def iCentral_p(G: Graph, BC: dict[Node, float], e: Edge, num_cores: int) -> dict[Node, float]:
+    if num_cores is None:
+        num_cores = mp.cpu_count()
+    num_processes = num_cores - 1 #* Reserve one core for main thread
 
     v1, v2 = e
     G.add_edge(v1, v2)
@@ -29,16 +30,17 @@ def iCentral_p(G: Graph, BC: dict[Node, float], e: Edge, PROCESSES: int) -> dict
     distances_v2 = bfs_distances(bicon_old, v2)
 
     #* Line 7:
-    #* Using threadsafe multiprocessing queue to store recalculation nodes
-    recalculation_queue: mp.Queue = mp.Queue()
-
+    #* Recalculation nodes to be given to each process (lists better for data structure access pattern)
+    recalculation_sets = [[] for i in range(num_processes)]
+    count = 0 
     for s in bicon_old.nodes: 
         #* Check if ends of the edge are at different distances from edge endpoints
         #* i.e. if not, then edge would not be used
         if distances_v1[s] != distances_v2[s]: 
-             recalculation_queue.put(s)
+             recalculation_sets[count % num_processes].append(s) #* Round robin distribution to processes
+             count += 1
 
-    print(f"RS: {recalculation_queue.qsize()}")
+    print(f"RS: {count}")
 
     #* Undefault the dict - used for testing when a default dict is passed in
     for n in G.nodes:
@@ -53,14 +55,14 @@ def iCentral_p(G: Graph, BC: dict[Node, float], e: Edge, PROCESSES: int) -> dict
 
     #* Spawn all processes
     workers = []
-    for _ in range(PROCESSES-1):
-        p: mp.Process = mp.Process(target=run, args=(recalculation_queue, result_queue, resources))
+    for recalc_set in recalculation_sets:
+        p: mp.Process = mp.Process(target=run, args=(recalc_set, result_queue, resources))
         p.start()
         workers.append(p)
 
     #* We require all processes to have finished their work (which can happen in any order)
     #* Handle dictionary updates on main thread
-    for _ in range(PROCESSES-1): 
+    for _ in range(num_processes): 
         bc_update = result_queue.get(block=True) #* Blocks until data available in queue
         for k, v in bc_update.items():
             if v != 0:
@@ -72,23 +74,16 @@ def iCentral_p(G: Graph, BC: dict[Node, float], e: Edge, PROCESSES: int) -> dict
     for worker in workers:
         worker.join()
 
-    recalculation_queue.close()
     result_queue.close()
-    recalculation_queue.join_thread()
     result_queue.join_thread()
         
     return BC
  
 
-def run(recalculation_queue: mp.Queue, result_queue: mp.Queue, resources: tuple) -> None:
+def run(recalculation_set: list[Node], result_queue: mp.Queue, resources: tuple) -> None:
         bc_upd = defaultdict(float)
-        try:
-            while not recalculation_queue.empty():
-                s: Node = recalculation_queue.get(block=False)
-                bc_upd = calculate_node_dependencies_p(s, bc_upd, *resources)
-        except Empty:
-            pass #* Catch case when empty/get mismatches due to thread timings 
-
+        for s in recalculation_set:
+            bc_upd = calculate_node_dependencies_p(s, bc_upd, *resources)
         result_queue.put(bc_upd)
 
 

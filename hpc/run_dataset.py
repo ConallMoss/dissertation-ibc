@@ -107,13 +107,14 @@ if __name__ == "__main__":
         s = time.perf_counter()
         if prog == "iCentral_p":
             mem, x = memory_usage(
-                proc=(func, (G, initial, e), {'PROCESSES': 20}),
+                proc=(func, (G, initial, e), {'num_cores': 20}),
                 interval=1,
                 retval=True,
                 include_children=True,
                 multiprocess=True,
                 max_iterations=1
             )
+            #x = func(G, initial, e, num_cores=20)
         else:
             mem, x = memory_usage(
                 proc=(func, (G, initial, e), {}),
@@ -121,6 +122,7 @@ if __name__ == "__main__":
                 retval=True,
                 max_iterations=1,
             )
+            x = func(G, initial, e)
 
         print(f"T: {time.perf_counter()-s}", flush=True)
         print(f"M: {max(mem)}", flush=True)

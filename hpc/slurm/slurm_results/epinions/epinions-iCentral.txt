@@ -1,0 +1,17 @@
+2024-04-24 01:10:32.642031
+dataset='epinions'
+prog='iCentral'
+max_runs=1000
+max_secs=40000
+
+graph size: N=119130, E=704572
+Subgraphing: lcc
+Graph read time:
+3.286694334121421
+
+Run times:
+RS: 18613
+RS: 18613
+T: 28917.637799307937
+M: 1506.57421875
+
