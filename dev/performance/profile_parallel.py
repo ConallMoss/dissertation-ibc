@@ -39,7 +39,7 @@ if __name__ == "__main__":
     bce_initial = defaultdict(float)
     #e = ('2289', '2510')
     with cProfile.Profile() as pr:
-        x = iCentral_p(G, bce_initial, e, PROCESSES=16)
+        x = iCentral_p(G, bce_initial, e, num_cores=16)
         stats = pstats.Stats(pr)
         print("Profile iCentral:")
         stats.sort_stats(SortKey.CUMULATIVE).print_stats()

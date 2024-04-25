@@ -8,7 +8,7 @@ if __name__ == "__main__":
 
     bc = nx.betweenness_centrality(G, endpoints=False, normalized=False)
 
-    bc_iCentral = iCentral_p(G, bc, e, PROCESSES=4)
+    bc_iCentral = iCentral_p(G, bc, e, num_cores=4)
     bc_new = nx.betweenness_centrality(G, endpoints=False, normalized=False)
 
     print(bc_iCentral)

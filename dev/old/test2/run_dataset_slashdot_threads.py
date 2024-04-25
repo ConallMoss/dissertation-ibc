@@ -74,7 +74,7 @@ if __name__ == "__main__":
         G = G_base.copy()
         bce_initial = defaultdict(float)
         s = time.perf_counter()
-        x = iCentral_p(G, bce_initial, e, PROCESSES=None)
+        x = iCentral_p(G, bce_initial, e, num_cores=None)
         counts[2].append(time.perf_counter() - s)
 
     print("dataset:")

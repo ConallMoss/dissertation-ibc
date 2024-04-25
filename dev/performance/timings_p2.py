@@ -34,7 +34,7 @@ if __name__ == "__main__":
     G = G2.copy()
     bce_initial = defaultdict(float)
     s = time.perf_counter()
-    x = iCentral_p(G, bce_initial, e, PROCESSES=32)
+    x = iCentral_p(G, bce_initial, e, num_cores=32)
     print("Real time Parallel iCentral:")
     print(time.perf_counter() - s)
     print("")

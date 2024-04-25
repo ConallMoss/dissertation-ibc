@@ -39,7 +39,7 @@ def dotest_iCentral_p(G: Graph, e: Edge):
     bc_new = true_bc(G2)
 
     #*Act
-    bc_iCentral_p = iCentral_p(G, bc_initial, e, PROCESSES=4)
+    bc_iCentral_p = iCentral_p(G, bc_initial, e, num_cores=4)
 
     return bc_new, bc_iCentral_p
 

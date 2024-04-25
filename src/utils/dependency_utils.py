@@ -1,7 +1,7 @@
 from src.utils.typing_utils import *
 from collections import deque, defaultdict
    
-def find_edge_pair_dependencies(G: Graph, s: Node) -> dict[Edge, float]:
+def find_edge_source_dependencies(G: Graph, s: Node) -> dict[Edge, float]:
     """
     Finds edge pair dependencies ($δ^G_{s,⋅}$, effect node has on each edge) of node for each edge in graph
     (Using definition from LeeBCC paper)

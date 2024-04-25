@@ -32,7 +32,7 @@ def get_bc():
 
     G = G2.copy()
     bce_initial = defaultdict(float)
-    x = iCentral_p(G, bce_initial, e, PROCESSES=15)
+    x = iCentral_p(G, bce_initial, e, num_cores=15)
 
     #dataset = "epinions"
 

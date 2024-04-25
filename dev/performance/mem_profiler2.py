@@ -22,7 +22,7 @@ def get_bc(G, e, bc):
 
 def get_bc_p(G, e, bc):
     start = time.perf_counter()
-    x = iCentral_p(G, bc, e, PROCESSES=20)
+    x = iCentral_p(G, bc, e, num_cores=20)
     return time.perf_counter() - start
 
 
