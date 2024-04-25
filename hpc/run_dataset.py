@@ -95,6 +95,11 @@ if __name__ == "__main__":
     print(graph_read_time)
     print("")
 
+    curr_mem = memory_usage(-1)[0]
+    time.sleep(0.1)
+    print("Current memory usage:")
+    print(f"M: {curr_mem}")
+
     print("Run times:")
 
     run = 0
@@ -117,12 +122,14 @@ if __name__ == "__main__":
             #x = func(G, initial, e, num_cores=20)
         else:
             mem, x = memory_usage(
-                proc=(func, (G, initial, e), {}),
+                proc=(func, (G, initial, e)),
                 interval=1,
                 retval=True,
-                max_iterations=1,
+                include_children=True,
+                multiprocess=True,
+                max_iterations=1
             )
-            x = func(G, initial, e)
+            #x = func(G, initial, e)
 
         print(f"T: {time.perf_counter()-s}", flush=True)
         print(f"M: {max(mem)}", flush=True)
