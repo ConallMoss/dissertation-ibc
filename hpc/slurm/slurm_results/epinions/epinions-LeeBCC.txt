@@ -1,12 +1,14 @@
-2024-04-24 01:10:32.865869
+2024-04-26 13:23:23.729415
 dataset='epinions'
 prog='LeeBCC'
 max_runs=1000
 max_secs=40000
 
-graph size: N=119130, E=704572
-Subgraphing: lcc
+graph size: N=58221, E=643009
+Subgraphing: bcc
 Graph read time:
-4.567357023945078
+4.069060303037986
 
+Current memory usage:
+M: 531.75
 Run times:

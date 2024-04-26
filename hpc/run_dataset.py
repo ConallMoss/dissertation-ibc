@@ -78,7 +78,7 @@ if __name__ == "__main__":
     }
     func = funcs[prog]
 
-    subgraping = "lcc"
+    subgraping = "bcc"
     
     subgraph_funcs = {
         "lcc": get_lcc,
@@ -96,7 +96,6 @@ if __name__ == "__main__":
     print("")
 
     curr_mem = memory_usage(-1)[0]
-    time.sleep(0.1)
     print("Current memory usage:")
     print(f"M: {curr_mem}")
 

@@ -1,0 +1,22 @@
+2024-04-25 03:24:49.620023
+dataset='slashdot-zoo'
+prog='iCentral'
+max_runs=1000
+max_secs=40000
+
+graph size: N=79116, E=467731
+Subgraphing: lcc
+Graph read time:
+3.322371414164081
+
+Current memory usage:
+M: 345.44140625
+Run times:
+RS: 26737
+T: 25217.51308168401
+M: 1634.1171875
+
+RS: 13792
+T: 11913.109739940846
+M: 2266.96875
+

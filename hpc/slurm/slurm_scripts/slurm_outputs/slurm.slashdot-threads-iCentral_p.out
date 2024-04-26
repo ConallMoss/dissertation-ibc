@@ -4,15 +4,15 @@ Loading rhel8/default-icl
     intel-oneapi-mpi/2021.6.0/intel/guxuvcpm
 Changed directory to /rds/user/cm2121/hpc-work/dissertation-ibc.
 
-JobID: 51434873
+JobID: 51516212
 ======
-Time: Wed Apr 24 01:10:29 BST 2024
-Running on master node: cpu-q-439
+Time: Thu Apr 25 08:54:51 BST 2024
+Running on master node: cpu-q-282
 Current directory: /rds/user/cm2121/hpc-work/dissertation-ibc
 
 Nodes allocated:
 ================
-cpu-q-439
+cpu-q-282
 
 numtasks=1, numnodes=1, mpi_tasks_per_node=1 (OMP_NUM_THREADS=1)
 
