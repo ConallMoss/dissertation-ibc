@@ -9,10 +9,10 @@
 
 #! sbatch directives begin here ###############################
 #! Name of the job:
-#SBATCH -J name
+#SBATCH -J slurm_run_testing
 #! Which project should be charged:
 #SBATCH -A TGRIFFIN-SL3-CPU
-#SBATCH -p icelake
+#SBATCH -p icelake-himem
 #! How many whole nodes should be allocated?
 #SBATCH --nodes=1
 #! How many (MPI) tasks will there be in total? (<= nodes*76)
@@ -59,19 +59,19 @@ module load rhel8/default-icl              # REQUIRED - loads the basic environm
 module load miniconda/3
 #! Insert additional module load commands after this line if needed:
 
-name=
-dataset=
-runs=
-prog=
+name=slashdot-threads-iCentral
+dataset=slashdot-threads
+runs=1000
+prog=iCentral
 
 #! Full path to application executable: 
-application="python -m hpc.run_dataset_testing $dataset -r $runs -p $prog"
+application="python -m hpc.run_dataset $dataset -r $runs -p $prog"
 
 #! Run options for the application:
-options=">hpc/slurm/slurm_results/$dataset/$name.txt"
+options=">hpc/slurm/slurm_results/testing_results.txt"
 
 #! Work directory (i.e. where the job will run):
-workdir="$SLURM_SUBMIT_DIR/.."  # The value of SLURM_SUBMIT_DIR sets workdir to the directory
+workdir="$SLURM_SUBMIT_DIR/../../.."  # The value of SLURM_SUBMIT_DIR sets workdir to the directory
                              # in which sbatch is run.
 
 #! Are you using OpenMP (NB this is unrelated to OpenMPI)? If so increase this
@@ -132,7 +132,7 @@ echo -e "\nnumtasks=$numtasks, numnodes=$numnodes, mpi_tasks_per_node=$mpi_tasks
 echo -e "\nExecuting command:\n==================\n$CMD\n"
 
 eval "source ~/.bashrc"
-eval "source activate main"
+eval "source activate main-pypy"
 eval "export PATH="/home/cm2121/.conda/envs/main-pypy/bin:$PATH""
 
 eval $CMD 

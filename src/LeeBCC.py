@@ -27,12 +27,12 @@ def LeeBCC(G: Graph, BCe: dict[Edge, float], e: Edge) -> dict[Edge, float]:
         v_s, v_t = e 
         subgraph_s, subgraph_t = subgraphs
         #* Since we are only looking at edges within subgraph, can just use subgraph itself instead of full graph
-        edge_pair_dependency_s: dict[Edge, float] = find_edge_source_dependencies(subgraph_s, v_s) 
-        edge_pair_dependency_t: dict[Edge, float] = find_edge_source_dependencies(subgraph_t, v_t) 
+        edge_source_dependency_s: dict[Edge, float] = find_edge_source_dependencies(subgraph_s, v_s) 
+        edge_source_dependency_t: dict[Edge, float] = find_edge_source_dependencies(subgraph_t, v_t) 
         for e_s in subgraph_s.edges:
-            BCe[(e_s if e_s[0] <= e_s[1] else (e_s[1], e_s[0]))] += len(subgraph_t) * edge_pair_dependency_s[e_s]
+            BCe[(e_s if e_s[0] <= e_s[1] else (e_s[1], e_s[0]))] += len(subgraph_t) * edge_source_dependency_s[e_s]
         for e_t in subgraph_t.edges:
-            BCe[(e_t if e_t[0] <= e_t[1] else (e_t[1], e_t[0]))] += len(subgraph_s) * edge_pair_dependency_t[e_t]
+            BCe[(e_t if e_t[0] <= e_t[1] else (e_t[1], e_t[0]))] += len(subgraph_s) * edge_source_dependency_t[e_t]
         BCe[(e if e[0] <= e[1] else (e[1], e[0]))] = 1.0 * len(subgraph_s) * len(subgraph_t)
 
     #* Line 18:
