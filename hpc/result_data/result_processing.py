@@ -63,8 +63,8 @@ for d in datasets:
 # %%
 datasets = ("chess", "elec", "email-EuAll", "facebook-combined", "linux", "pajek-erdos", "slashdot-threads", "sx-mathoverflow", "topology", "wikispeedia")
 
-datasets_small = ("linux",  "slashdot-threads", "sx-mathoverflow", "topology") #larger
-datasets_big = ("chess", "elec", "facebook-combined", "pajek-erdos", "wikispeedia") #small
+datasets_big = ("linux",  "slashdot-threads", "sx-mathoverflow", "topology") #larger
+datasets_small = ("chess", "elec", "facebook-combined", "pajek-erdos", "wikispeedia") #small
 # %%
 graph_dataset = datasets_small
 r = np.arange(len(graph_dataset))

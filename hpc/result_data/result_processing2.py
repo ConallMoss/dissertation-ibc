@@ -24,7 +24,6 @@ def get_stats(dataset, alg, run, max_results=200):
                 continue
             d[item[0]] = float(item[1])
         if set(d.keys()) != {'M', 'RS', 'T'} and i != max_results-1:
-            print("aaa")
             continue
         stats.append(d)
 
@@ -47,7 +46,22 @@ def mean_dev(data):
     s = np.std(data)
     return m, s
 
-def get_dataset_info(dataset, run, max_results=200):
+def get_alg_data(fstats):
+    algs = ("iCentral", "iCentral_p", "LeeBCC")
+    alg_means, alg_stdevs = {}, {}
+    for alg in algs:
+        m, s = mean_dev(fstats[alg]['T'])
+        alg_means[alg] = m
+        alg_stdevs[alg] = s
+    
+    return alg_means, alg_stdevs
+
+def get_comp_data(fstats):
+    iCentral_times = np.array(fstats['iCentral']['T'])
+    iCentral_times = np.array(fstats['iCentral']['T'])
+    iCentral_times = np.array(fstats['iCentral']['T'])
+
+def get_full_dataset_info(dataset, run, max_results=200):
     algs = ("iCentral", "iCentral_p", "LeeBCC")
     stats_dict = {}
     init_mems = {}
