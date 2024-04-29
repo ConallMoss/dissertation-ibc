@@ -1,0 +1,18 @@
+2024-04-26 13:23:28.091885
+dataset='slashdot-zoo'
+prog='LeeBCC'
+max_runs=1000
+max_secs=40000
+
+graph size: N=48168, E=436497
+Subgraphing: bcc
+Graph read time:
+3.3012141298968345
+
+Current memory usage:
+M: 413.62109375
+Run times:
+RS: 48168
+T: 31763.03740371391
+M: 1423.61328125
+

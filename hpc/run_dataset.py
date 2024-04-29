@@ -26,7 +26,6 @@ def pick_random_safe_edge(G, edges=None):
     if edges is None:
         edges = list(G.edges)
     G2 = G.copy()
-    edges = list(G.edges)
     e = random.choice(edges)
     G2.remove_edge(e[0], e[1])
     #Greedy edge removal
@@ -40,7 +39,9 @@ def get_dataset(name):
     return nx.read_edgelist(f"./datasets/{name}/out.{name}", nodetype=str, comments="%", data=False)
 
 def get_lcc(G):
-    return G.subgraph(max(nx.connected_components(G), key=len)).copy()
+    G2 = G.subgraph(max(nx.connected_components(G), key=len)).copy()
+    G2.remove_edges_from(nx.selfloop_edges(G2))
+    return G2
 
 def get_bcc(G):
     return G.subgraph(max(nx.biconnected_components(G), key=len)).copy()
@@ -59,7 +60,7 @@ if __name__ == "__main__":
     prog = args.prog
 
     max_runs = args.max_runs
-    max_secs = 40000
+    max_secs = 42000
 
     print(datetime.now())
     print(f"{dataset=}")
@@ -78,7 +79,7 @@ if __name__ == "__main__":
     }
     func = funcs[prog]
 
-    subgraping = "bcc"
+    subgraping = "lcc"
     
     subgraph_funcs = {
         "lcc": get_lcc,
@@ -99,14 +100,15 @@ if __name__ == "__main__":
     print("Current memory usage:")
     print(f"M: {curr_mem}")
 
+    G_edges = list(G_base.edges)
+
     print("Run times:")
 
     run = 0
     while ((time.perf_counter()-start_time)<max_secs) and (run < max_runs):
         run += 1
-        G, e = pick_random_safe_edge(G_base)
-        
-        G = copy.deepcopy(G_base)
+        G, e = pick_random_safe_edge(G_base, G_edges)
+
         initial = defaultdict(float)
         s = time.perf_counter()
         if prog == "iCentral_p":
@@ -132,5 +134,6 @@ if __name__ == "__main__":
 
         print(f"T: {time.perf_counter()-s}", flush=True)
         print(f"M: {max(mem)}", flush=True)
+        print(f"E: {e}", flush=True)
         print("")
 

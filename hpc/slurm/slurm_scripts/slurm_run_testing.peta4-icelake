@@ -65,7 +65,7 @@ runs=1000
 prog=iCentral
 
 #! Full path to application executable: 
-application="python -m hpc.run_dataset $dataset -r $runs -p $prog"
+application="python -m hpc.run_dataset_testing $dataset -r $runs -p $prog"
 
 #! Run options for the application:
 options=">hpc/slurm/slurm_results/testing_results.txt"

@@ -78,7 +78,7 @@ if __name__ == "__main__":
     }
     func = funcs[prog]
 
-    subgraping = "bcc"
+    subgraping = "lcc"
     
     subgraph_funcs = {
         "lcc": get_lcc,

@@ -1,0 +1,22 @@
+2024-04-26 13:23:24.139819
+dataset='epinions'
+prog='iCentral'
+max_runs=1000
+max_secs=40000
+
+graph size: N=58221, E=643009
+Subgraphing: bcc
+Graph read time:
+4.407734930980951
+
+Current memory usage:
+M: 524.734375
+Run times:
+RS: 16471
+T: 11809.75112869998
+M: 2066.45703125
+
+RS: 19539
+T: 25109.423263867036
+M: 2580.83203125
+

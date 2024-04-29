@@ -56,9 +56,9 @@ sbatch slashdot-threads/slurm_run_slashdot-threads-iCentral.peta4-icelake
 sbatch slashdot-threads/slurm_run_slashdot-threads-LeeBCC.peta4-icelake
 sbatch slashdot-threads/slurm_run_slashdot-threads-iCentral_p.peta4-icelake
 
-sbatch slashdot-zoo/slurm_run_slashdot-zoo-iCentral.peta4-icelake
-sbatch slashdot-zoo/slurm_run_slashdot-zoo-LeeBCC.peta4-icelake
-sbatch slashdot-zoo/slurm_run_slashdot-zoo-iCentral_p.peta4-icelake
+#sbatch slashdot-zoo/slurm_run_slashdot-zoo-iCentral.peta4-icelake
+#sbatch slashdot-zoo/slurm_run_slashdot-zoo-LeeBCC.peta4-icelake
+#sbatch slashdot-zoo/slurm_run_slashdot-zoo-iCentral_p.peta4-icelake
 
 sbatch sx-mathoverflow/slurm_run_sx-mathoverflow-iCentral.peta4-icelake
 sbatch sx-mathoverflow/slurm_run_sx-mathoverflow-LeeBCC.peta4-icelake
