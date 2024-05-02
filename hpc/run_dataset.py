@@ -51,7 +51,7 @@ parser.add_argument("dataset", help="Dataset to use", type=str)
 parser.add_argument("--max_runs", "-r", help="max number of runs", type=int, default=1)
 parser.add_argument("--prog", "-p", help="which program to run", type=str, default="iCentral")
 
-random.seed(42)
+random.seed(43)
 args = parser.parse_args()
 
 if __name__ == "__main__":
