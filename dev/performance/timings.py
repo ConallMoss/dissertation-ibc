@@ -1,13 +1,14 @@
 # %%
 from pathlib import Path
 import sys
-parent_dir = str(Path().resolve().parents[0])
+parent_dir = str(Path().resolve().parents[1])
 sys.path.insert(0, parent_dir)
 
 import networkx as nx
 from src.LeeBCC import LeeBCC
 from src.iCentral import iCentral
 from src.iCentral_p import iCentral_p
+from src.brandes import brandes
 from collections import defaultdict
 import cProfile, pstats
 from pstats import SortKey
@@ -20,7 +21,7 @@ import sys
 parent_dir = str(Path().resolve().parents[0])
 sys.path.insert(0, parent_dir)
 """
-
+# %%
 def pick_random_nonedge(G, seed=None):
     if seed is not None:
         random.seed(seed)
@@ -35,6 +36,9 @@ G_base = nx.read_edgelist("../datasets/facebook_combined.txt")
 G = G_base
 #e = pick_random_nonedge(G_base)
 e = ('693', '2379')#('1095', '3289')
+
+def true_bc(G) -> dict[Node, float]:
+    return nx.betweenness_centrality(G, normalized=False, endpoints=False) #type: ignore
 
 #* Performance tests:
 
