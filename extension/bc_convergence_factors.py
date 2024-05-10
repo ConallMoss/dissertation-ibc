@@ -103,9 +103,9 @@ def double_plot(loss_info: dict, property: str, name=None):
 
     ax1.set_ylabel("Loss Metric", color=cols["losses"])
     ax2.set_ylabel(names[property], color=cols[property])
-    ax1.set_xlabel("Edge Insertions")
+    ax1.set_xlabel("Number of edges inserted from edgelist")
     
-    fig.legend(loc=2)
+    #fig.legend(["Loss", names[property]], loc=2)
     fig.tight_layout()
     if name:
         plt.savefig(f'figs/{name}.pdf', dpi=300)
@@ -382,7 +382,7 @@ plt.plot(loss_info_greedy_forward["losses"], "tab:orange")
 plt.plot(loss_info_bce_good["losses"], "tab:red")
 plt.plot(loss_info_dc_good["losses"], "tab:green")
 plt.legend(["Backward", "Forward", "Betweenness", "Degree"])
-plt.xlabel("Edge insertions")
+plt.xlabel("Number of edges inserted from edgelist")
 plt.ylabel("Loss metric")
 
 plt.tight_layout()
@@ -405,7 +405,7 @@ plt.plot(loss_info_dfs["losses"], "tab:purple")
 plt.plot(loss_info_bce_good["losses"], "tab:red")
 plt.plot(loss_info_greedy_backward["losses"], "tab:green")
 plt.legend(["BFS", "DFS", "Betweenness", "Backward"])
-plt.xlabel("Edge insertions")
+plt.xlabel("Number of edges inserted from edgelist")
 plt.ylabel("Loss metric")
 
 plt.tight_layout()

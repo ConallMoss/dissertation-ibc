@@ -379,8 +379,8 @@ def plot_relative_times(dataset_stats, graph_datasets, algs, base, name="test"):
     ax.axhline(y=1, color='gray', linestyle='--', linewidth=0.5)
     # Add labels, title and legend
     ax.set_xlabel('Dataset', fontweight=550, fontsize=14)
-    ax.set_ylabel('Scaled Mean', fontweight=550, fontsize=14)
-    ax.set_title('Average Running Time (Scaled)', fontweight='bold', fontsize=16, pad=15)
+    ax.set_ylabel(f'Relative Mean (to {alg_rename[base]})', fontweight=550, fontsize=14)
+    ax.set_title('Average Run Time (Relative)', fontweight='bold', fontsize=16, pad=15)
     ax.set_xticks(r + (barWidth * (num_algorithms-1)) / 2) 
     ax.set_xticklabels(graph_datasets, rotation=30, ha='right', fontsize=12)
     for label in ax.get_yticklabels():
@@ -394,6 +394,46 @@ def plot_relative_times(dataset_stats, graph_datasets, algs, base, name="test"):
     plt.savefig(name, dpi=300)
     plt.show()
 
+def plot_relative_times2(dataset_stats, graph_datasets, algs, base, name="test"):
+    
+    num_datasets = len(graph_datasets)
+    num_algorithms = len(algs)
+
+    barWidth = 0.35
+
+    r = np.arange(num_datasets)
+    #plt.style.use('seaborn-v0_8-white')
+    # Create bars
+    fig, ax = plt.subplots(figsize=(10, 6))
+    def alg_name(a):
+        if a == "LeeBCC":
+            return "Lee-BCC"
+        else:
+            return a
+    for i, alg in enumerate(algs):
+        means = [dataset_stats[dataset][alg][0]/dataset_stats[dataset][base][0] for dataset in graph_datasets]
+        std_devs = [dataset_stats[dataset][alg][1]/dataset_stats[dataset][base][0] for dataset in graph_datasets]
+        
+        ax.bar(r + i * barWidth, means, yerr=std_devs, width=barWidth, label=alg_rename[alg], capsize=5, color=alg_cols[alg], ecolor="black", capstyle="butt", error_kw={"elinewidth": 2, "capsize": 5, 'markeredgewidth':1})
+
+    # Add horizontal line at y=0
+    ax.axhline(y=1, color='gray', linestyle='--', linewidth=0.5)
+    # Add labels, title and legend
+    ax.set_xlabel('Dataset', fontsize=14)
+    ax.set_ylabel(f'Relative Mean', fontsize=14)
+    ax.set_title(f'Average Algorithm Execution Time (Relative to {alg_rename[base]})', fontsize=16, pad=15)
+    ax.set_xticks(r + (barWidth * (num_algorithms-1)) / 2) 
+    ax.set_xticklabels(graph_datasets, rotation=30, ha='right', fontsize=12)
+    for label in ax.get_yticklabels():
+        label.set_fontsize(12)
+    ax.legend(fontsize=12, title="Algorithms", title_fontsize="12")
+
+    # Adjust layout and save plot
+    plt.margins(0.05)  # Reduce extra margin
+    plt.subplots_adjust(bottom=0.2)  # Adjust bottom margin
+    plt.tight_layout()
+    plt.savefig(name, dpi=300)
+    plt.show()
 
 #plot_relative_times(dataset_stats, datasets2, algs = ("LeeBCC", "iCentral"), base="LeeBCC")
 
@@ -407,7 +447,7 @@ def plot_real_times(dataset_stats, graph_datasets, name="test"):
     r = np.arange(num_datasets)
     #plt.style.use('seaborn-v0_8-white')
     # Create bars
-    fig, ax = plt.subplots(figsize=(10, 6))
+    fig, ax = plt.subplots(figsize=(10,6))
     def alg_name(a):
         if a == "LeeBCC":
             return "Lee-BCC"
@@ -423,14 +463,56 @@ def plot_real_times(dataset_stats, graph_datasets, name="test"):
     # Add horizontal line at y=0
     #ax.axhline(y=1, color='gray', linestyle='--', linewidth=0.5)
     # Add labels, title and legend
-    ax.set_xlabel('Dataset', fontweight=550, fontsize=14)
-    ax.set_ylabel('Mean runtime (s)', fontweight=550, fontsize=14)
-    ax.set_title('Average Algorithm Running Times', fontweight='bold', fontsize=16, pad=15)
+    ax.set_xlabel('Dataset', fontsize=14)
+    ax.set_ylabel('Mean runtime (s)', fontsize=14)
+    ax.set_title('Average Algorithm Running Times', fontsize=16, pad=15)
     ax.set_xticks(r + (barWidth * num_algorithms) / 2 - 0.1) 
     ax.set_xticklabels(graph_datasets, rotation=30, ha='right', fontsize=12)
     for label in ax.get_yticklabels():
         label.set_fontsize(12)
     ax.legend(fontsize=12)
+
+    # Adjust layout and save plot
+    plt.margins(0.05)  # Reduce extra margin
+    plt.subplots_adjust(bottom=0.2)  # Adjust bottom margin
+    plt.tight_layout()
+    plt.savefig(name, dpi=300)
+    plt.show()
+
+def plot_real_times2(dataset_stats, graph_datasets, name="test"):
+    algs = ("LeeBCC", "iCentral", "iCentral_p")
+    num_datasets = len(graph_datasets)
+    num_algorithms = len(algs)
+
+    barWidth = 0.25
+
+    r = np.arange(num_datasets)
+    #plt.style.use('seaborn-v0_8-white')
+    # Create bars
+    fig, ax = plt.subplots()
+    def alg_name(a):
+        if a == "LeeBCC":
+            return "Lee-BCC"
+        else:
+            return a
+        
+    for i, alg in enumerate(algs):
+        means = [dataset_stats[dataset][alg][0] for dataset in graph_datasets]
+        std_devs = [dataset_stats[dataset][alg][1] for dataset in graph_datasets]
+        
+        ax.bar(r + i * barWidth, means, yerr=std_devs, width=barWidth, label=alg_rename[alg], capsize=5, color=alg_cols[alg], ecolor="black", capstyle="butt", error_kw={"elinewidth": 1.5, "capsize": 4, 'markeredgewidth':1})
+
+    # Add horizontal line at y=0
+    #ax.axhline(y=1, color='gray', linestyle='--', linewidth=0.5)
+    # Add labels, title and legend
+    ax.set_xlabel('Dataset')
+    ax.set_ylabel('Mean runtime (s)')
+    ax.set_title('Average Algorithm Execution Time')
+    ax.set_xticks(r + (barWidth * num_algorithms) / 2 - 0.1) 
+    ax.set_xticklabels(graph_datasets, rotation=30, ha='right')
+    # for label in ax.get_yticklabels():
+    #     label.set_fontsize(12)
+    ax.legend(title="Algorithms")
 
     # Adjust layout and save plot
     plt.margins(0.05)  # Reduce extra margin
@@ -456,7 +538,7 @@ def plot_real_mems(dataset_stats, graph_datasets, name="test"):
         means = [dataset_stats[dataset][alg][0] for dataset in graph_datasets]
         std_devs = [dataset_stats[dataset][alg][1] for dataset in graph_datasets]
         
-        ax.bar(r + i * barWidth, means, yerr=std_devs, width=barWidth, label=alg_rename[alg], capsize=5, color=alg_cols[alg], ecolor="black", capstyle="butt", error_kw={"elinewidth": 2, "capsize": 5, 'markeredgewidth':1})
+        ax.bar(r + i * barWidth, means, yerr=std_devs, width=barWidth, label=alg_rename[alg], capsize=5, color=alg_cols[alg], ecolor="black", capstyle="butt", error_kw={"elinewidth": 1.5, "capsize": 4, 'markeredgewidth':1})
 
     # Add horizontal line at y=0
     #ax.axhline(y=1, color='gray', linestyle='--', linewidth=0.5)
@@ -469,6 +551,44 @@ def plot_real_mems(dataset_stats, graph_datasets, name="test"):
     for label in ax.get_yticklabels():
         label.set_fontsize(12)
     ax.legend(fontsize=12)
+
+    # Adjust layout and save plot
+    plt.margins(0.05)  # Reduce extra margin
+    plt.subplots_adjust(bottom=0.1, left=0.1)  # Adjust bottom margin
+    plt.tight_layout()
+    plt.savefig(name, dpi=300)
+    plt.show()
+
+def plot_real_mems2(dataset_stats, graph_datasets, name="test"):
+    algs = ("LeeBCC_mem", "iCentral_mem", "iCentral_p_mem")
+    num_datasets = len(graph_datasets)
+    num_algorithms = len(algs)
+
+    barWidth = 0.25
+
+    r = np.arange(num_datasets)
+    #plt.style.use('seaborn-v0_8-white')
+    # Create bars
+    fig, ax = plt.subplots()
+    alg_name = {"iCentral_mem": "iCentral", "LeeBCC_mem":"LeeBCC", "iCentral_p_mem":"iCentral_p"}
+        
+    for i, alg in enumerate(algs):
+        means = [dataset_stats[dataset][alg][0] for dataset in graph_datasets]
+        std_devs = [dataset_stats[dataset][alg][1] for dataset in graph_datasets]
+        
+        ax.bar(r + i * barWidth, means, yerr=std_devs, width=barWidth, label=alg_rename[alg], capsize=5, color=alg_cols[alg], ecolor="black", capstyle="butt", error_kw={"elinewidth": 1.5, "capsize": 4, 'markeredgewidth':1})
+
+    # Add horizontal line at y=0
+    #ax.axhline(y=1, color='gray', linestyle='--', linewidth=0.5)
+    # Add labels, title and legend
+    ax.set_xlabel('Dataset')
+    ax.set_ylabel('Mean memory usage (MB)')
+    ax.set_title('Average Algorithm Memory Usage')
+    ax.set_xticks(r + (barWidth * num_algorithms) / 2 - 0.1) 
+    ax.set_xticklabels(graph_datasets, rotation=30, ha='right')
+    # for label in ax.get_yticklabels():
+    #     label.set_fontsize(12)
+    ax.legend(title="Algorithms")
 
     # Adjust layout and save plot
     plt.margins(0.05)  # Reduce extra margin
@@ -514,6 +634,45 @@ def plot_relative_mems(dataset_stats, graph_datasets, algs, base, name="test"):
     plt.savefig(name, dpi=300)
     plt.show()
 
+def plot_relative_mems2(dataset_stats, graph_datasets, algs, base, name="test"):
+    
+    num_datasets = len(graph_datasets)
+    num_algorithms = len(algs)
+
+    barWidth = 0.35
+    alg_name = {"iCentral_mem": "iCentral", "LeeBCC_mem":"LeeBCC", "iCentral_p_mem":"iCentral_p"}
+    r = np.arange(num_datasets)
+    #plt.style.use('seaborn-v0_8-white')
+    # Create bars
+    fig, ax = plt.subplots(figsize=(10, 6))
+    
+    for i, alg in enumerate(algs):
+        means = [dataset_stats[dataset][alg][0]/dataset_stats[dataset][base][0] for dataset in graph_datasets]
+        std_devs = [dataset_stats[dataset][alg][1]/dataset_stats[dataset][base][0] for dataset in graph_datasets]
+        
+        ax.bar(r + i * barWidth, means, yerr=std_devs, width=barWidth, label=alg_rename[alg], capsize=5, color=alg_cols[alg], ecolor="black", capstyle="butt", error_kw={"elinewidth": 2, "capsize": 5, 'markeredgewidth':1})
+
+    # Add horizontal line at y=0
+    ax.axhline(y=1, color='gray', linestyle='--', linewidth=0.5)
+    # Add labels, title and legend
+    ax.set_xlabel('Dataset', fontsize=14)
+    ax.set_ylabel('Relative Mean', fontsize=14)
+    ax.set_title(f'Average Memory Usage (Relative to {alg_rename[base]})', fontsize=16, pad=15)
+    ax.set_xticks(r + (barWidth * (num_algorithms-1) / 2 )) 
+    ax.set_xticklabels(graph_datasets, rotation=30, ha='right', fontsize=12)
+    for label in ax.get_yticklabels():
+        label.set_fontsize(12)
+    ax.legend(loc=1, fontsize=12, title="Algorithms", title_fontsize="12")
+    #ax.set_yticks(list(ax.get_xticks()[0]) + [1])
+    
+    # Adjust layout and save plot
+    plt.margins(y=0.2)  # Reduce extra margin
+    plt.subplots_adjust(bottom=0.1, left=0.1)  # Adjust bottom margin
+    plt.tight_layout()
+    plt.savefig(name, dpi=300)
+    plt.show()
+
+
 
 # %%
 
@@ -547,22 +706,22 @@ alg_rename = {
 }    
 
 # %%
-plot_real_times(dataset_stats, datasets_big, name="figs/real_times_big.pdf")
+plot_real_times2(dataset_stats, datasets_big, name="figs/real_times_big.pdf")
 # %%
-plot_real_times(dataset_stats, datasets_small, name="figs/real_times_small.pdf")
+plot_real_times2(dataset_stats, datasets_small, name="figs/real_times_small.pdf")
 # %%
-plot_relative_times(dataset_stats, datasets, algs = ("LeeBCC", "iCentral"), base="LeeBCC", name="figs/rel_times_lee.pdf")
+plot_relative_times2(dataset_stats, datasets, algs = ("LeeBCC", "iCentral"), base="LeeBCC", name="figs/rel_times_lee.pdf")
 # %%
-plot_relative_times(dataset_stats, datasets, algs = ("iCentral", "iCentral_p"), base="iCentral_p", name="figs/rel_times_para.pdf")
+plot_relative_times2(dataset_stats, datasets, algs = ("iCentral", "iCentral_p"), base="iCentral_p", name="figs/rel_times_para.pdf")
 # %%
-plot_real_mems(dataset_stats, datasets_big, name="figs/real_mems_big.pdf")
+plot_real_mems2(dataset_stats, datasets_big, name="figs/real_mems_big.pdf")
 # %%
-plot_real_mems(dataset_stats, datasets_small, name="figs/real_mems_small.pdf")
+plot_real_mems2(dataset_stats, datasets_small, name="figs/real_mems_small.pdf")
 
 # %%
-plot_relative_mems(dataset_stats, datasets, algs = ("LeeBCC_mem", "iCentral_mem"), base="LeeBCC_mem", name="figs/rel_mems_lee.pdf")
+plot_relative_mems2(dataset_stats, datasets, algs = ("LeeBCC_mem", "iCentral_mem"), base="LeeBCC_mem", name="figs/rel_mems_lee.pdf")
 # %%
-plot_relative_mems(dataset_stats, datasets, algs = ("iCentral_mem", "iCentral_p_mem"), base="iCentral_mem", name="figs/rel_mems_para.pdf")
+plot_relative_mems2(dataset_stats, datasets, algs = ("iCentral_mem", "iCentral_p_mem"), base="iCentral_mem", name="figs/rel_mems_para.pdf")
 # %%
 
 
@@ -789,6 +948,7 @@ plt.show()
 
 #scipy.stats.linregress(a2, b2)
 # %%
+
 fig, ax = plt.subplots()
 ax.scatter(x=a, y=c, c="tab:red", marker="x")
 
@@ -808,10 +968,10 @@ for i, txt in enumerate(datasets):
 ax.plot(np.unique(a), np.poly1d(np.polyfit(a, c, 1))(np.unique(a)), c="tab:purple")
 
 # Add labels, title and legend
-ax.set_xlabel('iCentral/Lee-BCC speedup', fontweight=550, fontsize=10)
-ax.set_ylabel('Average Node Degree', fontweight=550, fontsize=10)
-ax.set_title('Comparison of Speedup vs. Average Node Degree', fontweight=550, fontsize=12, pad=15)
-ax.legend(["Datasets", "Line of Best Fit"], loc=2, fontsize=8)
+ax.set_xlabel('iCentral speedup over Lee-BCC')
+ax.set_ylabel('Average Node Degree')
+ax.set_title('Comparison of Speedup vs. Average Node Degree')
+ax.legend(["Datasets", "Regression Line (r=0.90)"])
 
 # Adjust layout and save plot
 plt.margins(y=0.1)  # Reduce extra margin
@@ -819,17 +979,21 @@ plt.subplots_adjust(bottom=0.1, left=0.1)  # Adjust bottom margin
 plt.tight_layout()
 plt.savefig('figs/speedupVdegree.pdf', dpi=300)
 plt.show()
+
+
+
+
 # %%
 fig, ax = plt.subplots()
 
 raw_stats, _ = get_stats("wikispeedia", "iCentral", "run7_lcc", max_results=200)
-ax.scatter(raw_stats["T"], raw_stats["RS"], marker="x", c="tab:blue")
-ax.plot(np.unique(raw_stats["T"]), np.poly1d(np.polyfit(raw_stats["T"], raw_stats["RS"], 1))(np.unique(raw_stats["T"])), c="tab:orange")
+ax.scatter(raw_stats["RS"], raw_stats["T"], marker="x", c="tab:blue")
+ax.plot(np.unique(raw_stats["RS"]), np.poly1d(np.polyfit(raw_stats["RS"], raw_stats["T"], 1))(np.unique(raw_stats["RS"])), c="tab:orange")
 
-ax.set_xlabel('iCentral Runtime (s)', fontweight=550, fontsize=10)
-ax.set_ylabel('Recalculation Set Size', fontweight=550, fontsize=10)
-ax.set_title('Comparison of Runtimes vs. Recalculation Set Size', fontweight=550, fontsize=12, pad=15)
-ax.legend(["Edge Insertion", "Line of Best Fit"], loc=2, fontsize=8)
+ax.set_ylabel('iCentral Runtime (s)')
+ax.set_xlabel('Recalculation Set Size')
+ax.set_title('Comparison of Run Time vs. Recalculation Set Size')
+ax.legend(["Edge Insertion", "Regression Line (r=0.999)"])
 
 # Adjust layout and save plot
 plt.margins(y=0.1)  # Reduce extra margin
@@ -881,9 +1045,9 @@ def get_stats_p(dataset, run, max_results=100):
     
     return {k: np.array(fstats[k]) for k in ["RS", "T"]}
 
-p_datasets = [f"parallel-elec-{i}" for i in [2, 4, 8, 16, 32, 64]]
-ps = [2, 4, 8, 16, 32, 64]
-raw_p_stats = {i: get_stats_p(f"parallel-elec-{i}", "run9_extras")["T"] for i in [2, 4, 8, 16, 32, 64]}
+p_datasets = [f"parallel-elec-{i}" for i in [2, 4, 8, 16, 32]]
+ps = [2, 4, 8, 16, 32]
+raw_p_stats = {i: get_stats_p(f"parallel-elec-{i}", "run9_extras")["T"] for i in ps}
 p_means = [np.mean(raw_p_stats[i]) for i in ps]
 p_speedup = [max(p_means)/i for i in p_means]
 p_log = [np.log(i) for i in p_means]
@@ -900,10 +1064,10 @@ ax.scatter(ps, p_speedup , marker="x", c="tab:green")
 
 ax.plot(np.unique(ps2), np.poly1d(np.polyfit(ps2, p_speedup2, 1))(np.unique(ps2)), c="tab:red")
 #regress = 0.7
-ax.set_ylabel('Relative speedup (vs. 2 core)', fontweight=550, fontsize=10)
-ax.set_xlabel('Number of cores', fontweight=550, fontsize=10)
-ax.set_title('Scalability of Parallelised iCentral', fontweight=550, fontsize=12, pad=15)
-ax.legend(["Run time", "Line of Best Fit"], loc=2, fontsize=8)
+ax.set_ylabel('Performance Improvement (relative to 2-core execution)')
+ax.set_xlabel('Number of cores')
+ax.set_title('Scalability of Parallelised iCentral')
+ax.legend(["Run time", "Regression Line (r=0.997)"])
 
 # Adjust layout and save plot
 plt.margins(y=0.1)  # Reduce extra margin
